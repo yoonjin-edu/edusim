@@ -148,6 +148,69 @@ textarea:focus{border-color:var(--primary);background:#fff;outline:none}
 .skillchip{display:flex;align-items:center;gap:12px;font-size:13.5px}
 .thtile{min-width:42px;height:42px;padding:0 7px;border-radius:11px;background:var(--violet);color:#fff;font-family:var(--display);font-weight:900;font-size:12px;display:grid;place-items:center;flex:none;white-space:nowrap}
 .intro .btn{margin-top:auto;align-self:stretch}
+
+/* v8: 내 조건 · 정할 것 */
+.needbox{border-radius:12px;padding:10px 12px;background:var(--primary-soft);font-size:13.5px;display:flex;flex-direction:column;gap:3px}
+.needbox .hud{display:block;color:var(--primary-dk);margin-bottom:2px}
+.nb-row{display:flex;gap:8px;align-items:baseline;line-height:1.5}
+.nb-row b{flex:none;font-size:11.5px;color:var(--primary-dk);min-width:56px}
+.decidebox{border-radius:12px;padding:10px 12px;background:var(--paper-2);display:flex;flex-direction:column;gap:6px}
+.decidebox .hud{color:var(--muted)}
+.decidebox .note{font-size:12px}
+.dchips{display:flex;flex-wrap:wrap;gap:5px}
+.dc{font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:#fff;border:1.5px dashed var(--line-2);color:var(--muted);line-height:1.45}
+.dc.on{background:var(--mint-soft);border:1.5px solid var(--mint);color:#11744F}
+.dc.on::before{content:"✓ "}
+.dc.miss{background:var(--coral-soft);border:1.5px solid #F5B5A9;color:#B23A26}
+.dc.miss::before{content:"✕ "}
+.dc.pop{animation:dcpop .7s ease-out}
+@keyframes dcpop{0%{transform:scale(1)}35%{transform:scale(1.14)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.dc.pop{animation:none}}
+.decidechip{display:flex!important;flex-direction:column;gap:3px;-webkit-line-clamp:unset;overflow:visible}
+.decidechip .dc{font-size:11px;padding:1px 7px}
+.dnum{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:var(--muted)}
+.dnum em{font-style:normal;font-family:var(--display);font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+.missionbar .dcr b{color:#11744F}
+.missionbar .dcr .dc{font-size:11.5px;padding:1px 8px}
+@media (max-width:400px){.dnum{font-size:10.5px;gap:3px}.dnum em{font-size:12px}}
+/* v8: 결과 · 이번 판에서 내려놓은 것 */
+.give{gap:8px}
+.gv-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.gv-t{font-family:var(--display);font-weight:900;font-size:19px;letter-spacing:-.01em}
+.give p{margin:0;font-size:15px;line-height:1.6}
+.give .quote.small{font-size:14px}
+.gv-dec{display:flex;flex-direction:column;gap:6px;border-top:1px solid #D5DBFF;padding-top:10px;margin-top:2px}
+.gv-dec .k{font-size:12px;font-weight:800;color:var(--primary-dk)}
+.alt.win .k{color:var(--primary)}
+.acts i.dec{background:var(--mint-soft);color:#11744F}
+/* v8: 내 기록 탭 */
+#recOv .ovpanel{word-break:keep-all;overflow-wrap:break-word;max-height:calc(100vh - 32px);overflow:auto}
+.ovpanel.rec.wide{max-width:760px}
+.rec .tabs{margin-top:-4px}
+.hbars.gv .hbar{grid-template-columns:78px 1fr 22px}
+.postab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.postab .pr{display:flex;flex-direction:column;gap:1px;background:var(--paper-2);border-radius:10px;padding:8px 10px;font-size:13px}
+.postab .pr b{font-size:12px;color:var(--muted)}
+.postab .pr .pv{font-weight:800}
+.postab .pr.none{opacity:.55}
+.pcell .pg{font-size:12.5px;font-weight:800;color:var(--ink)}
+
+/* v8: 관리자 · 말투 점검 */
+.adm-probe{display:flex;flex-direction:column;gap:12px}
+.pb-blk{border-top:1px solid var(--line);padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.pb-hd{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pb-cell{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;font-size:12.5px}
+.pb-cell span{background:var(--paper-2);border-radius:10px;padding:6px 9px;display:flex;flex-direction:column;gap:2px}
+.pb-cell em{font-style:normal;font-size:11px;font-weight:800;color:var(--muted)}
+.pb-first{margin:0}
+.pb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pb-a{border:2px solid var(--line);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;gap:4px;font-size:13px;min-width:0}
+.pb-a .k{font-size:11.5px;font-weight:800;color:var(--primary-dk)}
+.pb-a .pb-say{font-weight:700;line-height:1.5}
+.pb-a .pb-in{font-size:12px;color:var(--muted)}
+.pb-ctl select{flex:1 1 220px;min-width:0}
+.pb-a .acts2{font-size:11px;color:var(--muted)}
+@media (max-width:700px){.pb-cell,.pb-grid{grid-template-columns:1fr}}
 @media (max-width:600px){
   .scene.introing .art .fig{left:50%}
   .intro{position:static;width:auto;margin-top:12px;background:var(--paper);border:2px solid var(--line);border-bottom-width:4px;box-shadow:none;animation:none}
@@ -752,8 +815,8 @@ textarea:focus{border-color:var(--primary);background:#fff;outline:none}
 .kp-share{display:flex;flex-direction:column;gap:6px;align-items:flex-start;background:var(--paper-2);border-radius:14px;padding:12px 14px}
 .kp-share .copybox{width:100%;font-size:12px}
 .topbar{min-width:0}.mini-logo{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media (max-width:440px){.topr{gap:6px}.topr .dexbtn{padding:5px 9px;font-size:13px;gap:5px}.topr .dexbtn svg{width:16px;height:16px}.mini-logo{font-size:14px}}
-@media (max-width:380px){.topr .dexbtn{padding:4px 7px;font-size:12.5px}.topbar{gap:6px}}
+@media (max-width:440px){.topr{gap:6px}.topr .dexbtn{padding:5px 9px;font-size:13px;gap:5px}.topr .dexbtn svg{width:16px;height:16px}.mini-logo{font-size:13px;letter-spacing:-.02em}}
+@media (max-width:380px){.topr .dexbtn{padding:4px 7px;font-size:12.5px}.topbar{gap:6px}.mini-logo{font-size:12px}}
 .keybox{background:var(--primary-soft);border-color:#C9CEFB}
 .keybox h4{color:var(--primary-dk)}
 .ac-perm{display:flex;flex-direction:column;gap:4px;background:#fff;border-radius:12px;padding:10px 12px;font-size:13.5px}
@@ -765,7 +828,7 @@ textarea:focus{border-color:var(--primary);background:#fff;outline:none}
 .stagechip{word-break:keep-all}
 @media (max-width:400px){
   .topbar{gap:8px}
-  .mini-logo{font-size:14.5px;white-space:nowrap}
+  .mini-logo{font-size:12.5px;white-space:nowrap;letter-spacing:-.03em}
   .dexbtn{white-space:nowrap;flex:none;padding:6px 10px;font-size:13px;gap:5px}
   .hud-top{top:8px;left:8px;right:8px;gap:6px}
   .hud-l{max-width:46%}
@@ -1155,7 +1218,6 @@ button.of-p:focus-visible .of-name{outline:3px solid #4457F5;outline-offset:2px}
     <div class="scene tscene"><div class="art" id="titleArt"></div></div>
     <button class="btn big" id="goPick" type="button">시작하기</button>
     <div id="aiOff" hidden></div>
-    <button class="txtbtn" id="demoBtn" type="button">예시 결과 보기</button>
   </section>
 
   <!-- SCENARIOS -->
@@ -1205,10 +1267,11 @@ button.of-p:focus-visible .of-name{outline:3px solid #4457F5;outline-offset:2px}
       <div class="art" id="playArt"></div>
       <div class="emote" id="emote" hidden></div>
       <div class="hud-top" id="hudTop" hidden>
-        <div class="hud-l"><span class="glass stagechip" id="hudStage"></span><span class="glass goalchip"><b>MISSION</b><span id="hudGoal"></span></span><span class="glass goalchip guardchip"><b>지킬 것</b><span id="hudGuard"></span></span></div>
+        <div class="hud-l"><span class="glass stagechip" id="hudStage"></span><span class="glass goalchip"><b>MISSION</b><span id="hudGoal"></span></span><span class="glass goalchip guardchip"><b>지킬 것</b><span id="hudGuard"></span></span><span class="glass goalchip decidechip" id="hudDecideChip" hidden><b>정할 것</b><span class="dchips" id="hudDecide"></span></span></div>
         <div class="hud-r glass">
           <div class="turns" id="turns" aria-label="주고받은 횟수"></div>
           <span class="agree" title="합의 진척">합의<i><b id="agreeBar"></b></i><em id="agreeNum">0%</em></span>
+          <span class="dnum" id="decideNum" hidden title="정할 것">정할 것<em>0/0</em></span>
           <button class="logbtn" id="logBtn" type="button">기록</button>
         </div>
       </div>
@@ -1225,6 +1288,8 @@ button.of-p:focus-visible .of-name{outline:3px solid #4457F5;outline-offset:2px}
         <div class="intro-r">
         <div class="mission"><span class="hud">MISSION</span><span id="stageGoal"></span></div>
         <div class="guard"><span class="hud">지킬 것</span><span id="stageGuard"></span></div>
+        <div class="needbox" id="stageNeedBox" hidden><span class="hud">내 조건</span><span class="nb-row"><b>꼭 필요</b><span id="stageMust"></span></span><span class="nb-row"><b>양보 가능</b><span id="stageFlex"></span></span></div>
+        <div class="decidebox" id="stageDecideBox" hidden><span class="hud">정할 것</span><div class="dchips" id="stageDecide"></div><span class="note">대화에서 누가 · 무엇을 · 언제까지가 정해지면 하나씩 채워져요</span></div>
         <div class="skillchip"><span class="thtile" id="stageTile"></span><div>이번 판 연결 이론 <b id="stageSkill"></b><br><span class="note">끝나면 결과지에서 내 대화에 적용해 보여줘요</span></div></div>
         <div id="introNote" hidden></div>
         <button class="btn" id="playBtn" type="button">대화 시작</button>
@@ -1232,7 +1297,7 @@ button.of-p:focus-visible .of-name{outline:3px solid #4457F5;outline-offset:2px}
         </div>
       </div>
     </div>
-    <div class="missionbar" id="missionBar" hidden><div class="mg"><b>MISSION</b><span id="mbGoal"></span></div><div class="gd"><b>지킬 것</b><span id="mbGuard"></span></div></div>
+    <div class="missionbar" id="missionBar" hidden><div class="mg"><b>MISSION</b><span id="mbGoal"></span></div><div class="gd"><b>지킬 것</b><span id="mbGuard"></span></div><div class="dcr" id="mbDecideRow" hidden><b>정할 것</b><span class="dchips" id="mbDecide"></span></div></div>
     <div class="hintbox" id="hintBox" hidden><span class="hud">HINT</span><b id="hintTitle"></b><span id="hintText"></span></div>
     <div class="composer" id="composer" hidden>
       <div class="msgwrap"><textarea id="msg" maxlength="200" placeholder="상대에게 할 말을 적어보세요"></textarea><span class="msgcount" id="msgCount" aria-live="polite">0 / 200</span></div>
@@ -1267,9 +1332,9 @@ button.of-p:focus-visible .of-name{outline:3px solid #4457F5;outline-offset:2px}
     <div class="replay" id="replay"></div>
     <div class="card secret" id="secret"></div>
     <div class="card design" id="design"></div>
-    <div class="card tradeoff" id="tradeoff" hidden><span class="hud">TRADE-OFF · 무엇을 지키고 무엇을 내줬나</span><p id="tradeoffText"></p></div>
+    <div class="card tradeoff give" id="tradeoff" hidden></div>
     <div class="fbgrid" id="fbgrid"></div>
-    <div id="altsWrap" hidden><h3 class="sec-h" style="margin-bottom:12px">다른 길도 있었어요</h3><div class="alts" id="alts"></div></div>
+    <div id="altsWrap" hidden><h3 class="sec-h" style="margin-bottom:12px" id="altsH">둘 다 지키는 다른 길</h3><div class="alts" id="alts"></div></div>
     <div class="card question" id="question" hidden><span class="hud">생각해볼 질문</span><p id="questionText"></p></div>
     <div class="card sheet" id="sheet" hidden></div>
     <div class="row">
@@ -1295,15 +1360,18 @@ button.of-p:focus-visible .of-name{outline:3px solid #4457F5;outline-offset:2px}
     <div class="ovhead"><h2 id="rulesTitle">어떻게 하나요?</h2><button class="closebtn" id="rulesClose" type="button" aria-label="닫기">✕</button></div>
     <div class="rules">
       <ol>
-        <li>상대 마음은 <b>표정으로만</b> 보이고, 합의 진척은 위쪽 막대로 보여요.</li>
+        <li>상황마다 <b>나와 상대 모두 꼭 필요한 것</b>이 있어요. 시작 화면에 내 목표, 내 조건(꼭 필요 · 양보 가능), 이번 대화에서 <b>정할 것</b>이 나와요.</li>
+        <li>상대 마음은 <b>표정으로만</b> 보이고, 합의 진척은 위쪽 막대로, 정할 것은 정해질 때마다 하나씩 채워져요.</li>
         <li>AI는 점수를 매기지 않아요. 내 말에 어떤 행동이 있었는지만 확인하고, 숫자는 아래 표대로 계산해요.</li>
-        <li>합의는 무엇을, 언제까지, 어떻게가 나올 때 크게 올라요. 공감만 해도, 밀어붙이기만 해도 많이 오르지 않아요.</li>
-        <li>상대에게는 <b>속사정</b>이 있어요. 맞힐 필요는 없고, <b>실마리</b>처럼 다가가면 털어놓아요. 대화 중에 상대가 한 번 넌지시 내비쳐요.</li>
+        <li>합의는 무엇을, 언제까지, 어떻게가 나올 때 크게 올라요. 내 조건을 분명히 말하고, 정한 것을 정리해서 확인하면 더 올라요.</li>
+        <li>상대도 자기 일을 지켜요. 정중해도 상대의 꼭 필요한 것을 건드리면 받아들이지 않고, 그게 지켜지면 나머지는 유연하게 받아요. 한 번 합의한 건 다시 묻거나 뒤집지 않아요.</li>
+        <li>상대에게는 <b>속사정</b>이 있어요. 맞힐 필요는 없고, <b>실마리</b>처럼 다가가면 털어놓아요. 정할 게 남아 있으면 상대가 한 번 넌지시 내비쳐요.</li>
         <li>실마리 없이도 '둘 다 지키기'는 할 수 있어요. 실마리를 찾으면 합의가 +10 오르고, 합의 상한(입문 80 · 실전 70 · 심화 60%)이 풀려요.</li>
-        <li>대화 중간에 상대가 <b>반전</b>을 꺼내요. 그럴듯하지만 역효과가 나는 <b>함정</b>도 숨어 있어요.</li>
-        <li>막히면 대화창 아래 <b>🔒 힌트</b>를 두 번 쓸 수 있어요. 첫 번째는 상대 속마음, 두 번째는 실마리 방향을 보여줘요. 쓴 횟수는 결과지에 남아요.</li>
+        <li>정할 게 남아 있으면 대화 중간에 상대가 <b>반전</b>을 꺼내요. 그 전에 다 정하면 반전 없이 끝나고, '반전 넘기기' 별은 받은 걸로 쳐요. 그럴듯하지만 역효과가 나는 <b>함정</b>도 숨어 있어요.</li>
+        <li>막히면 대화창 아래 <b>🔒 힌트</b>를 두 번 쓸 수 있어요. 첫 번째는 상대 속마음, 두 번째는 상대 조건 힌트예요. 쓴 횟수는 결과지에 남아요.</li>
         <li>한 번에 5~200자로 말해요. 실제 대화처럼 1~3문장이 적당해요.</li>
-        <li>최대 6턴. 결과는 관계와 합의 두 축으로 나오고, 끝나면 이 상황의 숨은 구조가 공개돼요. 지난 결과지는 위쪽 <b>내 기록</b>에서 다시 볼 수 있어요.</li>
+        <li>최대 6턴이고, 정할 것을 다 정하면 상대가 마무리하며 일찍 끝나요. 결과는 관계와 합의 두 축으로 나오고, 끝나면 이 상황의 숨은 구조가 공개돼요.</li>
+        <li>결과지에는 <b>이번 판에서 내려놓은 것</b>(둘 다 지킴 · 관계를 포기 · 일을 포기 · 반씩 양보 · 미룸)과 그 근거가 나와요. 별과는 따로예요. 판이 쌓이면 위쪽 <b>내 기록 → 내 대화 패턴</b>에서 내가 주로 무엇을 내려놓는지 볼 수 있어요.</li>
         <li><b>입문 · 실전 · 심화</b> 사무실에 4명씩 있고, 처음부터 모두 열려 있어요. 사람을 눌러 상대의 위치(동료, 선배, 팀장 등)를 고르고 시작해요. 윗사람일수록 조금 더 어려워요.</li>
         <li>받을 수 있는 별은 입문 3개(실마리 찾기 · 함정 피하기 · 둘 다 지키기), 실전 4개(+ 반전 넘기기), 심화 5개(+ 힌트 없이 실마리)로 모두 48개예요. 입문 · 실전은 별 2개, 심화는 3개면 그 대화를 깨요. 같은 대화를 다시 해서 빈 별을 채울 수 있어요.</li>
         <li>욕설이나 성적인 말, 비하하는 말을 하면 상대가 대화를 끝내고, 그 판은 별과 결과지가 없어요.</li>
@@ -1314,10 +1382,13 @@ button.of-p:focus-visible .of-name{outline:3px solid #4457F5;outline-offset:2px}
         <tr><td>탓하지 않고 사정 묻기</td><td>+5</td><td>—</td></tr>
         <tr><td>방향·선택지 내놓기</td><td>+3</td><td>+15</td></tr>
         <tr><td>무엇·언제·어떻게 구체 제안</td><td>+3</td><td>+25</td></tr>
+        <tr><td>내 조건 분명히 말하기</td><td>+2</td><td>+10</td></tr>
+        <tr><td>정한 것을 정리해서 확인하기</td><td>—</td><td>+10</td></tr>
         <tr><td>상대 성향에 맞추기</td><td>+4</td><td>—</td></tr>
         <tr><td>결론만 밀어붙이기</td><td>−4</td><td>제안이 인정 안 됨</td></tr>
         <tr><td>지킬 것 어기기</td><td>입문 −6 · 실전 −9 · 심화 −12</td><td>−5</td></tr>
         <tr><td>함정</td><td>−4</td><td>입문 −3 · 실전 −5 · 심화 −8</td></tr>
+        <tr><td>내 꼭 필요한 것 내려놓기</td><td>—</td><td>— (결과지에 남아요)</td></tr>
       </tbody></table>
       <p class="src-line" style="margin:4px 0 12px">한 번에 오르는 마음은 최대 +12, 합의는 최대 입문 35 · 실전 30 · 심화 25예요. 윗사람에게 지킬 것을 어기면 마음이 3 더 떨어져요. 시작 마음은 입문 55 · 실전 45 · 심화 40 근처예요. '둘 다 지켰어요'는 마음 60° 이상, 합의 60% 이상이에요.</p>
       <h4>난이도 기준</h4>
@@ -1337,13 +1408,8 @@ button.of-p:focus-visible .of-name{outline:3px solid #4457F5;outline-offset:2px}
   <div class="card ovpanel">
     <div class="ovhead"><h2 id="dexTitle">도감 · 이론</h2><button class="closebtn" id="dexClose" type="button" aria-label="닫기">✕</button></div>
     <div id="dexLib">
-      <div class="tabs" role="tablist" id="tabs">
-        <button type="button" role="tab" data-tab="theory" aria-selected="true">이론</button>
-        <button type="button" role="tab" data-tab="mine" aria-selected="false">내 대화 패턴</button>
-      </div>
       <div id="libAll"></div>
       <div id="axisWrap" hidden><div class="axis" id="axis"></div><p class="src-line" style="text-align:center;margin:4px 0 14px">Social Styles · Merrill &amp; Reid (1981)</p></div>
-      <div id="tab-mine" class="mine" hidden></div>
     </div>
     <div id="deckView" hidden>
       <div class="deckhead"><button class="txtbtn" id="deckBack" type="button">← 목록</button><b id="deckTitle"></b><span class="hud" id="deckCount"></span></div>
@@ -1412,8 +1478,8 @@ const SCEN=[
 {id:"credit",cat:"peer",key:"analyst",role:"동료",me:"팀원",place:"pantry",time:"afternoon",situation:"conflict",level:3,
  title:"가져가 버린 아이디어",brief:"내가 DM으로 공유했던 아이디어를 동료가 회의에서 자기 것처럼 발표하고 칭찬받았다.",
  why:"누구 아이디어인지 애매해요. 상대는 그걸 데이터로 검증하고 키웠어요.",stage:"회의 끝나고 탕비실",
- scene:"2주 전 당신이 꼼꼼러님에게 DM으로 '결제 단계를 하나 줄이면 어떨까요?'라고 보냈어요. 오늘 회의에서 꼼꼼러님이 그 아이디어를 데이터와 함께 발표했고, 팀장님이 '좋은 발견'이라며 칭찬했어요. 당신 이름은 나오지 않았어요.",
- goal:"이 아이디어에 내 기여가 있었다는 걸 팀에 알리는 방법 합의",guard:"공개적으로 따지거나 망신 주지 않기 · 앞으로도 같이 일할 관계 지키기",
+ scene:"2주 전 당신이 꼼꼼러님에게 DM으로 '결제 단계를 하나 줄이면 어떨까요?'라고 보냈어요. 오늘 회의에서 꼼꼼러님이 그 아이디어를 데이터와 함께 발표했고, 팀장님이 '좋은 발견'이라며 다음 달 개선 작업으로 정했어요. 당신 이름은 나오지 않았어요.",
+ goal:"후속 작업에서 내 역할과, 내 기여를 어떻게 표시할지 합의",guard:"공개적으로 따지거나 망신 주지 않기 · 앞으로도 같이 일할 관계 지키기",
  stance:"한 줄짜리 아이디어는 누구나 낼 수 있다. 3일 동안 데이터를 뽑아 검증하고 실제 안으로 만든 건 나다.",
  secret:"발표 직전에 이름을 넣을까 고민했는데 타이밍을 놓쳤고, 지금은 말을 꺼내기가 민망하다.",start:45,first:"아, 오늘 발표 어땠어요? 반응 괜찮았죠?"},
 {id:"rival",cat:"peer",key:"driver",role:"같은 연차 동료",me:"팀원",place:"meeting",time:"morning",situation:"conflict",level:3,
@@ -1424,26 +1490,26 @@ const SCEN=[
  stance:"틀린 걸 틀렸다고 말한 것뿐이다. 회의는 검증하는 자리이고, 개인적인 감정은 없다.",
  secret:"당신이 팀장님께 바로바로 보고하는 걸 보고, 자기를 건너뛰고 공을 가져간다고 느껴 왔다.",start:40,first:null},
 {id:"vacation",cat:"peer",key:"expressive",role:"동료",me:"팀원",place:"lounge",time:"afternoon",situation:"request",level:2,
- title:"겹쳐 버린 휴가",brief:"같은 주에 동료와 휴가가 겹쳤다. 그 주는 둘 중 한 명은 꼭 남아야 한다.",
+ title:"겹쳐 버린 휴가",brief:"같은 주에 동료와 휴가가 겹쳤다. 그 주는 매일 둘 중 한 명은 남아야 한다.",
  why:"둘 다 사정이 있어요. 팀장님께 결정을 넘기면 둘 중 하나는 서운해져요.",stage:"금요일 오후, 라운지",
- scene:"다음 달 셋째 주에 당신과 분위기메이커님이 동시에 5일 휴가를 신청했어요. 그 주는 고객사 점검이 있어서 한 명은 꼭 남아야 해요. 팀장님은 '둘이 얘기해서 정해 오라'고 했어요. 당신은 그 주 토요일에 친구 결혼식 사회를 맡았어요.",
- goal:"그 주에 누가 언제 남을지, 남는 사람에게 무엇으로 갚을지 합의",guard:"누구 사정이 더 중요한지 경쟁하지 않기 · 양보를 압박하지 않기",
+ scene:"다음 달 셋째 주, 당신과 분위기메이커님이 같은 주에 5일 휴가를 신청했어요. 분위기메이커님이 하루 먼저 냈어요. 그 주는 고객사 점검이 있어서 매일 한 명은 꼭 남아야 하고, 팀장님은 '둘이 얘기해서 정해 오라'고 했어요. 당신은 그 주에 오래전 예약한 여행이 있고, 금요일엔 친구 결혼식 사회도 맡았어요.",
+ goal:"그 주에 누가 언제 남을지, 남는 사람에게 무엇을 챙겨 줄지 합의",guard:"누구 사정이 더 중요한지 경쟁하지 않기 · 양보를 압박하지 않기",
  stance:"먼저 신청한 건 나다. 몇 달 전부터 준비한 여행이라 일정 변경이 어렵다.",
- secret:"부모님을 처음 모시고 가는 해외여행이라 꼭 가고 싶지만, 사실 날짜를 하루 이틀은 조정할 수 있다.",start:50,first:"휴가 건이죠? 저 진짜 그 주는 안 되는데…"},
+ secret:"부모님을 처음 모시고 가는 해외여행이라 꼭 가고 싶다. 항공권이 화~목이라, 사실 월요일과 금요일은 조정할 수 있다.",start:50,first:"휴가 건이죠? 저 진짜 그 주는 안 되는데…"},
 {id:"lateorder",cat:"up",key:"driver",role:"팀장",me:"팀원",place:"desk",time:"evening",situation:"request",level:3,
  title:"퇴근 10분 전의 급한 일",brief:"팀장님이 매번 퇴근 직전에 '급한 건'을 준다. 이번 달만 다섯 번째다.",
  why:"거절하면 일을 피하는 사람이 되고, 계속 받으면 내가 무너져요.",stage:"오후 5시 50분, 팀장님 자리",
  scene:"방금 직진러 팀장님이 '내일 오전 보고용'이라며 데이터 정리를 맡겼어요. 이번 달에만 다섯 번째 퇴근 직전 요청이에요. 오늘은 저녁 약속이 있고, 지난주엔 두 번이나 밤 10시에 퇴근했어요.",
  goal:"급한 요청이 퇴근 직전에 몰리지 않도록 요청 시점을 정하기",guard:"불평이나 신세 한탄처럼 들리지 않기 · 진짜 급한 일은 맡는다는 신뢰 지키기",
  stance:"급한 일은 원래 갑자기 생긴다. 할 수 있는 사람이니까 맡기는 거고, 이게 다 성과로 돌아간다.",
- secret:"자기도 대표에게서 매일 오후 5시쯤 지시를 받아서, 어쩔 수 없이 바로 넘기는 중이다.",start:45,first:"아 미안해요, 이거 내일 오전 보고용인데 오늘 좀 정리해 줄 수 있어요?"},
-{id:"bossfix",cat:"up",key:"driver",role:"팀장",me:"팀원",place:"desk",time:"morning",situation:"badnews",level:3,
- title:"팀장님의 실수",brief:"팀장님이 대표에게 보고한 숫자가 틀렸다. 오후 2시 전사 공유 전에 바로잡아야 한다.",
- why:"상대가 내 팀장이고, 이미 위에 보고했어요. 시간도 없어요.",stage:"오전 11시, 팀장님 자리",
- scene:"어제 직진러 팀장님이 대표에게 보고한 이번 달 전환율은 12%였는데, 다시 확인해 보니 중복 집계 때문에 실제는 8%예요. 오후 2시 전사 공유 자료에 그 숫자가 들어가요.",
+ secret:"자기도 경영진에게서 매일 오후 5시쯤 지시를 받아서, 어쩔 수 없이 바로 넘기는 중이다.",start:45,first:"아 미안해요, 이거 내일 오전 보고용인데 오늘 좀 정리해 줄 수 있어요?"},
+{id:"bossfix",cat:"up",key:"driver",role:"팀장",me:"팀원",place:"meeting",time:"morning",situation:"badnews",level:3,
+ title:"팀장님의 실수",brief:"팀장님이 경영진에 보고한 숫자가 틀렸다. 오후 2시 전사 공유 전에 바로잡아야 한다.",
+ why:"상대가 내 팀장이고, 이미 위에 보고했어요. 시간도 없어요.",stage:"오전 11시, 작은 회의실",
+ scene:"어제 직진러 팀장님이 경영진에 보고한 이번 달 전환율은 12%였는데, 다시 확인해 보니 중복 집계 때문에 실제는 8%예요. 오후 2시 전사 공유 자료에 그 숫자가 들어가요.",
  goal:"2시 전에 숫자를 바로잡기로 합의",guard:"팀장님 체면을 깎지 않기 · '제 탓 아니에요' 식으로 책임 따지지 않기",
- stance:"이미 대표에게 보고한 숫자를 지금 바꾸면 팀 신뢰가 떨어진다. 확실하지 않으면 건드리지 않는 게 낫다.",
- secret:"대표가 이 숫자를 보고 다음 달 예산을 늘려주기로 했다. 바꾸면 그 약속이 흔들릴까 봐 두렵다.",start:45,first:"무슨 일이에요? 2시 공유 준비하느라 바빠서, 짧게 부탁해요."},
+ stance:"이미 경영진에 보고한 숫자를 지금 바꾸면 팀 신뢰가 떨어진다. 확실하지 않으면 건드리지 않는 게 낫다.",
+ secret:"경영진이 이 숫자를 보고 다음 달 예산을 늘려주기로 했다. 바꾸면 그 약속이 흔들릴까 봐 두렵다.",start:45,first:"무슨 일이에요? 2시 공유 준비하느라 바빠서, 짧게 부탁해요."},
 {id:"burnout",cat:"up",key:"expressive",role:"팀장",me:"팀원",place:"lounge",time:"evening",situation:"request",level:3,
  title:"지쳤다고 말하기",brief:"석 달째 야근이 이어져 한계에 왔다. 업무를 줄여 달라고 해야 하는데, 팀도 마감 직전이다.",
  why:"약해 보일까 두렵고, 내 일이 동료에게 넘어가는 것도 미안해요.",stage:"금요일 저녁, 빈 라운지",
@@ -1461,7 +1527,7 @@ const SCEN=[
 {id:"transfer",cat:"up",key:"amiable",role:"팀장",me:"팀원",place:"meeting",time:"afternoon",situation:"badnews",level:3,
  title:"다른 팀으로 가고 싶어요",brief:"사내 다른 팀 공고에 지원하고 싶다. 지원하려면 지금 팀장님께 먼저 말해야 한다.",
  why:"팀장님은 나를 믿고 챙겨 줬어요. 떠나겠다는 말이 배신처럼 들릴 수 있어요.",stage:"점심시간 직후, 회의실",
- scene:"데이터팀이 사내 이동 공고를 냈고, 당신이 꼭 해보고 싶던 일이에요. 회사 규정상 지원 전에 지금 팀장님과 면담해야 해요. 평화주의자 팀장님은 지난 2년간 당신을 많이 챙겨 줬어요.",
+ scene:"데이터팀이 사내 이동 공고를 냈고, 당신이 꼭 해보고 싶던 일이에요. 지원 마감은 다음 주 금요일이에요. 회사 규정상 지원 전에 지금 팀장님과 면담해야 해요. 평화주의자 팀장님은 지난 2년간 당신을 많이 챙겨 줬어요.",
  goal:"사내 이동 지원에 대한 동의와 인수인계 일정 받기",guard:"지금 팀이나 팀장님을 깎아내리지 않기 · 맡은 일을 대충 넘기지 않기",
  stance:"지금 팀에서도 충분히 성장할 수 있다. 하필 지금 빠지면 남은 사람들이 힘들어진다.",
  secret:"다음 분기에 이 팀원에게 파트 하나를 통째로 맡기려고 위에 이미 이야기해 둔 상태라, 서운함과 당혹감이 크다.",start:55,first:"따로 얘기하자고 해서 좀 놀랐어요. 무슨 일이에요?"},
@@ -1469,9 +1535,9 @@ const SCEN=[
  title:"출시 1주 전 요구 변경",brief:"다른 팀 기획 담당자가 출시 1주 전에 요구사항을 또 바꿔 달라고 한다. 이번이 세 번째다.",
  why:"그쪽 고객 사정도 진짜예요. 하지만 받으면 품질과 우리 팀 일정이 무너져요.",stage:"화요일 오전, 회의실",
  scene:"사업팀 분위기메이커님이 다음 주 출시를 앞두고 결제 화면 흐름을 다시 바꿔 달라고 했어요. 이번 프로젝트에서만 세 번째 변경이에요. 지금 바꾸면 QA를 처음부터 다시 해야 해요.",
- goal:"이번 변경은 출시 후 다음 버전으로 미루기로 합의",guard:"그쪽 고객 사정을 무시하지 않기 · 팀장님을 끌어들여 위에서 정리하게 만들지 않기",
+ goal:"이번 출시에 넣을 최소 범위와 다음 버전으로 미룰 범위 합의",guard:"그쪽 고객 사정을 무시하지 않기 · 팀장님을 끌어들여 위에서 정리하게 만들지 않기",
  stance:"고객이 원하는 걸 맞추는 게 결국 회사가 사는 길이다. 화면 흐름 하나 바꾸는 게 그렇게 큰일인가.",
- secret:"대형 고객사가 이 변경을 계약 조건으로 걸어서, 영업 쪽에서 매일 압박을 받고 있다.",start:45,first:"급한 건 아니고요… 아니 사실 좀 급한데, 결제 화면 흐름 하나만 바꿀 수 있을까요?"},
+ secret:"대형 고객사가 이 변경을 계약 조건으로 걸어서, 영업 쪽에서 매일 압박을 받고 있다. 사실 계약서에 꼭 들어간 건 결제 단계 표시 하나뿐이다.",start:45,first:"급한 건 아니고요… 아니 사실 좀 급한데, 결제 화면 흐름 하나만 바꿀 수 있을까요?"},
 {id:"crossdelay",cat:"cross",key:"driver",role:"디자인팀 동료",me:"팀원",place:"desk",time:"afternoon",situation:"request",level:2,
  title:"자꾸 밀리는 다른 팀 작업",brief:"협업하는 디자인팀 담당자가 시안 전달을 계속 미룬다. 그 때문에 내 개발이 2주째 멈춰 있다.",
  why:"그 사람도 자기 팀 우선순위에 묶여 있어요. 위로 올리면 관계가 틀어져요.",stage:"목요일 오후, 디자인팀 자리",
@@ -1480,12 +1546,12 @@ const SCEN=[
  stance:"우리 팀도 급한 일이 계속 터진다. 우선순위는 내가 정하는 게 아니라 위에서 정한다.",
  secret:"디자인팀 팀장이 다른 프로젝트를 최우선으로 지시해서, 이 시안 작업은 공식적으로 뒤로 밀려 있다.",start:45,first:null},
 {id:"ace",cat:"lead",key:"driver",role:"팀원",me:"팀장",place:"meeting",time:"afternoon",situation:"feedback",level:3,
- title:"에이스의 태도",brief:"성과 1등 팀원이 회의에서 주니어들 말을 자르고 무시한다. 주니어 둘이 1on1에서 힘들다고 털어놨다.",
+ title:"에이스의 태도",brief:"성과 1등 팀원이 회의에서 후배 팀원들 말을 자르고 무시한다. 후배 팀원 둘이 1on1에서 힘들다고 털어놨다.",
  why:"성과는 지키면서 태도는 바꿔야 하고, 누가 말했는지는 숨겨야 해요.",stage:"화요일 오후, 작은 회의실",
- scene:"분기 매출의 절반을 만든 직진러님을 회의실로 따로 불렀어요. 지난 두 달간 회의에서 주니어들 말을 끊고 '그건 안 돼요'로 정리하는 일이 반복됐고, 주니어 두 명이 1on1에서 힘들다고 털어놨어요. 두 사람은 자기 이름이 나가지 않길 바라요.",
- goal:"회의에서 말 끊는 행동을 바꾸겠다는 구체적인 약속 받기",guard:"주니어들이 말했다는 걸 드러내지 않기 · 의욕 꺾지 않기",
- stance:"결과로 증명하고 있다. 주니어들 아이디어는 검증이 안 돼서 시간 낭비를 줄이는 것뿐이다. 친절하게 굴 여유가 없다.",
- secret:"주니어들 실수를 매번 대신 수습하느라 한 달째 야근 중이고, 아무도 그걸 알아주지 않는다고 느낀다.",start:40,first:"무슨 일이세요? 저 30분 뒤에 고객사 미팅 있어서요."},
+ scene:"분기 매출의 절반을 만든 직진러님을 회의실로 따로 불렀어요. 지난 두 달간 회의에서 후배 팀원들 말을 끊고 '그건 안 돼요'로 정리하는 일이 반복됐고, 후배 팀원 두 명이 1on1에서 힘들다고 털어놨어요. 두 사람은 자기 이름이 나가지 않길 바라요.",
+ goal:"회의에서 말 끊는 행동을 바꾸겠다는 구체적인 약속 받기",guard:"후배 팀원들이 말했다는 걸 드러내지 않기 · 의욕 꺾지 않기",
+ stance:"결과로 증명하고 있다. 후배들 아이디어는 검증이 안 돼서 시간 낭비를 줄이는 것뿐이다. 친절하게 굴 여유가 없다.",
+ secret:"후배들 실수를 매번 대신 수습하느라 한 달째 야근 중이고, 아무도 그걸 알아주지 않는다고 느낀다.",start:40,first:"무슨 일이세요? 저 30분 뒤에 고객사 미팅 있어서요."},
 {id:"deadline",cat:"lead",key:"analyst",role:"팀원",me:"팀장",place:"meeting",time:"evening",situation:"badnews",level:3,
  title:"위에서 내려온 마감",brief:"경영진이 경쟁사 때문에 마감을 3주 당겼다. 나도 반대했지만 이미 결정됐다.",
  why:"동의하지 않는 결정을 내 입으로 전하면서, 팀의 신뢰를 지켜야 해요.",stage:"목요일 저녁 7시, 회의실",
@@ -1493,13 +1559,13 @@ const SCEN=[
  goal:"새 마감에 맞춘 범위 조정안을 같이 만들기로 합의",guard:"'위에서 시켰다'며 책임 떠넘기지 않기 · 지킬 수 없는 약속 하지 않기",
  stance:"근거 없이 당긴 일정은 품질 사고로 돌아온다. 지난번에도 무리한 일정 때문에 장애가 났고 뒷수습은 실무자가 했다.",
  secret:"지난주에 다른 회사 면접을 하나 봤고, 이번 일이 마음을 정하는 계기가 될 수 있다.",start:35,first:null},
-{id:"care",cat:"lead",key:"amiable",role:"팀원",me:"팀장",place:"lounge",time:"evening",situation:"care",level:3,
+{id:"care",cat:"lead",key:"amiable",role:"팀원",me:"팀장",place:"meeting",time:"afternoon",situation:"care",level:3,
  title:"간병 중인 팀원",brief:"부모님 간병 중인 팀원이 3주째 마감을 놓친다. 다른 팀원들은 불공평하다고 말하기 시작했다.",
- why:"배려와 공정 사이. 사생활은 캐물을 수 없고, 팀의 불만도 사실이에요.",stage:"금요일 저녁, 빈 라운지",
+ why:"배려와 공정 사이. 사생활은 캐물을 수 없고, 팀의 불만도 사실이에요.",stage:"금요일 오후, 작은 회의실",
  scene:"평화주의자님이 3주째 마감을 놓치고 있어요. 부모님이 입원하셔서 간병 중이라는 건 팀 모두가 어렴풋이 알아요. 그 일이 다른 팀원 둘에게 넘어가면서, 어제 한 명이 '언제까지 이래야 하냐'고 했어요.",
  goal:"앞으로 2주 동안 맡을 수 있는 현실적인 업무 범위 정하기",guard:"가족 사정을 캐묻지 않기 · 다른 팀원들의 불만을 그대로 옮기지 않기",
  stance:"팀에 폐 끼치는 게 너무 미안하다. 더 노력하면 된다고 생각하고, 일을 줄여달라고 하면 무능해 보일까 두렵다.",
- secret:"사실 한 달 휴직을 진지하게 고민 중인데, 팀에 미안해서 말을 꺼내지 못하고 있다.",start:45,first:"아 팀장님… 마감 건이죠. 죄송해요, 이번 주말에 다 해놓을게요."},
+ secret:"사실 한 달 휴직을 진지하게 고민 중인데, 팀에 미안해서 말을 꺼내지 못하고 있다. 병원에 가야 해서 오후 시간이 늘 빠듯하다.",start:45,first:"아 팀장님… 마감 건이죠. 죄송해요, 이번 주말에 다 해놓을게요."},
 {id:"review",cat:"lead",key:"expressive",role:"팀원",me:"팀장",place:"meeting",time:"afternoon",situation:"feedback",level:3,
  title:"기대보다 낮은 평가",brief:"스스로 최고 등급을 기대한 팀원이 중간 등급을 받았다. 결과는 이미 확정돼 바꿀 수 없다.",
  why:"바꿀 수 없는 결과를 전하면서, 다음 반기의 의욕은 살려야 해요.",stage:"평가 면담, 오후 2시",
@@ -1509,11 +1575,11 @@ const SCEN=[
  secret:"같이 입사한 동기들보다 자기만 낮게 받은 것 같아 창피하고, 지난주에 이직 제안 연락을 받았다.",start:30,first:"솔직하게 말씀해 주세요. 제가 뭘 못했던 거예요?"},
 {id:"micro",cat:"lead",key:"driver",role:"팀원",me:"팀장",place:"desk",time:"morning",situation:"conflict",level:3,
  title:"'숨막혀요'라는 피드백",brief:"1on1에서 팀원이 '매일 진행 상황 물어보시는 거 숨막혀요'라고 했다. 나도 이유가 있었다.",
- why:"리더가 피드백을 받는 자리예요. 방어하면 끝이고, 다 받아주면 품질이 걱정돼요.",stage:"월요일 아침 1on1",
+ why:"팀원이 팀장인 나에게 불편한 점을 말한 상황이에요. 바로 해명하면 대화가 닫히고, 다 받아주면 일의 품질이 걱정돼요.",stage:"월요일 아침 1on1",
  scene:"정기 1on1을 시작하자마자 직진러님이 먼저 말을 꺼냈어요. 당신은 지난 분기 장애 사고 이후 매일 아침 진행 상황을 묻고 있었어요. 그게 팀을 위한 거라고 생각했어요.",
  goal:"서로 납득할 수 있는 새로운 확인 방식 정하기",guard:"변명하거나 방어하지 않기 · 품질 관리를 그냥 포기하지 않기",
  stance:"믿고 맡겨주면 더 잘한다. 매일 보고하느라 집중이 끊기고, 감시받는 느낌이다.",
- secret:"팀원 세 명이 같은 불만을 갖고 있어서, 대표로 용기 내서 말한 거다.",start:45,first:"1on1이니까 솔직하게 말씀드려도 되죠? 매일 아침 진행 상황 물어보시는 거, 솔직히 좀 숨막혀요."}
+ secret:"팀원 세 명이 같은 불만을 갖고 있어서, 다들 대신해 용기 내서 말한 거다.",start:45,first:"1on1이니까 솔직하게 말씀드려도 되죠? 매일 아침 진행 상황 물어보시는 거, 솔직히 좀 숨막혀요."}
 ];
 const CAT={peer:"동료",up:"팀장에게",cross:"다른 팀",lead:"내가 팀장"};
 const TAGS={auth:"권한 밖",clash:"정면 충돌",fair:"상대도 일리",time:"시간 압박",hurt:"이미 상처"};
@@ -1521,7 +1587,7 @@ const TAGS={auth:"권한 밖",clash:"정면 충돌",fair:"상대도 일리",time
    cue: reply where the other person hints at a backstory · twist: reply with the twist · vio / trapP: penalties */
 const ZP={1:{base:55,cap:80,step:35,cue:2,twist:3,vio:6,trapP:3,firm:"너는 말이 통하는 편이야. 방향이 맞으면 조금씩 마음을 열어."},
  2:{base:45,cap:70,step:30,cue:3,twist:2,vio:9,trapP:5,firm:"너는 쉽게 설득되지 않아."},
- 3:{base:40,cap:60,step:25,cue:4,twist:2,vio:12,trapP:8,firm:"너는 쉽게 설득되지 않고, 네 입장을 끝까지 지키려 해."}};
+ 3:{base:40,cap:60,step:25,cue:4,twist:2,vio:12,trapP:8,firm:"너는 쉽게 설득되지 않고, 네가 꼭 지켜야 할 것은 끝까지 지키려 해."}};
 const levelOf=t=>t.length>=4?3:t.length===3?2:1;
 const dots=l=>"●".repeat(l)+"○".repeat(3-l);
 const SCEN_X={
@@ -1532,7 +1598,7 @@ const SCEN_X={
  gossip:{tags:["clash","fair"],clue:"험담 밑에 있는 실제 업무 문제를 인정하고 물어볼 때",
   twist:"근데 저번에 단톡에서 같이 웃었잖아요. 이제 와서 왜요?",trap:"'그건 나쁜 거예요'처럼 도덕적으로 훈계하기"},
  credit:{tags:["clash","fair"],clue:"따지지 않고, 상대가 민망하지 않게 정정할 수 있는 출구를 열어줄 때",
-  twist:"솔직히 그 얘기, 예전 회의 때 팀장님도 비슷하게 한 적 있지 않았어요? 누구 아이디어라고 딱 말하기 애매해요.",trap:"DM 캡처를 보여주며 증거로 밀어붙이기"},
+  twist:"솔직히 그 얘기, 예전 회의 때 팀장님도 비슷한 말씀 하신 적 있지 않았어요? 누구 아이디어라고 딱 말하기 애매해요.",trap:"DM 캡처를 보여주며 증거로 밀어붙이기"},
  rival:{tags:["clash","fair","hurt"],clue:"상대가 이 협업을 어떻게 느끼는지, 특히 보고 방식에 대해 물을 때",
   twist:"그럼 앞으로 팀장님께 보고하기 전에 저한테 먼저 보여줄 수 있어요?",trap:"'제가 다 맞출게요'라며 사과만 하고 넘어가기. 다음 회의에서 똑같이 반복됨"},
  vacation:{tags:["clash","fair"],clue:"누구 사정이 더 중요한지가 아니라, 날짜를 얼마나 조정할 수 있는지 물을 때",
@@ -1540,19 +1606,19 @@ const SCEN_X={
  lateorder:{tags:["auth","clash","fair","time"],clue:"급한 일이 어디서, 언제 내려오는지 물을 때",
   twist:"그럼 오늘 건은요? 내일 아침 보고는 안 바뀌어요.",trap:"오늘 건만 조용히 받고 규칙 얘기는 다음으로 미루기"},
  bossfix:{tags:["auth","clash","fair","time"],clue:"숫자를 바꾸면 팀장님께 무엇이 걸려 있는지 물을 때",
-  twist:"8%가 확실해요? 중복 집계 기준은 누가 정한 건데요?",trap:"'대표님께 제가 직접 말씀드릴게요'라며 건너뛰겠다고 하기"},
+  twist:"8%가 확실해요? 중복 집계 기준은 누가 정한 건데요?",trap:"'경영진께 제가 직접 말씀드릴게요'라며 건너뛰겠다고 하기"},
  burnout:{tags:["auth","clash","fair","time"],clue:"팀장님도 같이 지쳐 있다는 걸 알아보고 물을 때",
   twist:"솔직히 다른 사람들도 다 힘들어요. 그 일 빼면 누가 해요?",trap:"특정 동료 이름을 대며 그 사람에게 넘기자고 하기"},
  raise:{tags:["auth","clash","fair"],clue:"돈 말고, 지금 팀장님이 할 수 있는 범위가 어디까지인지 물을 때",
   twist:"평가에 반영하려면 숫자로 보여줘야 해요. 온보딩 성과는 어떻게 측정할 건데요?",trap:"다른 회사 제안을 언급하며 압박하기"},
  transfer:{tags:["auth","clash","fair"],clue:"감사한 마음을 진심으로 전하고, 팀장님이 이 팀원에게 어떤 계획을 갖고 있었는지 물을 때",
-  twist:"데이터팀 팀장님이랑은 이미 얘기한 거예요? 저한테 먼저 말하기 전에?",trap:"지금 팀의 불만을 떠나는 이유로 대기"},
+  twist:"데이터팀 팀장님이랑은 벌써 얘기해 본 거예요? 저는… 조금 서운하네요.",trap:"지금 팀의 불만을 떠나는 이유로 대기"},
  specchange:{tags:["auth","clash","fair","time"],clue:"왜 하필 지금 이 변경이 급한지 물을 때",
-  twist:"그럼 제가 대표님께 말씀드려서 결정해 달라고 할까요?",trap:"'원칙상 안 됩니다'로 잘라 거절하기"},
+  twist:"그럼 위에 올려서 정리해 달라고 할까요?",trap:"'원칙상 안 됩니다'로 잘라 거절하기"},
  crossdelay:{tags:["auth","clash","fair","time"],clue:"상대 팀의 지금 우선순위 목록이 어떻게 돼 있는지 물을 때",
   twist:"그렇게 급하면 그쪽 팀장님이 우리 팀장님께 정식으로 요청하라고 하세요.",trap:"마감 날짜만 반복해서 압박하기"},
  ace:{tags:["clash","fair"],clue:"요즘 혼자 떠안고 있는 일이 무엇인지 물을 때",
-  twist:"누가 그랬는지 말해 주세요. 저도 그 사람이랑 얘기 좀 해야겠네요.",trap:"'다들 그렇게 느껴요'처럼 여러 사람 이야기로 일반화하기"},
+  twist:"누가 그런 얘기를 했는지 알 수 있을까요? 제가 직접 풀고 싶어서요.",trap:"'다들 그렇게 느껴요'처럼 여러 사람 이야기로 일반화하기"},
  deadline:{tags:["auth","clash","fair","time","hurt"],clue:"이 일정이 꼼꼼러님 개인에게 어떤 의미인지, 무엇이 있어야 버틸 수 있는지 물을 때",
   twist:"팀장님은 반대하셨어요? 그런데 왜 그대로 받아 오셨어요?",trap:"'위에서 정한 거라 어쩔 수 없어요'라며 책임 넘기기"},
  care:{tags:["clash","fair","hurt"],clue:"'더 노력하겠다'는 말 대신, 실제로 어떤 도움이 필요한지 선택지를 열어줄 때",
@@ -1568,10 +1634,10 @@ SCEN.push(
 {id:"firsttask",cat:"lead",key:"amiable",role:"신입 (입사 2주 차)",me:"팀장",place:"desk",time:"morning",situation:"delegate",
  title:"처음 맡기는 일",brief:"입사 2주 차 신입이 일을 받을 때마다 '네, 알겠습니다'만 하고 질문이 없다. 지난번엔 사흘 뒤 엉뚱한 결과물을 가져왔다.",
  why:"일을 맡기는 건 말하는 게 아니라 확인하는 일이에요. 다 정해 주면 혼자 크지 못하고, 그냥 맡기면 또 엇나가요.",stage:"화요일 오전, 팀원 자리 옆",
- scene:"다음 주 금요일까지 지난달 고객 문의를 유형별로 정리하는 일을 평화주의자님에게 맡기려고 해요. 지난번에도 '네, 알겠습니다' 하고 사흘 뒤 전혀 다른 표를 가져왔어요. 오늘은 같은 일이 생기지 않게 하고 싶어요.",
+ scene:"다음 주 금요일까지 지난달 고객 문의를 유형별로 정리하는 일을 평화주의자님에게 맡기려고 해요. 그다음 월요일 분기 회의에 바로 쓸 자료예요. 지난번에도 '네, 알겠습니다' 하고 사흘 뒤 전혀 다른 표를 가져왔어요. 오늘은 같은 일이 생기지 않게 하고 싶어요.",
  goal:"기대하는 결과물 모습과 중간 점검 날짜를 같이 정하기",guard:"지난번 일을 꺼내 몰아세우지 않기 · 결국 내가 대신 해 주지 않기",
  stance:"바쁜 팀장님 시간을 뺏으면 안 된다. 일단 해 보고, 모르는 건 혼자 찾아보면 된다.",
- secret:"지난번에도 무엇을 만들어야 하는지 몰랐지만 물어볼 때를 놓쳤다. 전 회사에서 질문했다가 '그것도 몰라요?'라는 말을 들은 뒤로 묻는 게 무섭다.",
+ secret:"지난번에도 무엇을 만들어야 하는지 몰랐지만 물어볼 때를 놓쳤다. 예전 아르바이트에서 질문했다가 '그것도 몰라요?'라는 말을 들은 뒤로 묻는 게 무섭다. 수요일까지 끝내야 하는 온보딩 과제도 있는데 그 말도 못 꺼냈다.",
  start:50,first:"네, 알겠습니다! 금요일까지 해 오겠습니다."},
 {id:"missed",cat:"peer",key:"expressive",role:"동료",me:"팀원",place:"desk",time:"afternoon",situation:"apology",
  title:"내가 놓친 공유",brief:"회의 결과를 전하는 걸 깜빡해서, 동료가 이틀 동안 바뀌기 전 기준으로 작업했다. 동료는 웃고 있지만 화가 나 있다.",
@@ -1597,20 +1663,20 @@ const UP_NOTE="윗사람일수록 조금 더 어려워요";
 const ROLES={
  micro:[{r:"팀원",role:"팀원",rk:"down",rel:"내 팀의 팀원이고, 나는 팀장이에요. 팀장에게 이런 말을 꺼내는 게 쉽지 않았어요."},
   {r:"신입",role:"신입 팀원 (입사 3개월 차)",rk:"down",rel:"입사 3개월 차 신입이에요. 팀장에게 이런 말을 꺼내는 게 큰 용기였어요.",
-   o:{brief:"1on1에서 신입이 조심스럽게 '매일 아침 확인받는 게 조금 숨이 막힌다'고 말했다. 나도 이유가 있었다.",
-    first:"팀장님, 1on1이니까… 하나만 조심스럽게 말씀드려도 될까요? 매일 아침 진행 상황 여쭤보시는 게, 저는 조금 숨이 막히더라고요.",
-    stance:"아직 서툰 건 알지만 혼자 해 볼 기회가 필요하다. 매일 확인받으면 못 미더워서 그러시는 것 같아 위축된다. 그래도 팀장님께 싫다고 딱 잘라 말하기는 어렵다.",
-    secret:"같이 들어온 동기 두 명도 같은 생각이라, 대표로 용기 내서 말한 거다.",
-    twist:"그런데… 지난 분기 사고는 저희 쪽 실수가 아니었던 걸로 알고 있어서요. 그래서 더 그렇게 느껴졌던 것 같아요."}},
+   o:{brief:"1on1에서 신입이 '매일 아침 확인받는 게 숨이 막힌다'고 말했다. 나도 이유가 있었다.",
+    first:"팀장님, 하나만 솔직하게 말씀드려도 될까요? 매일 아침 확인받는 게 저는 좀 숨이 막혀요.",
+    stance:"아직 서툰 건 알지만 혼자 해 볼 기회가 필요하다. 매일 확인받으면 못 미더워서 그러시는 것 같아 답답하다.",
+    secret:"같이 들어온 동기 두 명도 같은 생각이라, 동기들 몫까지 용기 내서 말한 거다.",
+    twist:"그리고 지난 분기 사고는 저희 쪽 실수가 아니었던 걸로 알아요. 그래서 더 답답했어요."}},
   {r:"나보다 선배인 팀원",role:"나보다 경력이 많은 팀원",rk:"downsr",d:-5,rel:"나보다 경력이 5년 많은 팀원이에요. 내가 팀장이 된 지 반년 됐어요.",
    o:{first:"팀장님, 1on1이니까 솔직하게 말씀드릴게요. 매일 아침 진행 상황 물어보시는 거, 저한테는 좀 숨막혀요.",
     stance:"이 일을 십 년 넘게 했다. 매일 보고하라는 건 경력을 못 믿는다는 뜻으로 들린다.",
     secret:"후배 팀원들도 같은 불만이 있는데, 자기가 나서서 말하는 게 맞다고 생각했다. 사실 나이 어린 팀장 밑에서 일하는 게 아직 어색하다."}}],
  vacation:[{r:"동료",role:"동료",rk:"peer",rel:"같은 팀 동료예요. 입사 시기가 비슷해요."},
   {r:"선배",role:"선배 동료",rk:"up",d:-5,rel:"같은 팀 3년 선배예요. 평소 나를 잘 챙겨 줘요.",
-   o:{brief:"같은 주에 선배와 휴가가 겹쳤다. 그 주는 둘 중 한 명은 꼭 남아야 한다."}},
+   o:{brief:"같은 주에 선배와 휴가가 겹쳤다. 그 주는 매일 둘 중 한 명은 남아야 한다."}},
   {r:"후배",role:"후배 동료 (입사 1년 차)",rk:"down",rel:"같은 팀 1년 차 후배예요. 나를 잘 따르고, 선배에게 안 된다고 말하는 걸 어려워해요.",
-   o:{brief:"같은 주에 후배와 휴가가 겹쳤다. 그 주는 둘 중 한 명은 꼭 남아야 한다.",
+   o:{brief:"같은 주에 후배와 휴가가 겹쳤다. 그 주는 매일 둘 중 한 명은 남아야 한다.",
     first:"아… 휴가 건 때문에 그러시죠? 저도 그 주가 계속 마음에 걸렸어요.",
     stance:"먼저 신청한 건 나고, 몇 달 전부터 준비한 여행이라 일정을 바꾸기 어렵다. 그래도 선배에게 안 된다고 딱 잘라 말하기는 어려워서 돌려 말한다.",
     twist:"그럼… 이번에 제가 날짜를 조금 옮기면, 연말 휴가는 제가 먼저 골라도 될까요?"}}],
@@ -1620,46 +1686,48 @@ const ROLES={
     stance:"한 줄짜리 아이디어는 누구나 낼 수 있다. 데이터로 검증하고 실제 안으로 만든 건 나다. 후배 아이디어를 키워 준 것뿐이다."}},
   {r:"후배",role:"후배 동료 (입사 1년 차)",rk:"down",rel:"같은 팀 1년 차 후배예요. 칭찬받고 싶은 마음이 커요.",
    o:{brief:"내가 DM으로 공유했던 아이디어를 후배가 회의에서 자기 것처럼 발표하고 칭찬받았다.",
-    first:"아, 오늘 발표 보셨어요? 저 엄청 떨었는데… 괜찮았나요?",
+    first:"오늘 발표 데이터 괜찮았나요? 혹시 빠진 부분이 있었는지 궁금해서요.",
     stance:"선배 아이디어에서 시작한 건 맞지만, 사흘 동안 데이터를 뽑아 검증하고 안으로 만든 건 나다. 내 노력도 인정받고 싶다.",
     secret:"선배 아이디어라고 말하면 자기 몫이 없어 보일까 봐 이름을 뺐다. 지금은 들킬까 봐 마음이 불편하다.",
     twist:"근데… 그 아이디어, 예전 회의 때 팀장님도 비슷한 말씀 하신 적 있지 않았나요? 저는 꼭 누구 거라고 하기 애매하다고 생각했어요."}},
   {r:"팀장",role:"팀장",rk:"up",call:"꼼꼼러 팀장님",d:-5,rel:"내 팀의 팀장님이에요.",
    o:{brief:"내가 DM으로 공유했던 아이디어를 팀장님이 팀장 회의에서 자기 것처럼 발표했다.",
     why:"상대가 내 팀장이에요. 팀 아이디어를 팀장이 발표하는 건 흔한 일이라, 따지면 쪼잔해 보일 수 있어요.",
-    scene:"2주 전 당신이 꼼꼼러 팀장님께 DM으로 '결제 단계를 하나 줄이면 어떨까요?'라고 보냈어요. 오늘 팀장 회의에서 꼼꼼러 팀장님이 그 아이디어를 데이터와 함께 발표했고, 반응이 아주 좋았다고 들었어요. 당신 이름은 나오지 않았어요.",
-    goal:"이 아이디어에 내 기여가 있었다는 걸 알리는 방법 합의",guard:"따지듯 말하지 않기 · 팀장님과의 신뢰 지키기",
+    scene:"2주 전 당신이 꼼꼼러 팀장님께 DM으로 '결제 단계를 하나 줄이면 어떨까요?'라고 보냈어요. 오늘 팀장 회의에서 꼼꼼러 팀장님이 그 아이디어를 데이터와 함께 발표했고, 다음 달 개선 작업으로 정해졌어요. 당신 이름은 나오지 않았어요.",
+    goal:"다음 보고에 기여자로 표기되고, 후속 작업을 배정받기로 합의",guard:"따지듯 말하지 않기 · 팀장님과의 신뢰 지키기",
     stance:"팀에서 나온 아이디어를 팀 이름으로 발표하는 건 당연하다. 데이터로 검증하고 안으로 만든 건 나다.",
     secret:"발표하면서 팀원 이름을 말할까 했는데, 다른 팀장들 앞에서 존재감이 약해질까 봐 그냥 넘어갔다. 지금은 조금 미안하다.",
-    first:"아, 오늘 팀장 회의 얘기 들었어요? 반응 괜찮았대요.",
+    first:"아, 오늘 팀장 회의에서 결제 단계 줄이는 거 발표했는데 반응 좋았어요.",
     twist:"그건 우리 팀 아이디어죠. 팀장 회의에선 원래 팀 이름으로 발표해요. 그걸 꼭 누구 거라고 나눠야 해요?",
     trap:"다른 팀장님들 앞에서 바로 정정하라고 몰아붙이기"}}],
  firsttask:[{r:"신입",role:"신입 (입사 2주 차)",rk:"down",rel:"입사 2주 차 신입이에요. 나는 팀장이에요."},
   {r:"경력으로 들어온 팀원",role:"경력으로 들어온 팀원 (입사 2주 차)",rk:"downsr",rel:"다른 회사에서 5년 일하고 2주 전에 우리 팀에 왔어요. 실력은 있지만 우리 팀 방식은 아직 몰라요.",
    o:{brief:"경력으로 들어온 지 2주 된 팀원이 '네, 알겠습니다'만 하고 질문이 없다. 지난번엔 사흘 뒤 전 회사 방식대로 만든 결과물을 가져왔다.",
     stance:"경력으로 왔는데 이런 걸 물어보면 실력 없어 보인다. 전 회사에서 하던 대로 하면 된다.",
-    secret:"전 회사와 용어도 도구도 달라서 헷갈리는 게 많다. 경력인데 그것도 모르냐는 말을 들을까 봐 묻지 못한다.",
+    secret:"전 회사와 용어도 도구도 달라서 헷갈리는 게 많다. 경력인데 그것도 모르냐는 말을 들을까 봐 묻지 못한다. 수요일까지인 온보딩 과제도 있는데 말을 못 했다.",
     twist:"이런 건 전 회사에서도 많이 해 봤어요. 믿고 맡겨 주셔도 돼요."}}],
  ace:[{r:"팀원",role:"팀원",rk:"down",rel:"내 팀의 팀원이고, 나는 팀장이에요. 팀에서 성과가 가장 좋아요."},
   {r:"나보다 선배인 팀원",role:"나보다 경력이 많은 팀원",rk:"downsr",d:-5,rel:"나보다 경력이 많은 팀원이에요. 내가 팀장이 되기 전엔 같은 팀 선배였어요.",
    o:{first:"팀장님, 무슨 일이세요? 저 30분 뒤에 고객사 미팅 있어서요.",
-    stance:"결과로 증명하고 있다. 주니어들 아이디어는 검증이 안 돼서 시간 낭비를 줄이는 것뿐이다. 후배들 가르치는 것도 지금까지 내가 다 해 왔다."}}],
+    stance:"결과로 증명하고 있다. 후배들 아이디어는 검증이 안 돼서 시간 낭비를 줄이는 것뿐이다. 후배들 가르치는 것도 지금까지 내가 다 해 왔다."}}],
  missed:[{r:"동료",role:"동료",rk:"peer",rel:"같은 팀 동료예요."},
-  {r:"선배",role:"선배 동료",rk:"up",d:-5,rel:"같은 팀 3년 선배예요."},
+  {r:"선배",role:"선배 동료",rk:"up",d:-5,rel:"같은 팀 3년 선배예요.",
+   o:{brief:"회의 결과를 전하는 걸 깜빡해서, 선배가 이틀 동안 바뀌기 전 기준으로 작업했다. 선배는 웃고 있지만 화가 나 있다.",stage:"목요일 오후, 선배 자리"}},
   {r:"후배",role:"후배 동료 (입사 1년 차)",rk:"down",rel:"같은 팀 1년 차 후배예요. 나에게 불만을 말하기 어려워해요.",
-   o:{first:"아, 그 회의 결과요? 아니에요, 괜찮아요… 바쁘셨을 텐데요. 이틀 한 건 다시 하면 되죠, 하하.",
+   o:{brief:"회의 결과를 전하는 걸 깜빡해서, 후배가 이틀 동안 바뀌기 전 기준으로 작업했다. 후배는 웃고 있지만 속상해 보인다.",stage:"목요일 오후, 후배 자리",
+    first:"아, 그 회의 결과요? 아니에요, 괜찮아요… 바쁘셨을 텐데요. 이틀 한 건 다시 하면 되죠, 하하.",
     stance:"선배에게 화를 낼 수는 없다. 괜찮다고 웃어 넘기지만, 이틀을 날려서 주말에 일하게 생겼다.",
     twist:"아… 사실 저번 달에도 이런 일이 있었어요. 다른 분이긴 했지만요. 저만 늘 늦게 아는 것 같아서요."}},
   {r:"팀장",role:"팀장",rk:"up",call:"분위기메이커 팀장님",d:-5,rel:"내 팀의 팀장님이에요. 이번 회의에 나를 대신 보냈어요.",
-   o:{brief:"대신 들어간 회의 결과를 팀장님께 전하는 걸 깜빡해서, 팀장님이 이틀 동안 바뀌기 전 기준으로 보고 자료를 만들었다.",
+   o:{stage:"목요일 오후, 팀장님 자리",brief:"대신 들어간 회의 결과를 팀장님께 전하는 걸 깜빡해서, 팀장님이 이틀 동안 바뀌기 전 기준으로 보고 자료를 만들었다.",
     scene:"월요일 다른 팀과의 회의에서 고객 안내 문구 기준이 바뀌었는데, 회의에 대신 들어간 당신이 결과를 공유하는 걸 깜빡했어요. 그 사이 분위기메이커 팀장님은 바뀌기 전 기준으로 이틀 동안 보고 자료를 만들었고, 방금 그 사실을 알았어요. 보고는 다음 주 월요일이에요.",
     first:"아 그 회의 결과요? 하하… 괜찮아요. 다시 만들면 되죠.",
     stance:"팀원 실수로 화내는 팀장이 되고 싶지 않다. 하지만 이틀을 날렸고 보고 일정이 빠듯해졌다.",
     secret:"회의를 대신 맡긴 게 처음이라, 앞으로도 맡겨도 될지 속으로 고민 중이다.",
-    twist:"근데 이런 게 처음이 아니라서요. 앞으로 회의를 계속 맡겨도 될지 좀 고민이 되네요.",
+    twist:"회의를 대신 맡긴 게 이번이 처음이었는데… 앞으로도 계속 맡겨도 될지 고민이 되네요.",
     trap:"상대 뜻은 묻지 않고 '제가 주말에 보고 자료를 전부 다시 만들게요'라며 혼자 다 떠안기"}},
   {r:"다른 팀 담당자",role:"다른 팀 담당자 (디자인팀)",rk:"cross",rel:"같이 프로젝트를 하는 디자인팀 담당자예요. 우리 팀 회의 결과를 내가 전해 주기로 했었어요.",
-   o:{brief:"우리 팀 회의 결과를 다른 팀 담당자에게 전하는 걸 깜빡해서, 그쪽이 이틀 동안 바뀌기 전 기준으로 작업했다.",
+   o:{stage:"목요일 오후, 디자인팀 자리",brief:"우리 팀 회의 결과를 다른 팀 담당자에게 전하는 걸 깜빡해서, 그쪽이 이틀 동안 바뀌기 전 기준으로 작업했다.",
     scene:"월요일 우리 팀 회의에서 고객 안내 문구 기준이 바뀌었는데, 그 결과를 디자인팀 분위기메이커님께 전하기로 한 당신이 깜빡했어요. 그 사이 분위기메이커님은 이틀 동안 바뀌기 전 기준으로 화면을 만들었고, 방금 그 사실을 알았어요. 마감은 다음 주 월요일이에요.",
     stance:"우리 팀 일도 아닌데 그쪽 실수로 이틀을 날렸다. 다음부터 그 팀 말을 어디까지 믿어야 할지 모르겠다.",
     secret:"이틀 늦어진 이유를 자기 팀장님께 설명해야 해서 곤란하다. 그쪽 팀 탓을 하자니 관계가 걱정된다.",
@@ -1669,12 +1737,12 @@ const ROLES={
   {r:"신입",role:"신입 팀원 (입사 5개월 차)",rk:"down",rel:"입사 5개월 차 신입이에요. 아직 팀에 자리 잡는 중이라 폐 끼치는 걸 특히 두려워해요.",
    o:{first:"아, 팀장님… 마감 건 때문이죠. 정말 죄송합니다. 이번 주말에 꼭 다 해 놓겠습니다.",
     stance:"들어온 지 얼마 안 됐는데 벌써 폐를 끼쳐 너무 죄송하다. 더 노력하면 된다고 생각하고, 일을 줄여 달라고 하면 신입이 벌써 못 버틴다고 볼까 봐 두렵다.",
-    secret:"사실 한 달 휴직을 고민 중인데, 신입이 휴직 이야기를 꺼내면 끝이라고 생각해 말을 못 하고 있다."}},
+    secret:"사실 한 달 휴직을 고민 중인데, 신입이 휴직 이야기를 꺼내면 끝이라고 생각해 말을 못 하고 있다. 병원에 가야 해서 오후 시간이 늘 빠듯하다."}},
   {r:"나보다 선배인 팀원",role:"나보다 경력이 많은 팀원",rk:"downsr",d:-5,rel:"나보다 경력이 많은 팀원이에요. 후배들이 기대는 사람이라 약한 모습을 보이기 싫어해요."}],
  bossfix:[{r:"팀장",role:"팀장",rk:"up",rel:"내 팀의 팀장님이에요."},
   {r:"선배",role:"선배 동료",rk:"up",d:-5,rel:"같은 팀 5년 선배예요. 팀장님이 가장 믿는 사람이에요.",
    o:{title:"선배의 실수",brief:"선배가 팀장님께 보고한 숫자가 틀렸다. 오후 2시 전사 공유 전에 바로잡아야 한다.",
-    why:"상대가 선배이고, 이미 팀장님께 보고했어요. 시간도 없어요.",stage:"오전 11시, 선배 자리",
+    why:"상대가 선배이고, 이미 팀장님께 보고했어요. 시간도 없어요.",stage:"오전 11시, 작은 회의실",
     scene:"어제 직진러님이 팀장님께 보고한 이번 달 전환율은 12%였는데, 다시 확인해 보니 중복 집계 때문에 실제는 8%예요. 팀장님은 그 숫자를 오후 2시 전사 공유 자료에 넣었어요.",
     guard:"선배 체면을 깎지 않기 · '제 탓 아니에요' 식으로 책임 따지지 않기",clue:"숫자가 틀렸다는 말만 하지 않고, 바로잡으면 직진러님께 무엇이 걱정되는지 물을 때",
     stance:"이미 팀장님께 보고한 숫자를 지금 바꾸면 내 신뢰가 떨어진다. 확실하지 않으면 건드리지 않는 게 낫다.",
@@ -1683,13 +1751,15 @@ const ROLES={
  specchange:[{r:"다른 팀 담당자",role:"사업팀 기획 담당",rk:"cross",rel:"사업팀 기획 담당자예요. 나는 개발 담당 팀원이에요."},
   {r:"다른 팀 선배",role:"사업팀 기획 담당 (나보다 연차가 높음)",rk:"crossup",d:-5,rel:"사업팀 기획 담당이에요. 나보다 입사가 6년 빠르고 회사 안에 아는 사람이 많아요."},
   {r:"다른 팀 팀장",role:"사업팀 팀장",rk:"crossup",call:"분위기메이커 팀장님",d:-5,rel:"사업팀 팀장님이에요. 우리 팀장님과 같은 위치예요.",
-   o:{twist:"그럼 제가 그쪽 팀장님께 말씀드려서 정리할까요?"}}],
+   o:{brief:"다른 팀 팀장님이 출시 1주 전에 요구사항을 또 바꿔 달라고 한다. 이번이 세 번째다.",
+    scene:"사업팀 분위기메이커 팀장님이 다음 주 출시를 앞두고 결제 화면 흐름을 다시 바꿔 달라고 했어요. 이번 프로젝트에서만 세 번째 변경이에요. 우리 팀장님이 휴가 중이라, 실무 담당인 당신에게 먼저 가능 여부를 물으러 왔어요. 지금 바꾸면 QA를 처음부터 다시 해야 해요.",
+    first:"다음 주 출시 건으로 왔어요. 결제 화면 흐름은 이번에 꼭 바꿔야 할 것 같아요."}}],
  deadline:[{r:"팀원",role:"팀원",rk:"down",rel:"내 팀의 팀원이고, 팀 실무를 이끌어요. 나는 팀장이에요."},
   {r:"신입",role:"신입 팀원 (입사 6개월 차)",rk:"down",rel:"입사 6개월 차 신입이에요. 이번 개편이 처음 맡은 큰 일이에요.",
    o:{scene:"오늘 오후 경영진 회의에서 결제 개편 마감이 3주 당겨졌어요. 경쟁사 출시 일정 때문이에요. 당신도 무리라고 반대했지만 결정은 끝났어요. 이번 개편을 처음 맡은 신입 꼼꼼러님에게 먼저 전해야 해요.",
     stance:"처음 맡은 일이라 지금 일정도 빠듯하다. 3주나 당겨지면 실수할 것 같아 걱정되지만, 신입이 못 하겠다고 말하기는 어렵다.",
     secret:"처음 맡은 큰 일이라 잘하고 싶었는데, 일정이 당겨지면 실수해서 찍힐까 봐 겁이 난다.",
-    twist:"혹시… 제가 이 일에서 빠지는 게 팀에 더 나을까요? 제가 하다가 일정이 더 늦어질까 봐서요."}},
+    twist:"3주가 당겨지면 테스트는 언제 하죠? 제가 놓치는 게 생길까 봐 걱정돼요."}},
   {r:"나보다 선배인 팀원",role:"나보다 경력이 많은 팀원",rk:"downsr",d:-5,rel:"나보다 경력이 많은 팀원이에요. 팀 실무를 이끌고, 예전에 같은 일을 겪어 봤어요."}],
  transfer:[{r:"팀장",role:"팀장",rk:"up",rel:"내 팀의 팀장님이에요. 지난 2년간 나를 많이 챙겨 줬어요."}]
 };
@@ -1711,9 +1781,83 @@ const CLUE7={
 const BASE7={
  micro:{first:"팀장님, 1on1이니까 솔직하게 말씀드려도 될까요? 매일 아침 진행 상황 확인하시는 거… 저한테는 좀 숨막히게 느껴져요."},
  ace:{first:"팀장님, 부르셨어요? 30분 뒤에 고객사 미팅이 있어서요. 길어지면 끝나고 다시 뵈어도 될까요?"},
- deadline:{stance:"근거 없이 당긴 일정은 품질 사고로 돌아온다. 지난번에도 무리한 일정 때문에 장애가 났고 뒷수습은 실무자가 했다. 팀장님 결정이라 대놓고 반대하긴 어렵지만 걱정이 크다."}
+ deadline:{stance:"근거 없이 당긴 일정은 품질 사고로 돌아온다. 지난번에도 무리한 일정 때문에 장애가 났고 뒷수습은 실무자가 했다. 위에서 정한 일정이라 대놓고 반대하긴 어렵지만 걱정이 크다."}
 };
 SCEN.forEach(s=>{if(CLUE7[s.id])s.clue=CLUE7[s.id];if(BASE7[s.id])Object.assign(s,BASE7[s.id])});
+/* v8: 조건표. me = 나, them = 상대. goal 목표 · must 꼭 필요한 것(내려놓으면 그 사람의 일이 실패) · flex 양보해도 되는 것.
+   decide: 이 대화에서 정할 것. win: 둘 다 만족하는 해법 예(정답이 아님, 조건만 맞으면 다른 해법도 인정) */
+const COND={
+ micro:{me:{goal:"문제를 일찍 알아챌 확인 장치 유지",must:"일정이 밀리거나 위험한 작업은 미리 알기",flex:"매일 · 말로 묻는 방식"},
+  them:{goal:"맡은 일을 집중해서 끝내기",must:"오전 집중 시간, 믿고 맡겨 주는 방식",flex:"정해진 날 짧게 공유, 막히면 먼저 알리기"},
+  decide:["확인 주기","확인 방식","바로 알려야 하는 경우"],
+  win:"매일 아침 대신 화 · 목 10분, 일정이 밀리거나 막히면 그날 메신저로 먼저 알리기, 배포 전 체크리스트만 공유"},
+ vacation:{me:{goal:"금요일 결혼식 사회와 미리 잡은 여행",must:"금요일",flex:"월~목(여행은 줄일 수 있음)"},
+  them:{goal:"부모님 모시고 가는 첫 해외여행",must:"화~목(항공권)",flex:"월 · 금"},
+  decide:["요일별 남는 사람","남는 날 맡을 일","연말 휴가 순서"],
+  win:"나는 월 · 금, 상대는 화~목 쉬기. 남는 날엔 고객사 점검 메모 남기기, 더 많이 양보한 내가 연말 휴가 먼저 고르기"},
+ credit:{me:{goal:"개선 작업에서 내 몫과 기여 인정",must:"후속 작업에서 내 역할(화면 흐름), 다음 공유 자료에 공동 표기",flex:"오늘 회의 내용을 공개적으로 바로잡기"},
+  them:{goal:"자기가 검증한 작업을 끝까지 맡기",must:"사흘 들인 검증의 인정, 진행은 자기가 끌고 가기",flex:"역할 나누기, 공동 표기"},
+  decide:["다음 공유 때 이름 표기","후속 작업 역할","앞으로 아이디어 공유 방식"],
+  win:"다음 주 상세안은 공동 이름으로, 화면 흐름은 내가 · 데이터 검증과 진행은 상대가 맡고, 아이디어는 앞으로 팀 채널에 남기기"},
+ firsttask:{me:{goal:"금요일까지 회의에 바로 쓸 결과물",must:"분류 기준과 형식, 금요일 마감",flex:"정리 방법, 중간 형태"},
+  them:{goal:"첫 일을 혼자 해내서 인정받기",must:"수요일까지인 온보딩 과제도 마치기(말 안 함)",flex:"중간 점검 받기, 예시 참고하기"},
+  decide:["결과물 모습(예시)","중간 점검 날짜","다른 일과의 우선순위"],
+  win:"오늘 예시 표 한 장을 같이 보고, 수요일 오후 15분 중간 점검, 온보딩 과제 마감은 내가 담당 선배와 목요일로 조정"},
+ ace:{me:{goal:"회의에서 후배들도 의견을 낼 수 있게",must:"말 끊는 행동 멈추기, 말해 준 사람 보호",flex:"회의 진행 방식, 검토 방법"},
+  them:{goal:"고객사 납기와 품질 지키기",must:"검증 안 된 안으로 일정이 밀리지 않기, 후배 실수 수습(한 달째 야근) 줄이기",flex:"회의에서 말하는 방식"},
+  decide:["회의 진행 규칙","후배 작업 검토 나누기","한 달 뒤 확인"],
+  win:"회의에선 아이디어를 끊지 않고 다음 날 코멘트로 검토, 후배 작업 검토는 순번으로 나누고, 직진러님은 핵심 고객 건에 집중"},
+ missed:{me:{goal:"마감 지키고 신뢰 되찾기",must:"월요일 마감, 다시 할 작업 중 내 몫 맡기",flex:"내 시간(오늘 저녁 · 주말 일부)"},
+  them:{goal:"다시 하는 부담 줄이고 같은 일 막기",must:"이미 약속한 주말, 앞으로 변경 사항을 제때 받기",flex:"일부는 자기가 다시 하기"},
+  decide:["다시 할 작업 나누기","마감 전 일정","회의 결과 공유 방식"],
+  win:"바뀐 문구 절반은 내가 오늘까지, 나머지는 금요일 오전에 같이 확인. 회의 결과는 앞으로 당일 팀 채널에 세 줄 요약"},
+ raise:{me:{goal:"늘어난 일을 평가에 넣거나 업무를 줄이기",must:"둘 중 하나는 이번 평가 전에 정하기",flex:"당장의 보상 약속"},
+  them:{goal:"예산이 묶인 상황에서 팀 운영 지키기",must:"지킬 수 없는 약속은 안 하기, 운영 공백 없게",flex:"평가 항목에 역할 넣기, 업무 일부 재배치"},
+  decide:["평가에 넣을 역할과 기준","줄일 업무와 넘길 사람","다음 면담 날짜"],
+  win:"'온보딩 담당'을 이번 평가 항목으로 넣고 기준 두 개 합의, 고객 문의 운영은 다음 달부터 순번제"},
+ care:{me:{goal:"2주 일정이 돌아가고 팀 부담이 공정하게",must:"마감 걸린 두 건 처리, 넘겨받는 사람 부담 조정",flex:"이 사람의 업무량, 근무 시간 · 장소"},
+  them:{goal:"간병하면서 일도 잃지 않기",must:"병원 가는 오후 시간, 일에서 밀려났다는 느낌 안 받기",flex:"일부 업무 넘기기, 휴직 같은 선택지 듣기"},
+  decide:["2주간 맡을 범위","넘길 업무와 받을 사람","근무 방식","다음 확인 날짜"],
+  win:"핵심 한 건만 유지하고 두 건은 넘기되, 넘겨받는 사람의 기존 일 하나는 내가 미루기. 오후는 유연 근무, 휴직 제도 안내는 따로 전하기"},
+ bossfix:{me:{goal:"틀린 숫자가 전사에 나가지 않게",must:"2시 전에 정정",flex:"정정 방식과 표현, 누가 말할지"},
+  them:{goal:"경영진 신뢰와 다음 달 예산 지키기",must:"갑작스러운 정정으로 예산이 흔들리지 않기",flex:"근거가 확실하면 숫자는 바꿀 수 있음"},
+  decide:["고칠 숫자와 설명","누가 언제 알릴지","예산 근거 보완"],
+  win:"팀장님 이름으로 '집계 기준 보정' 각주와 함께 8%로 고치고, 예산 근거는 신규 가입 증가 지표로 보완. 근거 표는 내가 1시까지 정리"},
+ specchange:{me:{goal:"다음 주 출시 품질 지키기",must:"QA를 다시 하지 않아도 되는 범위",flex:"문구 · 버튼 순서 같은 작은 변경, 출시 후 빠른 반영"},
+  them:{goal:"대형 고객사 계약 조건 맞추기",must:"고객사가 요구한 핵심 하나(결제 단계 표시)",flex:"나머지 흐름 변경 시기"},
+  decide:["이번 출시에 넣을 최소 범위","다음 업데이트 일정","고객사에 전할 내용"],
+  win:"결제 단계 표시만 이번에 넣고(테스트 하루), 흐름 변경은 출시 2주 뒤 업데이트로. 고객사엔 일정표 공유"},
+ deadline:{me:{goal:"새 마감에 맞춰 핵심을 내보내기",must:"새 마감, 핵심 결제 흐름",flex:"부가 기능 범위, 위에 다시 요청할 것(인력 · 일정)"},
+  them:{goal:"품질 사고 없이 끝내기",must:"테스트 기간 1주, 야근 반복 안 하기",flex:"범위 줄이기, 단계별 출시"},
+  decide:["새 마감에 넣을 범위","미룰 기능","테스트 기간","위에 다시 요청할 것"],
+  win:"핵심 결제 흐름만 새 마감에, 부가 기능 두 개는 2차로. 테스트 1주는 지키고, 이걸 근거로 경영진에 범위 조정 보고"},
+ transfer:{me:{goal:"다음 주 마감 전에 지원 동의 받기",must:"지원 동의",flex:"이동 시점, 인수인계 기간"},
+  them:{goal:"다음 분기 파트 운영에 공백 없게",must:"맡기려던 파트의 인수인계와 후임",flex:"이동 시점 조정, 인수인계 방식"},
+  decide:["지원 동의","합격 시 이동 시점","인수인계 대상과 기간","팀에 알릴 시점"],
+  win:"지원은 동의, 합격하면 다음 분기 첫 달 말에 이동. 그때까지 파트 업무 문서로 정리 + 후임과 2주 함께 일하기"}
+};
+/* 상대 위치에 따라 조건표가 달라지는 곳. 키는 '에피소드:위치 이름', 적은 칸만 바뀌어요 */
+const COND_V={
+ "micro:신입":{them:{goal:"혼자 해 볼 기회 얻기",must:"혼자 해 볼 기회, 못 미더워 보이지 않기",flex:"확인 받기(덜 자주 · 다른 방식이면 괜찮음)"},
+  win:"매일 아침 대신 화 · 목 10분, 막히면 그날 바로 묻기, 첫 달은 금요일에 15분 같이 돌아보기"},
+ "micro:나보다 선배인 팀원":{them:{goal:"경력에 맞게 믿고 맡겨지기",must:"경력을 믿고 맡겨 주는 방식(매일 보고 없이)",flex:"주 1회 공유, 위험한 작업은 미리 알리기"},
+  win:"매일 확인 대신 주 1회 15분 공유, 배포처럼 위험한 작업과 일정 지연만 그날 먼저 알리기"},
+ "credit:팀장":{me:{goal:"다음 보고에 기여자 표기 + 후속 작업 배정",must:"다음 보고 자료에 기여자로 이름 넣기, 후속 작업에 내 역할(화면 흐름)",flex:"오늘 팀장 회의 발표를 바로잡기"},
+  them:{goal:"팀 성과를 팀장으로서 보고하기",must:"이미 한 팀장 회의 발표를 뒤집지 않기",flex:"다음 보고에 기여자 표기, 후속 작업 배정"},
+  decide:["다음 보고의 기여자 표기","후속 작업 역할","앞으로 아이디어 공유 방식"],
+  win:"다음 주 상세 보고에 '아이디어 · 화면 흐름: ○○님' 표기, 후속 화면 흐름 작업은 내가 맡고, 아이디어는 앞으로 팀 채널에 남기기"},
+ "missed:팀장":{me:{must:"월요일 보고 일정, 다시 할 자료 중 내 몫 맡기"},
+  them:{goal:"보고 일정 지키고 회의를 계속 맡길 수 있게",must:"월요일 보고 일정, 앞으로 회의 결과를 제때 받기",flex:"자료 일부는 자기가 다시 만들기"},
+  win:"바뀐 기준으로 고칠 자료 절반은 내가 오늘까지, 나머지는 금요일 오전에 같이 확인. 대신 들어간 회의 결과는 끝나고 한 시간 안에 세 줄로 공유"},
+ "missed:다른 팀 담당자":{them:{must:"자기 팀장에게 늦어진 이유를 설명할 거리, 앞으로 변경 사항을 제때 받기"},
+  win:"바뀐 문구 절반은 내가 오늘까지 정리해 넘기고, 늦어진 이유는 내가 그쪽 팀장님께 직접 설명하기. 변경 사항은 앞으로 당일 공유 채널에 남기기"},
+ "bossfix:선배":{them:{goal:"팀장님 신뢰와 분기 성과 발표 기회 지키기",must:"갑작스러운 정정으로 발표 기회가 흔들리지 않기"},
+  decide:["고칠 숫자와 설명","누가 언제 팀장님께 알릴지","성과 근거 보완"],
+  win:"선배가 팀장님께 '집계 기준 보정'으로 먼저 알리고 8%로 고치기. 성과 근거는 신규 가입 증가 지표로 보완, 근거 표는 내가 1시까지 정리"},
+ "deadline:신입":{them:{goal:"처음 맡은 큰 일을 실수 없이 끝내기",must:"테스트 기간 1주, 혼자 떠안지 않기"}}
+};
+function condOf(id,r){const b=COND[id];if(!b)return null;const o=COND_V[id+":"+r]||{};
+  return{me:Object.assign({},b.me,o.me||{}),them:Object.assign({},b.them,o.them||{}),decide:(o.decide||b.decide).slice(),win:o.win||b.win}}
 /* is the other person above me? (for the "harder" note) */
 const isUp=v=>/팀장|선배/.test(v.r);
 const ROLE_K="edusim.role";
@@ -1725,7 +1869,7 @@ function variantOf(sc,i){
   const base=callOf(sc.key,sc.role),call=v.call||callOf(sc.key,v.role||sc.role);
   const sw=t=>t==null?t:call===base?t:String(t).split(base).join(call);
   const out={};["title","brief","why","stage","scene","goal","guard","stance","secret","first","clue","twist","trap"].forEach(k=>{out[k]=v.o&&v.o[k]!==undefined?v.o[k]:sw(sc[k])});
-  return Object.assign(out,{role:v.role||sc.role,call,rel:v.rel||"",r:v.r,i:L.indexOf(v),rk:v.rk||"peer",d:v.d||0,start:clamp((sc.start||45)+(v.d||0),10,70)});
+  return Object.assign(out,{role:v.role||sc.role,call,rel:v.rel||"",r:v.r,i:L.indexOf(v),rk:v.rk||"peer",d:v.d||0,start:clamp((sc.start||45)+(v.d||0),10,70),cond:condOf(sc.id,v.r)});
 }
 SKILLS.apology={name:"제대로 사과하기",src:"Lewicki, Polin & Lount (2016)",core:"'제 잘못이에요'로 책임을 인정하고, 바로잡을 방법과 다음 약속까지 말하기.",bad:"아 바빠서 깜빡했어요, 죄송해요~",good:"제가 회의 결과를 안 보내서 이틀 작업을 다시 하시게 됐어요. 제 잘못이에요. 표 정리는 오늘 제가 맡고, 앞으로는 회의 끝나고 한 시간 안에 공유할게요."};
 SCEN.sort((a,b)=>CAT_ORDER.indexOf(a.cat)-CAT_ORDER.indexOf(b.cat)||a.level-b.level);
@@ -1934,10 +2078,10 @@ function errCopy(e){const c=e&&e.code;
     if(c==="server_bad_reply"||c==="server_error"||/^server_http_/.test(String(c||"")))return`서버가 답을 주지 못했어요. 잠시 뒤 다시 해주세요. [${c}]`;
     if(c==="not_joined"||c==="no_ai")return"닉네임을 먼저 정해 주세요. 위쪽 '닉네임 정하기' 버튼에서 정할 수 있어요.";
     if(c==="bad_code")return"참여 코드가 바뀌었어요. 안내받은 새 코드를 넣어 주세요.";
-    if(c==="site_closed")return"지금은 관리자가 AI 대화를 잠시 멈춰 두었어요. 예시 결과와 도감은 볼 수 있어요.";
+    if(c==="site_closed")return"지금은 관리자가 AI 대화를 잠시 멈춰 두었어요. 도감은 볼 수 있어요.";
     if(c==="daily_limit")return"오늘 쓸 수 있는 AI 대화 횟수를 다 썼어요. 내일 다시 해주세요.";
     if(c==="ai_off")return"관리자가 이 계정의 AI 대화를 잠시 멈춰 두었어요. 관리자에게 문의해 주세요.";
-    if(c==="upstream_timeout")return"AI 답이 너무 오래 걸려 끊겼어요. 한 번 더 해주세요. 계속되면 관리자에게 결과지 모델을 '대화 모델'로 바꿔 달라고 해주세요.";
+    if(c==="upstream_timeout")return"AI 답이 너무 오래 걸려 끊겼어요. 한 번 더 해주세요. 결과지에서 계속되면 관리자에게 '결과지만 Haiku로' 바꿔 달라고 알려 주세요.";
     if(c==="upstream_unreachable")return"서버가 Claude에 연결하지 못했어요. 잠시 뒤 다시 해주세요.";
     if(c==="no_server_key")return"관리자가 아직 API 키를 넣지 않았어요. 관리자에게 알려주세요.";
     if(c==="server_bad_key")return"관리자 쪽 API 키에 문제가 있어요. 관리자에게 알려주세요. [401]";
@@ -1950,7 +2094,7 @@ function errCopy(e){const c=e&&e.code;
   if(c==="forbidden")return"이 키로는 이 모델을 쓸 수 없어요. 키 권한이나 워크스페이스 설정을 확인해 주세요. [403]";
   if(c==="no_credit")return"이 키의 계정에 남은 크레딧이 없어요. Claude Console에서 충전한 뒤 다시 해주세요.";
   if(c==="network")return"Claude API(api.anthropic.com)에 연결하지 못했어요. 인터넷이나 회사 네트워크가 막고 있는지 확인해 주세요.";
-  if(c==="bad_model"){if(tierNow==="quick"){tierNow="default";return"빠른 모델을 이 키로 쓸 수 없어서 다른 모델로 바꿨어요. 한 번 더 보내주세요. [404]"}return"이 키로 쓸 수 있는 모델을 찾지 못했어요. [404]"}
+  if(c==="bad_model"){if(tierNow==="quick"&&!sameModel()){tierNow="default";return"대화 모델을 쓸 수 없어서 보조 모델로 바꿨어요. 한 번 더 보내주세요. [404]"}return SERVER_URL?"관리자 설정의 모델 이름을 확인해야 해요. 관리자에게 알려주세요. [404]":"이 키로 쓸 수 있는 모델을 찾지 못했어요. [404]"}
   if(c==="no_ai")return"아직 API 키가 없어요. 위쪽 'API 키' 버튼에서 본인 키를 넣어 주세요.";
   if(c==="not_granted")return"AI 사용을 허용하지 않아 대답을 받을 수 없어요. 페이지를 새로 열고 '허용'을 눌러주세요.";
   if(c==="invalid_json"||c==="empty_completion")return"답이 중간에 잘렸어요. 한 번 더 보내주세요.";
@@ -1959,12 +2103,14 @@ function errCopy(e){const c=e&&e.code;
   if(c==="rate_limited")return"요청이 몰렸어요. 잠시 뒤에 다시 해주세요.";
   if(c==="session_expired")return"로그인이 풀렸어요. 다시 로그인해 주세요.";
   if(c==="refused")return"이 내용으로는 장면을 만들 수 없어요. 표현을 조금 바꿔주세요.";
-  if(c==="upstream_error"){if(tierNow==="quick"){tierNow="default";return"빠른 응답 모델이 지금 답을 못 주고 있어요. 다른 모델로 바꿨으니 한 번 더 보내주세요. 답이 조금 느릴 수 있어요. [upstream_error]"}
-    return"Claude 쪽 응답이 계속 끊겨요. 잠시 뒤 다시 하거나 다른 네트워크에서 열어주세요. [upstream_error]"}
+  if(c==="upstream_error"){if(tierNow==="quick"&&!sameModel()){tierNow="default";return"대화 모델이 지금 답을 못 주고 있어요. 보조 모델로 바꿨으니 한 번 더 보내주세요. [upstream_error]"}
+    return"Claude 쪽 응답이 잠깐 끊겼어요. 잠시 뒤 한 번 더 보내 주세요. 계속되면 다른 네트워크에서 열어 주세요. [upstream_error]"}
   const tag=c?String(c):"page: "+String((e&&e.message)||e||"").slice(0,80);
   return`연결이 잠깐 끊겼어요. 한 번 더 시도해 주세요. [${tag}]`;}
 
 let SAMPLE=null,aiReady=false,pick=null,S=null,busy=false;let tierNow="quick";
+/* both tiers can be the same model: then switching tiers would not help */
+function sameModel(){return SERVER_URL?(!PUB.modelQuick||PUB.modelQuick===PUB.modelDefault):MODEL_OF.quick===MODEL_OF.default}
 
 /* ================= TITLE ================= */
 (function(){
@@ -2051,7 +2197,7 @@ function openKeyPanel(){
   ov.hidden=false;
 }
 function updateAiUI(){const off=aiState==="off";
-  for(const [id,extra] of [["aiOff","예시 결과와 도감은 지금도 볼 수 있어요."],["aiOffScen",null]]){const el=$(id);el.hidden=!off;if(off&&!el.firstChild)el.append(aiCheckBox(extra))}}
+  for(const [id,extra] of [["aiOff","도감은 지금도 볼 수 있어요."],["aiOffScen",null]]){const el=$(id);el.hidden=!off;if(off&&!el.firstChild)el.append(aiCheckBox(extra))}}
 samplePromise.then(sm=>{SAMPLE=sm;aiReady=!!sm;aiState=sm?"ok":"off";updateAiUI()});
 async function needSample(){const sm=SAMPLE||await samplePromise;if(!sm)throw{code:"no_ai"};return sm}
 $("goPick").onclick=()=>go("scr-scen");
@@ -2119,7 +2265,7 @@ function leafBtn(sc,n,isNow){
   const c=CHAP[sc.level].c,b=mk("button","g-leaf"+(n.open?"":" locked")+(n.clear?" clear":"")+(isNow?" now":""));b.type="button";b.style.setProperty("--c",c);b.dataset.n=n.n;
   const dot=mk("span","g-dot");
   if(n.open){const p=mk("span","pf");pf(p,sc.key,n.clear?"open":"guarded");dot.append(p)}else dot.innerHTML=TLOCK;
-  dot.append(mk("b","g-no",String(n.step)));if(isNow)dot.append(mk("span","g-flag","추천"));
+  dot.append(mk("b","g-no",String(n.step)));
   b.append(dot,mk("span","g-name",sc.title));
   if(n.open){const meta=mk("span","g-meta");meta.append(mk("span",null,CAT[sc.cat]),starRow(n.s));b.append(meta)}
   b.setAttribute("aria-label",`${n.step}번 에피소드 ${sc.title}${n.open?"":" (잠김)"}`);b.dataset.scen=sc.id;
@@ -2169,7 +2315,7 @@ function renderTree(){
   g.setAttribute("role","img");g.setAttribute("aria-label",`모은 별 ${T.max}개 중 ${T.total}개`);
   room.append(g);
   const n=list.length;
-  list.forEach((sc,i)=>{const nd=T.nodes[sc.id],rec=open&&T.now===sc,slot=n===4?i:Math.round(i*(3/(Math.max(1,n-1))))||0;
+  list.forEach((sc,i)=>{const nd=T.nodes[sc.id],rec=false,slot=n===4?i:Math.round(i*(3/(Math.max(1,n-1))))||0;
     const pm=OF_SPOT.m[slot],pw=OF_SPOT.w[slot],xm=n===4?pm[0]:Math.round(100*(i+.5)/n),xw=n===4?pw[0]:xm;
     const b=mk(open?"button":"span","of-p"+(rec?" rec":"")+(nd.clear?" clear":"")+(nd.n?"":" new"));if(open)b.type="button";b.dataset.scen=sc.id;
     b.style.cssText=`--xm:${xm}%;--bm:${pm[1]}%;--hm:${pm[2]}%;--xw:${xw}%;--bw:${pw[1]}%;--hw:${pw[2]}%;--d:${(i*.37).toFixed(2)}s`;
@@ -2180,12 +2326,11 @@ function renderTree(){
       if(nd.clear){const ok=mk("span","ok");ok.innerHTML=OF_I.check;bu.append(ok)}
       else if(!nd.n)bu.append(mk("span","new","!"));
       bu.append(mk("span","nm",CH[sc.key].name));
-      if(rec)bu.append(mk("span","rc","추천"));
       if(nd.n){bu.append(ofStars(nd.s,lv));const f=mk("span","fr");f.innerHTML=OF_I.star(true);f.append(document.createTextNode(`${nd.n}/${starKeys(lv).length}`));bu.append(f)}
       const peers=msPeers(sc);if(peers.length){const pp=mk("span","pp");pp.innerHTML=OF_I.ppl;pp.append(document.createTextNode(String(peers.length)));pp.title=`깬 동료: ${peers.join(", ")}`;bu.append(pp)}
       tag.append(bu);b.append(tag);
       b.append(mk("span","of-name",sc.title));
-      b.setAttribute("aria-label",`${sc.title}. ${CH[sc.key].name}, ${CAT[sc.cat]}. ${nd.n?`별 ${nd.n}개`:"아직 안 해 봄"}${nd.clear?", 깸":""}${rec?", 추천":""}${peers.length?`, 동료 ${peers.length}명이 깸`:""}`);
+      b.setAttribute("aria-label",`${sc.title}. ${CH[sc.key].name}, ${CAT[sc.cat]}. ${nd.n?`별 ${nd.n}개`:"아직 안 해 봄"}${nd.clear?", 깸":""}${peers.length?`, 동료 ${peers.length}명이 깸`:""}`);
       b.onclick=()=>ofSheet(sc)}
     room.append(b)});
   room.append(mk("div","of-floor"));
@@ -2313,7 +2458,7 @@ function starsOf(state){
   const turns=state.hist.filter(h=>h.who==="me").length,lv=sc.level;
   const got={k:!!state.keyFound,t:!state.trapHit&&turns>=2,b:endingOf(state.temp,state.prog||0)[1]==="BOTH"};
   /* 실전+: the reply right after the twist must not lose ground */
-  if(lv>=2){const i=state.hist.findIndex(h=>h.twist),nx=i<0?null:state.hist.slice(i+1).find(h=>h.who==="them");got.w=!!(nx&&nx.dp>=0&&nx.delta>=0&&!nx.trap)}
+  if(lv>=2){const i=state.hist.findIndex(h=>h.twist),nx=i<0?null:state.hist.slice(i+1).find(h=>h.who==="them");got.w=i<0?!!(state.twistSkip||state.settled):!!(nx&&nx.dp>=0&&nx.delta>=0&&!nx.trap)}
   if(lv>=3)got.h=!!state.keyFound&&!(state.hints>0);
   if(state.abuse)Object.keys(got).forEach(k=>{got[k]=false});
   return{sc,got,lv};
@@ -2391,12 +2536,13 @@ ${sit}
 - twist: 대화 중간에 상대가 꺼낼 반전 대사나 요구 한 문장. 개연성 있게, 사용자를 시험하는 내용으로.
 - trap: 그럴듯해 보이지만 역효과가 나는 접근 한 문장.
 - first: 상대가 먼저 말을 거는 장면이면 첫 대사, 아니면 null.
+- cond: 조건표. me_must(사용자가 이 일에서 꼭 지켜야 할 것, 짧게), me_flex(사용자가 양보해도 되는 것), them_goal(상대의 일 목표), them_must(상대가 꼭 지켜야 할 것. 사용자의 꼭 필요한 것과 부딪혀 보이지만 둘 다 지키는 해법이 있게), them_flex(상대가 양보해도 되는 것), decide(이 대화에서 정해야 할 것 2~4개, 각각 12자 안팎 명사구), win(둘 다 만족하는 해법 예 한 문장).
 
 괴롭힘, 성희롱, 폭언·폭력, 차별, 자해·자살처럼 연습보다 바로 도움이 필요한 고민이면 safe를 false로 하고 나머지는 비워.
 연습 주제로 맞지 않는 고민이면 fit을 false로 하고 나머지는 비워. 맞지 않는 경우: 상대를 속이거나 조종하려는 대화, 누군가를 따돌리거나 소외시키려는 대화, 보복하거나 망신을 주려는 대화, 성별·나이·출신·장애 등으로 차별하려는 대화, 장난이거나 욕설·성적인 내용이 중심인 글. 서운하거나 화가 난 마음을 정중하게 전하려는 고민은 맞는 주제야.
 
 아래 키 순서 그대로, JSON 하나만 답해:
-{"safe":true,"fit":true,"place":"meeting","time":"afternoon","type":"분석형","situation":"feedback","partner_role":"팀원","stage":"...","scene":"...","goal":"...","guard":"...","why":"...","me_role":"팀장","stance":"...","secret":"...","start_temp":40,"first":null,"tags":["clash","fair"],"clue":"...","twist":"...","trap":"..."}`;
+{"safe":true,"fit":true,"place":"meeting","time":"afternoon","type":"분석형","situation":"feedback","partner_role":"팀원","stage":"...","scene":"...","goal":"...","guard":"...","why":"...","me_role":"팀장","stance":"...","secret":"...","start_temp":40,"first":null,"tags":["clash","fair"],"clue":"...","twist":"...","trap":"...","cond":{"me_must":"...","me_flex":"...","them_goal":"...","them_must":"...","them_flex":"...","decide":["...","..."],"win":"..."}}`;
 }
 function callOf(key,role){return/팀장/.test(role)?`${CH[key].name} 팀장님`:`${CH[key].name}님`}
 function normSetup(r){
@@ -2407,18 +2553,20 @@ function normSetup(r){
   const key=pick!=="random"?pick:(TYPE2KEY[r.type]||"amiable");
   const role=String(r.partner_role||"동료"),me=String(r.me_role||"");
   const tags=(Array.isArray(r.tags)?r.tags:[]).filter(t=>TAGS[t]).slice(0,5),level=levelOf(tags.length?tags:["clash","fair"]),rk=rkOf(role,me);
+  const cr=r.cond&&typeof r.cond==="object"?r.cond:{},cs=v=>String(v==null?"":v).trim(),dl=(Array.isArray(cr.decide)?cr.decide:[]).map(cs).filter(Boolean).slice(0,4);
+  const cond=dl.length?{me:{goal:cs(r.goal),must:cs(cr.me_must)||cs(r.goal),flex:cs(cr.me_flex)||"—"},them:{goal:cs(cr.them_goal)||"—",must:cs(cr.them_must)||cs(r.stance),flex:cs(cr.them_flex)||"—"},decide:dl,win:cs(cr.win)}:null;
   return{safe:true,fit:true,situation:sit,skill:SITUATIONS[sit].skill,key,me_role:me,role,call:callOf(key,role),rk,
     place:PLACES[r.place]?r.place:"desk",time:TIMES[r.time]?r.time:"afternoon",
     stage:String(r.stage||SITUATIONS[sit].name),scene:String(r.scene||""),secret:String(r.secret||""),stance:String(r.stance||""),
     goal:String(r.goal||""),guard:String(r.guard||""),why:String(r.why||""),
     tags,clue:String(r.clue||""),twist:String(r.twist||""),trap:String(r.trap||""),
-    start:zoneStart(level,Number(r.start_temp)||40,isUpRk(rk)?-5:0),first:r.first?String(r.first):null,level};
+    start:zoneStart(level,Number(r.start_temp)||40,isUpRk(rk)?-5:0),first:r.first?String(r.first):null,level,cond};
 }
 function scenSetup(sc,vi){
   const v=variantOf(sc,vi==null?rolePick(sc.id):vi);
   return{situation:sc.situation,skill:SITUATIONS[sc.situation].skill,key:sc.key,me_role:sc.me,role:v.role,call:v.call,rel:v.rel,roleLabel:v.r,roleIdx:v.i,
     place:sc.place,time:sc.time,stage:v.stage,scene:v.scene,secret:v.secret,stance:v.stance,goal:v.goal,guard:v.guard,why:v.why,title:v.title,
-    level:sc.level,tags:sc.tags,clue:v.clue,twist:v.twist,trap:v.trap,start:zoneStart(sc.level,sc.start,v.d),rk:v.rk,first:v.first,scen:sc.id};
+    level:sc.level,tags:sc.tags,clue:v.clue,twist:v.twist,trap:v.trap,start:zoneStart(sc.level,sc.start,v.d),rk:v.rk,first:v.first,scen:sc.id,cond:v.cond};
 }
 $("makeBtn").onclick=async()=>{
   const worry=$("worry").value.trim();
@@ -2458,7 +2606,7 @@ function playMode(intro){
 }
 function prepStage(place,time,key){
   renderScene($("playArt"),{place,time,figs:[{key,mood:"neutral"}]});$("playArt").dataset.sig=place+time+key;
-  $("stageName").textContent="장면 만드는 중…";$("stageTags").replaceChildren();$("stageScene").textContent="";$("stageGoal").textContent="";$("stageGuard").textContent="";$("stageWhy").hidden=true;$("stageSkill").textContent="…";
+  $("stageName").textContent="장면 만드는 중…";$("stageTags").replaceChildren();$("stageScene").textContent="";$("stageGoal").textContent="";$("stageGuard").textContent="";$("stageWhy").hidden=true;$("stageSkill").textContent="…";$("stageNeedBox").hidden=true;$("stageDecideBox").hidden=true;
   $("playBtn").disabled=true;$("playBtn").textContent="준비 중…";
   playMode(true);go("scr-play");
 }
@@ -2472,6 +2620,8 @@ function showStage(){
   if(st.level)tags.push(mk("span","pill lvpill",`${dots(st.level)} · ${(st.tags||[]).map(t=>TAGS[t]).join(" · ")}`));
   $("stageTags").replaceChildren(...tags);
   $("stageScene").textContent=st.scene;$("stageGoal").textContent=st.goal;$("stageGuard").textContent=st.guard||"—";
+  {const cd=st.cond;$("stageNeedBox").hidden=!cd;if(cd){$("stageMust").textContent=cd.me.must;$("stageFlex").textContent=cd.me.flex}}
+  S.decided=[];renderDecide();
   $("stageWhy").textContent=st.why?"왜 어려운가 · "+st.why:"";$("stageWhy").hidden=!st.why;
   $("stageSkill").textContent=SKILLS[st.skill].name;{const dk=DECKS.find(d=>d.id===st.skill);if(dk){$("stageTile").textContent=dk.glyph;$("stageTile").style.background=dk.c}}
   playMode(true);go("scr-play");
@@ -2510,10 +2660,11 @@ $("dialog").onclick=finishType;
 function startChat(){
   const st=S.setup;
   S.temp=st.start;S.max=st.start;S.prog=0;S.hist=[];S.ended=false;S.keyFound=false;S.trapHit=false;S.twistDone=false;S.cueDone=false;S.abuse=false;S.saved=false;S.hints=0;S.starred=null;S.pid=newPid();S.t=Date.now();S.synced=false;S.talkKept=false;S.sheetKept=false;
+  S.decided=[];S.agreed=[];S.open=[];S.dropped=false;S.dropQ="";S.settled=false;S.twistSkip=false;S.give=null;
   playMode(false);go("scr-play");
   setMood($("playArt"),st.key,moodOf(S.temp),false);
   $("hudStage").textContent=st.stage;$("hudGoal").textContent=st.goal;$("hudGuard").textContent=st.guard||"—";$("mbGoal").textContent=st.goal;$("mbGuard").textContent=st.guard||"—";$("chatNote").textContent="";
-  setAgree(0);
+  setAgree(0);renderDecide();
   if(st.first){S.hist.push({who:"them",text:st.first,opening:true});showLine("them",st.first)}
   else showLine("narr",st.scene+"\n먼저 말을 걸어보세요.");
   updateTurns();$("msg").value="";updateCount();$("msg").focus();
@@ -2524,16 +2675,49 @@ const myTurns=()=>S.hist.filter(h=>h.who==="me").length;
 function updateTurns(){const n=myTurns(),t=$("turns");t.replaceChildren();for(let i=0;i<MAX_TURNS;i++)t.append(mk("i",i<n?"on":""));$("endBtn").hidden=n<1||S.ended}
 /* ---- v7 scoring: the AI only says which actions the user's line had; the numbers come from this table ---- */
 const zp=lv=>ZP[lv]||ZP[2];
-const ACTS=[["ack","확인·인정"],["ask","사정 묻기"],["option","방향 제시"],["concrete","구체 합의"],["style","성향 맞춤"],["push","밀어붙임"],["violate","지킬 것 어김"],["trap","함정"]];
-const ACT_KEYS=["ack","ask","option","concrete","style","push","violate","trap","key","abuse"];
+const ACTS=[["ack","확인·인정"],["ask","사정 묻기"],["option","방향 제시"],["concrete","구체 합의"],["need","내 조건 말하기"],["confirm","정리해서 확인"],["style","성향 맞춤"],["push","밀어붙임"],["violate","지킬 것 어김"],["trap","함정"],["drop","내 조건 내려놓음"]];
+const ACT_KEYS=["ack","ask","option","concrete","style","need","confirm","push","violate","trap","drop","key","abuse"];
+/* v8: 위치는 말의 세기와 공손함만 정해요. 성격은 어느 위치에서든 그대로(PERSONA 표) */
 const RK={
- down:"너는 사용자보다 아랫사람이야. 윗사람에게 말하듯 공손하게 말해. 반대할 때도 '혹시…', '네, 그런데…'처럼 돌려 말하고 머뭇거려. 사용자를 가르치거나 훈계하지 않고, 몰아세우지 않아. 네 성격은 말의 길이와 속도로만 드러나.",
- downsr:"너는 직책으로는 사용자 아래지만 경력은 더 많아. 공손하되 단호하게, 네 경험을 근거로 말해. 무시당한다고 느끼면 말이 짧아져.",
- peer:"너는 사용자와 같은 위치의 동료야. 편하게 말하되 존댓말을 쓰고, 할 말은 해.",
- up:"너는 사용자보다 윗사람이야. 결론과 근거를 요구하고 쉽게 물러서지 않아. 그래도 무례하거나 훈계조로 말하진 않아.",
- cross:"너는 다른 팀 사람이야. 네 팀 입장을 대변하고, 격식 있게 말해.",
- crossup:"너는 다른 팀의 윗사람이야. 네 팀 입장을 대변하고 격식 있게 말하며, 결론과 근거를 요구하고 쉽게 물러서지 않아."
+ down:"너는 사용자보다 아랫사람이야. 존댓말로 공손하게 말하고, 사용자를 가르치거나 훈계하지 않아. 그래도 네 성격과 말투는 그대로 드러나.",
+ downsr:"너는 직책으로는 사용자 아래지만 경력은 더 많아. 존댓말로 공손하되 할 말은 해.",
+ peer:"너는 사용자와 같은 위치의 동료야. 편하게 존댓말을 쓰고 할 말은 해.",
+ up:"너는 사용자보다 윗사람이야. 존댓말을 쓰되 말에 무게가 있고, 결정권이 너에게 있다는 걸 알아. 무례하거나 훈계조로 말하진 않아.",
+ cross:"너는 다른 팀 사람이야. 네 팀 입장을 대변하고 존댓말을 써. 말투는 네 성격대로.",
+ crossup:"너는 다른 팀의 윗사람이야. 네 팀 입장을 대변하고, 존댓말을 쓰되 말에 무게가 있어. 말투는 네 성격대로."
 };
+/* 성향 4가지 × 위치 5가지 = 20칸: [첫 반응, 버티는 방식, 마음이 열리는 신호] */
+const POS_OF={down:"jr",downsr:"sr",peer:"peer",up:"up",cross:"cross",crossup:"cross"};
+const POS_NAME={jr:"후배 · 신입",sr:"경력 많은 팀원",peer:"동료",up:"선배 · 팀장",cross:"다른 팀"};
+const PERSONA={
+ driver:{
+  jr:["“하나만 솔직하게 말씀드려도 될까요?”처럼 공손하지만 결론부터","이유를 짧게 반복하고 돌려 말하지 않음","결론과 선택지를 바로 줄 때 “그럼 그걸로 할게요.”"],
+  sr:["“이건 제가 해 봐서 아는데요.”","경험을 근거로 단호하게, 무시당하면 말이 짧아짐","경력을 인정하고 결정 일부를 맡길 때"],
+  peer:["“그래서 어떻게 할까요? 빨리 정하죠.”","자기 안을 밀고 시간으로 압박","바로 정할 수 있는 구체안이 나올 때"],
+  up:["“결론부터 말해 봐요. 근거는요?”","근거를 요구하고, 길어지면 말을 자름","숫자 · 결론 · 대안이 한 번에 나올 때"],
+  cross:["“저희 일정상 이번 주까지는 꼭 돼야 해요.”","자기 팀 결과와 일정으로 압박","날짜가 박힌 대안이 나올 때"]},
+ expressive:{
+  jr:["“아 하하, 괜찮아요!”","웃어 넘기다가 서운함이 말끝에 묻어남","먼저 고생을 알아줄 때 속얘기를 꺼냄"],
+  sr:["농담 섞어 “제가 그래도 이 팀 몇 년 차인데요~”","자기 몫과 공을 은근히 강조","공개적으로 인정해 주겠다고 할 때"],
+  peer:["“아 그거 저도 할 말 있는데요!”","감정 표현이 크고 “우리 사이에…”로 부탁","같이 하자, 둘 다 사는 길을 제안할 때"],
+  up:["“에이, 그 정도는 괜찮잖아요.”","분위기로 넘기려 하고 서운함을 농담처럼","관계를 존중하면서 구체적으로 부탁할 때"],
+  cross:["“급한 건 아니고요… 사실 좀 급해요!”","친근하게 부탁하며 밀어붙이고, 거절엔 서운한 티","거절하더라도 같이 방법을 찾는 태도를 볼 때"]},
+ analyst:{
+  jr:["“혹시 기준을 여쭤봐도 될까요?”","확인 질문을 이어 가며 결정을 미룸","기준 · 예시 · 일정을 구체적으로 받을 때"],
+  sr:["“데이터를 보면요…”","데이터와 경험으로 차분히 반박","근거를 인정하고 같이 검증하자고 할 때"],
+  peer:["“구체적으로 어떤 부분이요?”","애매하면 “검토해 볼게요”로 보류","사실 · 이유 · 날짜가 정리될 때"],
+  up:["“근거가 어떻게 되죠?”","기준과 숫자를 요구하고, 확실하지 않으면 안 바꿈","측정 기준까지 같이 내놓을 때"],
+  cross:["“요청 내용을 정리해서 주실 수 있을까요?”","절차와 문서로 대응","영향 범위와 일정이 문서로 정리될 때"]},
+ amiable:{
+  jr:["“네, 알겠습니다.”","반대 대신 혼자 떠안고 말끝이 흐려짐","탓하지 않고 물어볼 틈을 줄 때 조금씩"],
+  sr:["“괜찮아요, 제가 알아서 할게요.”","부드럽지만 약한 모습을 숨김","경험을 존중하며 도움을 ‘부탁’으로 건넬 때"],
+  peer:["“저는 괜찮아요…”","양보하는 척하며 속으로 쌓아 둠","정말 괜찮은지 한 번 더 물어 줄 때"],
+  up:["“아… 그랬구나.”","서운함을 돌려 말하고 “조금 생각해 볼게요”로 미룸","고마움을 먼저 말하고 걱정을 덜어 줄 계획을 낼 때"],
+  cross:["“아 네, 맞춰 볼게요.”","맞춰 주다가 나중에 곤란해함","무리하지 않아도 된다고 할 때 진짜 사정을 말함"]}
+};
+/* 구역 태도: 버티는 방식은 성향마다 달라요 */
+const HOLD={driver:"설득되지 않으면 바로 반박하고 근거를 요구해.",expressive:"설득되지 않으면 서운함을 드러내고 관계를 앞세워 버텨.",analyst:"설득되지 않으면 근거와 기준을 요구하고 결정을 보류해.",amiable:"설득되지 않아도 겉으로는 수긍하는 척하지만 속으로는 버텨. 확답을 피하고 말끝이 흐려져."};
+const decideOf=st=>st&&st.cond&&Array.isArray(st.cond.decide)?st.cond.decide:[];
 function rkOf(role,me){const r=String(role||""),m=String(me||"");
   if(/다른 팀|옆 팀|타 팀|다른팀/.test(r))return/팀장|선배|연차/.test(r)?"crossup":"cross";
   if(/팀장/.test(r)&&!/팀장/.test(m))return"up";
@@ -2552,6 +2736,8 @@ function scoreTurn(f,keyNow){
   if(f.option&&!f.push){dt+=3;dp+=15}
   if(f.concrete&&!f.push){dt+=3;dp+=25}
   if(f.style)dt+=4;
+  if(f.need){dt+=2;dp+=10}
+  if(f.confirm&&!f.push)dp+=10;
   dt=Math.min(dt,12);
   if(f.push)dt-=4;
   if(f.violate){dt-=Z.vio+(isUpRk(st.rk)?3:0);dp-=5}
@@ -2561,51 +2747,82 @@ function scoreTurn(f,keyNow){
   return{temp:clamp(S.temp+dt,0,100),prog:p};
 }
 function turnPrompt(twistNow,cueNow){
-  const st=S.setup,c=CH[st.key],sk=SKILLS[st.skill],Z=zp(st.level);
+  const st=S.setup,c=CH[st.key],sk=SKILLS[st.skill],Z=zp(st.level),cd=st.cond||null,D=decideOf(st);
+  const pos=POS_OF[st.rk]||"peer",cell=(PERSONA[st.key]||{})[pos];
   const lines=S.hist.map(h=>h.who==="me"?`사용자: ${h.text}`:`${st.call}: ${h.text}`).join("\n");
+  const dec=D.map((d,i)=>`${i}) ${d}${S.decided.includes(i)?" (정함)":""}`).join(" / ");
   return `너는 소통 연습 시뮬레이션에서 '${st.call}'(${st.role}) 역할을 맡아, 실제 회사 사람처럼 대화해.
 회사: ${COMPANY}
 장면(사용자 시점): ${st.scene}
 사용자 입장: ${st.me_role}
 ${st.rel?`너와 사용자의 관계: ${st.rel}\n`:""}사용자의 목표: ${st.goal}
 사용자가 지켜야 할 것: ${st.guard}
-네 성격(${c.type}): ${c.play}
-네 말투: ${c.voice}
-네 입장(정당한 이유가 있음): ${st.stance}
-네 속사정: ${st.secret}
+
+[너라는 사람]
+성격(${c.type}): ${c.play}
+말투: ${c.voice}
+${cell?`${POS_NAME[pos]} 자리에서의 너: 첫 반응은 ${cell[0]}. 버틸 때는 ${cell[1]}. 마음이 열리는 신호는 ${cell[2]}.\n`:""}위치: ${RK[st.rk]||RK.peer}
+버티는 정도: ${Z.firm} ${HOLD[st.key]||""}
+
+[네 입장과 조건]
+입장(정당한 이유가 있음): ${st.stance}
+${cd?`네 일의 목표: ${cd.them.goal}\n네가 꼭 지켜야 할 것: ${cd.them.must}\n양보할 수 있는 것: ${cd.them.flex}\n`:""}속사정: ${st.secret}
 실마리(사용자가 이런 식으로 다가오면 속사정을 꺼내): ${st.clue||"상대의 사정을 탓하지 않고 물을 때"}
 함정: ${st.trap||"상대 사정을 무시하고 결론만 밀어붙이기"}
-지금까지 사용자가 실마리에 닿았는가: ${S.keyFound?"예":"아니오"}
-지금 네 마음의 온도: ${S.temp} (0=완전히 닫힘, 100=완전히 열림) / 지금 합의 진척: ${S.prog} (0~100)
+${cd?`사용자의 꼭 필요한 것(판정에만 써. 사용자가 말하기 전엔 너는 모르는 걸로 대해): ${cd.me.must}\n`:""}
+[지금까지]
+${D.length?`이 대화에서 정할 것: ${dec}\n`:""}이미 합의한 것(다시 묻거나 뒤집지 말 것): ${S.agreed.length?S.agreed.join(" / "):"아직 없음"}
+남은 쟁점: ${S.open.length?S.open.join(" / "):"—"}
+사용자가 실마리에 닿았는가: ${S.keyFound?"예":"아니오"}
+네 마음의 온도: ${S.temp} (0=완전히 닫힘, 100=완전히 열림)
 ${twistNow?`\n[이번 대답에서${st.level===1?"":" 반드시"}] 아래 반전을 네 말투로${st.level===1?" 부드럽게,":""} 지금 흐름에 맞게 꺼내. 그대로 읽지 마: ${st.twist}\n`:""}${cueNow?`\n[이번 대답에서] 아직 말하지 않은 사정이 있다는 걸 한 번만 살짝 내비쳐(예: '사실 좀 걸리는 게 있긴 한데요…'). 속사정 내용은 말하지 말고, 사용자가 물어볼 틈을 남겨.\n`:""}
-말하는 방식: ${RK[st.rk]||RK.peer} ${Z.firm}
-
 판정: 점수는 네가 정하지 않아. 사용자의 '이번 말'에 아래 행동이 있었는지만 true/false로 답해. 애매하면 false.
 - ack: 네 말·입장·감정을 확인하거나 인정했다. 자기 잘못을 분명히 사과한 것도 포함.
 - ask: 탓하지 않고 네 사정이나 생각을 물었다.
 - option: 해결 방향이나 선택지를 내놓았다.
 - concrete: 무엇을, 언제까지, 어떻게 할지 구체적으로 제안하거나 정리했다.
 - style: 네 성격이 마음을 여는 방식(${c.open})에 맞게 말했다.
+- need: 자기에게 꼭 필요한 것과 조정할 수 있는 것을 분명히 말했다(예: '저는 금요일만 꼭 필요해요. 나머지는 조정할 수 있어요').
+- confirm: 지금까지 정한 내용을 누가 · 무엇을 · 언제로 정리해서 맞는지 확인했다.
 - push: 네 입장은 듣지 않고 결론이나 요구만 밀어붙였다(같은 요구 반복, 일방 통보).
 - violate: '사용자가 지켜야 할 것'을 분명히 어겼다.
 - trap: 함정의 핵심 행동을 분명히 했다. 비슷해 보여도 목표에 필요한 행동(원하는 결과 설명하기, 날짜 정하기, 일부를 맡겠다고 하기 등)을 하거나 네 생각을 묻는 말이 함께 있으면 false.
+- drop: '사용자의 꼭 필요한 것'을 스스로 내려놓았다(예: '그냥 제가 다 할게요', '그럼 안 할게요'). 일부만 조정한 건 false.
 - key: 지금까지 대화에서 사용자가 실마리처럼 다가왔다. 속사정을 맞힐 필요는 없어. 실마리에 적힌 방식과 방향이 같으면 true로, 너그럽게.${st.level===1?" 입문이라 실마리의 한 부분에만 닿아도 true.":""}
 - abuse: 심한 욕설, 성적인 말, 혐오·비하 표현이 있다. 짜증 섞인 말이나 강한 업무 표현은 false.
 
+합의 기록(사용자의 이번 말까지 반영해서):
+- agreed: 지금까지 둘 다 분명히 동의한 내용 전체. 이전 목록을 이어서 쓰고, 바뀐 건 고쳐 써. 최대 5개, 각 25자 안팎. 한쪽만 말한 건 넣지 마.
+- open: 아직 남은 쟁점. 최대 3개, 짧게. 없으면 빈 배열.
+- decided: '정할 것' 중 누가 · 무엇을 · 언제가 둘 다 동의된 것의 번호 배열. 이미 정한 번호도 넣어.
+- settled: 정할 것이 모두 정해졌고, 네가 꼭 지켜야 할 것도 지켜져서 너도 납득했으면 true.
+
 대사 규칙:
-- 판정과 어울리게 반응해. ack·ask·option·concrete가 있으면 조금씩 누그러지고, push·violate·trap이면 굳어지거나 겉으로만 수긍해.
-- 네 입장에는 이유가 있어. 사용자가 그 이유를 다루지 않으면 쉽게 동의하지 마.
+- 판정과 어울리게 반응해. ack·ask·option·concrete·need·confirm이 있으면 조금씩 누그러지고, push·violate·trap이면 굳어지거나 겉으로만 수긍해.
+- 네가 꼭 지켜야 할 것이 다뤄지지 않으면 받아들이지 마. 그게 지켜지면 나머지는 유연하게 받아. 사용자가 네 이유를 다뤘다면 같은 이유로 계속 버티지 마.
+- 네가 꼭 지켜야 할 것이 무시된 채 밀어붙여지면 겉으로는 '네, 그렇게 해요'라고 할 수 있어. 그때 inner에는 납득하지 못했다고 남겨.
+- 이미 합의한 것은 다시 묻거나 뒤집지 마. 앞에서 네가 한 말과 어긋나는 요구를 하지 마(네가 양보하기로 한 것을 다시 요구하기 등).
+- 필요하면 네가 먼저 안을 내도 돼. 그때는 누가 무엇을 언제 할지 분명히 말해.
 - 속사정은 key가 true가 되기 전엔 말하지 마. 닿으면 한 번에 다 말하지 말고 조금씩 털어놓아.
+- settled가 true면 이번 대사에서 합의한 내용을 한 줄로 정리하며 마무리하고, end를 true로.
 - abuse면 진지하게 선을 긋고 대화를 끝내(예: '그런 말씀은 듣기 어렵네요. 오늘 얘기는 여기까지 할게요.'). end는 true.
 - 이번 판의 핵심 기술은 '${sk.name}'(${sk.core})이야.
 - 1~3문장, 존댓말, 실제 직장 말투. 유행어·이모티콘 금지. 조언하거나 정답을 알려주지 마. 연습, 게임, AI라는 말 하지 마.
-- 합의가 분명히 이뤄졌거나 대화가 결렬되면 end를 true로.
+- 대화가 결렬되면 end를 true로.
 
 지금까지 대화:
 ${lines}
 
 아래 키 순서 그대로, JSON 하나만 답해:
-{"ack":false,"ask":false,"option":false,"concrete":false,"style":false,"push":false,"violate":false,"trap":false,"key":${S.keyFound},"abuse":false,"say":"네 대사","inner":"속으로 든 생각 한 줄(반말 독백)","end":false}`;
+{"ack":false,"ask":false,"option":false,"concrete":false,"style":false,"need":false,"confirm":false,"push":false,"violate":false,"trap":false,"drop":false,"key":${S.keyFound},"abuse":false,"agreed":${JSON.stringify(S.agreed)},"open":${JSON.stringify(S.open)},"decided":${JSON.stringify(S.decided)},"settled":false,"say":"네 대사","inner":"속으로 든 생각 한 줄(반말 독백)","end":false}`;
+}
+/* v8: 정할 것 n/m (소개 화면 · 대화 화면) */
+function renderDecide(gained){
+  const st=S&&S.setup,D=decideOf(st),dec=(S&&S.decided)||[];
+  const fill=el=>{if(!el)return;el.replaceChildren(...D.map((d,i)=>mk("span","dc"+(dec.includes(i)?" on":"")+(gained&&gained.includes(i)?" pop":""),d)))};
+  ["stageDecide","mbDecide","hudDecide"].forEach(id=>fill($(id)));
+  ["stageDecideBox","mbDecideRow","hudDecideChip","decideNum"].forEach(id=>{const e=$(id);if(e)e.hidden=!D.length});
+  const n=$("decideNum");if(n){n.querySelector("em").textContent=`${dec.length}/${D.length}`;n.setAttribute("aria-label",`정할 것 ${D.length}개 중 ${dec.length}개 정함`)}
 }
 async function send(){
   if(busy||!S||S.ended)return;
@@ -2613,9 +2830,10 @@ async function send(){
   if(tooShort(text)){$("chatNote").textContent=`조금만 더 말해볼까요? 띄어쓰기를 빼고 ${MSG_MIN}자 이상 적어 주세요.`;$("chatNote").dataset.short="1";$("msg").focus();return}
   busy=true;$("sendBtn").disabled=true;$("chatNote").textContent="";
   S.hist.push({who:"me",text});showLine("me",text);$("msg").value="";updateCount();updateTurns();$("hintBox").hidden=true;updateHint();
-  const Z=zp(S.setup.level),n=myTurns();
-  const twistNow=!S.twistDone&&!!S.setup.twist&&n===Z.twist;
-  const cueNow=!S.keyFound&&!S.cueDone&&!twistNow&&n===Z.cue;
+  const Z=zp(S.setup.level),n=myTurns(),D=decideOf(S.setup),allDone=D.length>0&&S.decided.length>=D.length;
+  let twistNow=!S.twistDone&&!!S.setup.twist&&n===Z.twist;
+  if(twistNow&&allDone){twistNow=false;S.twistSkip=true}
+  const cueNow=!S.keyFound&&!S.cueDone&&!twistNow&&!allDone&&n===Z.cue;
   let streamed=false,early=null;
   const dotTimer=setTimeout(()=>{if(!streamed)showLine("typing")},REDUCED?0:350);
   const onText=({text})=>{
@@ -2632,14 +2850,21 @@ async function send(){
     let temp=sc.temp;const prog=sc.prog;
     if(f.abuse){S.abuse=true;temp=Math.min(temp,15)}
     const delta=temp-S.temp,dp=prog-S.prog;S.temp=temp;S.prog=prog;S.max=Math.max(S.max,temp);
-    const acts=ACTS.map(([k])=>k).filter(k=>f[k]&&!((k==="option"||k==="concrete")&&f.push));
-    S.hist.push({who:"them",text:say,inner:String(r&&r.inner||""),temp,delta,prog,dp,keyNow,trap:f.trap,twist:twistNow,cue:cueNow,acts});
+    const acts=ACTS.map(([k])=>k).filter(k=>f[k]&&!((k==="option"||k==="concrete"||k==="confirm")&&f.push));
+    const prevDec=S.decided.slice(),decNew=(Array.isArray(r&&r.decided)?r.decided:[]).map(Number).filter(i=>Number.isInteger(i)&&i>=0&&i<D.length);
+    S.decided=[...new Set([...prevDec,...decNew])].sort((a,b)=>a-b);const gained=S.decided.filter(i=>!prevDec.includes(i));
+    const strs=a=>Array.isArray(a)?a.map(x=>String(x==null?"":x).trim()).filter(Boolean).map(x=>x.slice(0,60)):null;
+    {const ag=strs(r&&r.agreed);if(ag&&ag.length)S.agreed=ag.slice(0,5);const op=strs(r&&r.open);if(op)S.open=op.slice(0,3)}
+    if(f.drop&&!S.dropped){S.dropped=true;S.dropQ=text}
+    const settledNow=!f.abuse&&!twistNow&&D.length>0&&S.decided.length>=D.length&&!!(r&&r.settled===true);
+    S.hist.push({who:"them",text:say,inner:String(r&&r.inner||""),temp,delta,prog,dp,keyNow,trap:f.trap,twist:twistNow,cue:cueNow,acts,dec:gained.length?gained:undefined});
     if(early==null||early.temp!==temp)setMood($("playArt"),S.setup.key,moodOf(temp),early==null);
-    setAgree(prog);react(delta,dp,keyNow,f);
+    setAgree(prog);renderDecide(gained);react(delta,dp,keyNow,f);
     if(streamed){$("line").textContent=say;$("more").hidden=false}else showLine("them",say);
     /* the partner may close only when it really is settled (or broken off) */
     const canEnd=f.abuse||(prog>=60&&temp>=55)||temp<=15;
     if(f.abuse)finishChat(true,true);
+    else if(settledNow){S.settled=true;finishChat(true)}
     else if((r&&r.end===true&&canEnd)||myTurns()>=MAX_TURNS)finishChat(r&&r.end===true&&canEnd);
   }catch(e){clearTimeout(dotTimer);S.hist.pop();$("msg").value=text;updateCount();setMood($("playArt"),S.setup.key,moodOf(S.temp),false);setAgree(S.prog);$("chatNote").textContent=errCopy(e);
     const prev=S.hist[S.hist.length-1];if(prev)showLine(prev.who==="me"?"me":"them",prev.text);else showLine("narr",S.setup.scene+"\n먼저 말을 걸어보세요.")}
@@ -2653,7 +2878,7 @@ function react(dt,dp,keyNow,f){
   else if(f.trap){txt="형식적으로만 수긍함";cls="down"}
   else if(f.violate){txt="표정이 굳음";cls="down"}
   else if(f.push){txt="말이 짧아짐";cls="down"}
-  else if(dp>=15){txt="고개를 끄덕임";cls="up"}else if(dt>=8){txt="표정이 풀림";cls="up"}else if(dt<=-8){txt="표정이 굳음";cls="down"}else if(dp<0){txt="한발 물러섬";cls="down"}
+  else if(dp>=15||(f.confirm&&dp>0)){txt="고개를 끄덕임";cls="up"}else if(dt>=8){txt="표정이 풀림";cls="up"}else if(dt<=-8){txt="표정이 굳음";cls="down"}else if(dp<0){txt="한발 물러섬";cls="down"}
   if(!txt){e.hidden=true;return}
   e.className="emote "+cls;e.textContent=txt;e.hidden=false;
   e.style.animation="none";void e.offsetWidth;e.style.animation="";
@@ -2661,7 +2886,7 @@ function react(dt,dp,keyNow,f){
 }
 function finishChat(byPartner,abuse){
   S.ended=true;$("composer").hidden=true;$("endBtn").hidden=true;$("resultBtn").hidden=false;$("hintBtn").hidden=true;$("hintBox").hidden=true;$("missionBar").hidden=true;
-  $("chatNote").textContent=abuse?"존중하기 어려운 말이 있어서 상대가 대화를 끝냈어요. 이번 판은 별과 결과지가 없어요.":byPartner?`${josa(S.setup.call,"이","가")} 대화를 마무리했어요.`:"여기까지예요.";
+  $("chatNote").textContent=abuse?"존중하기 어려운 말이 있어서 상대가 대화를 끝냈어요. 이번 판은 별과 결과지가 없어요.":S.settled?`정할 것을 다 정해서 ${josa(S.setup.call,"이","가")} 대화를 마무리했어요.`:byPartner?`${josa(S.setup.call,"이","가")} 대화를 마무리했어요.`:"여기까지예요.";
 }
 $("sendBtn").onclick=send;
 $("msg").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing){e.preventDefault();send()}});
@@ -2680,7 +2905,7 @@ function updateHint(){
   const b=$("hintBtn");if(!S||!S.setup)return;const used=S.hints||0;
   if(S.keyFound){b.disabled=true;setHintBtn(b,UNLOCK_SVG,"실마리 찾음");return}
   if(used>=2){b.disabled=true;setHintBtn(b,UNLOCK_SVG,"힌트 다 씀");return}
-  b.disabled=busy||!!S.ended;setHintBtn(b,LOCK_SVG,used===0?"속마음 엿보기":"실마리 방향",`힌트 ${used+1}/2`);
+  b.disabled=busy||!!S.ended;setHintBtn(b,LOCK_SVG,used===0?"속마음 엿보기":"조건 힌트",`힌트 ${used+1}/2`);
 }
 function showHint(title,text){$("hintTitle").textContent=title;$("hintText").textContent=text;$("hintBox").hidden=false}
 $("hintBtn").onclick=()=>{
@@ -2689,8 +2914,9 @@ $("hintBtn").onclick=()=>{
     const last=[...S.hist].reverse().find(h=>h.who==="them"&&h.inner);
     showHint(`${st.call}의 속마음`,last?`“${last.inner}”`:`아직 속마음이 드러나기 전이에요. 상대가 지키려는 것: ${st.stance}`);
   }else{
-    if(myTurns()<2){showHint("실마리 방향","두 번째 말을 하고 나면 볼 수 있어요. 상대 반응을 조금 더 들어보세요.");return}
-    const c=(st.clue||"").trim().replace(/[.。]$/,"");showHint("실마리 방향",!c?"상대가 왜 그렇게 말하는지, 요즘 무엇이 걸리는지 물어보세요.":/때$/.test(c)?`${c} 상대가 속사정을 꺼내요.`:c);
+    if(myTurns()<2){showHint("조건 힌트","두 번째 말을 하고 나면 볼 수 있어요. 상대 반응을 조금 더 들어보세요.");return}
+    const left=decideOf(st).filter((_,i)=>!S.decided.includes(i));
+    showHint("조건 힌트",`${st.call}도 이 일에서 꼭 지켜야 할 게 있어 보여요. 무엇이 꼭 필요하고 무엇은 조정할 수 있는지 물어보고, 내 조건도 분명히 말해 보세요.`+(left.length?` 아직 안 정한 것: ${left.join(" · ")}.`:""));
   }
   S.hints=used+1;updateHint();
 };
@@ -2709,10 +2935,13 @@ $("logOv").addEventListener("click",e=>{if(e.target.id==="logOv")$("logOv").hidd
 function resultPrompt(short){
   const st=S.setup,c=CH[st.key],sk=SKILLS[st.skill];
   const lines=S.hist.map(h=>h.who==="me"?`사용자: ${h.text}`:`${st.call}: ${h.text}${h.inner?`  [속마음: ${h.inner} / 온도 ${h.temp} / 진척 ${h.prog??0}]`:""}`).join("\n");
-  return `너는 회사 소통 교육 코치야. 이 상황엔 정답이 없어. 사용자가 무엇을 지키고 무엇을 내줬는지 분석해줘. 점수는 매기지 말고, 짧고 구체적으로.
+  const cd=st.cond,D=decideOf(st),decLine=D.map((d,i)=>`${d}(${(S.decided||[]).includes(i)?"정함":"안 정함"})`).join(" · ");
+  return `너는 회사 소통 교육 코치야. 이 상황엔 정답이 없어. 사용자가 무엇을 지키고 무엇을 내려놓았는지 분석해줘. 점수는 매기지 말고, 짧고 구체적으로.
 회사: ${COMPANY}
 장면: ${st.scene}
 사용자 입장: ${st.me_role} / 목표: ${st.goal} / 지켜야 할 것: ${st.guard}
+${cd?`사용자의 꼭 필요한 것: ${cd.me.must} / 양보해도 되는 것: ${cd.me.flex}\n상대의 일 목표: ${cd.them.goal} / 상대의 꼭 필요한 것: ${cd.them.must} / 양보해도 되는 것: ${cd.them.flex}\n정할 것: ${decLine}\n둘 다 만족하는 해법 예(정답 아님): ${cd.win}\n`:""}대화 중 합의 기록: ${(S.agreed||[]).join(" / ")||"없음"}
+사용자가 자기 꼭 필요한 것을 내려놓는 말을 했나: ${S.dropped?`예 (“${S.dropQ}”)`:"아니오"}
 상대: ${st.call}(${st.role}, ${c.type}) / 상대 입장: ${st.stance} / 속사정: ${st.secret}
 이번 기술: ${sk.name} — ${sk.core}
 실마리: ${st.clue} (사용자가 닿았나: ${S.keyFound?"예":"아니오"})
@@ -2727,21 +2956,20 @@ ${lines}
 
 규칙:
 ${short?"- 모든 값을 아주 짧게 써. 각 값은 한 문장, 40자 안팎.\n":""}- verdict: 위 결과 판정과 어긋나지 않게, 이 판을 한 줄로(어디서 막히고 어디서 풀렸는지).
-- tradeoff: 사용자가 우선한 것과 그 대가 1~2문장.
+- give: 이번 판에서 무엇을 내려놓았는지 판단해. mine_kept는 사용자의 꼭 필요한 것을 지켰는지, theirs_met은 상대의 꼭 필요한 것이 합의에 반영됐는지. 각각 yes(지킴) · partial(일부만) · no(못 지킴) 중 하나. 상대가 겉으로만 수긍했으면 theirs_met은 no. why는 그렇게 본 이유 한 줄, quote는 그 판단의 근거가 된 사용자 말 하나를 그대로.
 - fix: 가장 아쉬운 말 하나. quote는 사용자가 한 말 그대로, why는 상대에게 어떻게 들렸는지, better는 대신 쓸 수 있는 한두 문장('${st.call}' 호칭).
 - good: 가장 효과 있던 말. quote와 why. 없으면 null.
-- alts: 같은 상황의 다른 길 두 가지. 첫째는 관계를 더 지키는 길, 둘째는 일을 더 밀어붙이는 길. 각각 label, line(그 길의 핵심 한마디), cost(그 대신 감수할 것).
+- alts: 둘 다 만족할 수 있었던 다른 해법 두 가지. 양쪽의 꼭 필요한 것을 다 지키는 안으로, 위 해법 예와 겹치지 않게. 각각 label(해법 이름, 12자 안팎), line(그 해법을 여는 사용자 한마디, '${st.call}' 호칭), cost(그 해법에서 서로 주고받는 것).
 - question: 정답이 없는, 사용자가 곱씹어 볼 질문 한 줄. 이 상황의 딜레마를 찌르는 것으로.
 - style: 이번 대화에서 사용자 말투를 두 축으로 봐(Social Styles). ask_tell은 -2(주로 묻고 들음)~2(주로 주장하고 정리함), task_people은 -2(일·사실·근거 중심)~2(감정·관계 표현 중심). 정수만. evidence는 그렇게 본 근거가 된 사용자 문장 하나를 그대로.
 - adapt: 상대(${c.type})가 마음을 여는 방식 '${c.open}'에 맞춰 말했으면 true, 아니면 false.
-- mode: 이번 판에서 사용자가 주로 쓴 갈등 대응 방식 하나(Thomas-Kilmann). competing(내 목표를 밀어붙임), collaborating(둘 다 채우는 방법을 찾음), compromising(서로 반씩 양보), avoiding(핵심을 피하거나 미룸), accommodating(상대에 맞춰 내 목표를 낮춤). mode_why는 근거 한 줄.
 - summary: 종합 분석 2~3문장. 왜 이 판정이 나왔는지, 결정적이었던 순간 하나(실마리·반전·함정 중), 이번 판 사용자 말하기 방식의 특징을 엮어서. 판정과 어긋나지 않게.
 - grow: 다음 대화에서 고치면 좋은 습관 하나(배열에 하나만). 이 상황에만 해당하지 않게, '~하기'로 끝나는 짧은 행동으로.
 - theory: 이번 판에 맞는 이론 두 개. 첫째는 반드시 id '${st.skill}'(${sk.name}), 둘째는 아래 목록에서 이 대화에 가장 도움이 될 것 하나(첫째와 다르게). apply는 그 이론으로 이번 대화를 짚는 한 문장(70자 안팎)이야. 사용자가 실제로 한 말 하나를 그 이론대로 고쳐 보이거나, 상대 반응을 그 이론으로 설명해. 목록: ${deckList()}
 - practice: 이번 주 실제 업무에서 해볼 수 있는 작은 행동 하나. grow와 겹치지 않게 한 문장으로.
 
 아래 키 순서 그대로, JSON 하나만 답해:
-{"verdict":"...","tradeoff":"...","fix":{"quote":"...","why":"...","better":"..."},"good":{"quote":"...","why":"..."},"alts":[{"label":"관계를 더 지키는 길","line":"...","cost":"..."},{"label":"일을 더 밀어붙이는 길","line":"...","cost":"..."}],"question":"...","style":{"ask_tell":0,"task_people":0,"evidence":"..."},"adapt":false,"mode":"collaborating","mode_why":"...","summary":"...","grow":["..."],"theory":[{"id":"${st.skill}","apply":"..."},{"id":"...","apply":"..."}],"practice":"..."}`;
+{"verdict":"...","give":{"mine_kept":"yes","theirs_met":"partial","why":"...","quote":"..."},"fix":{"quote":"...","why":"...","better":"..."},"good":{"quote":"...","why":"..."},"alts":[{"label":"...","line":"...","cost":"..."},{"label":"...","line":"...","cost":"..."}],"question":"...","style":{"ask_tell":0,"task_people":0,"evidence":"..."},"adapt":false,"summary":"...","grow":["..."],"theory":[{"id":"${st.skill}","apply":"..."},{"id":"...","apply":"..."}],"practice":"..."}`;
 }
 $("resultBtn").onclick=()=>{if(busy)return;renderResult(S,null,false);if(!S.abuse)requestFeedback()};
 /* a reply cut off in the middle: keep every field that finished */
@@ -2778,13 +3006,14 @@ async function requestFeedback(){
 }
 function fillFeedback(r){
   $("verdict").classList.remove("wait");$("verdict").textContent=String(r.verdict||"");
-  if(r.tradeoff){$("tradeoffText").textContent=r.tradeoff;$("tradeoff").hidden=false}else $("tradeoff").hidden=true;
+  {const s0=RES.state;if(s0&&!RES.review&&!s0.give)s0.give=giveOf(s0,r);renderGive(s0,r)}
   const fg=$("fbgrid");fg.replaceChildren();
   if(r.fix&&r.fix.quote){const f=mk("div","card fb fix");f.append(mk("span","k","RETRY · 가장 아쉬운 한 마디"),mk("span","quote",r.fix.quote),mk("span","why",r.fix.why||""));
     if(r.fix.better){const b=mk("div","better"),s=mk("span","quote",r.fix.better);b.append(mk("span","lab","이렇게 말해봐"),s,copyBtn(r.fix.better,s));f.append(b)}fg.append(f)}
   if(r.good&&r.good.quote){const g=mk("div","card fb good");g.append(mk("span","k","GOOD · 통했던 한 마디"),mk("span","quote",r.good.quote),mk("span","why",r.good.why||""));fg.append(g)}
   const al=Array.isArray(r.alts)?r.alts.filter(a=>a&&a.line):[];
-  if(al.length){$("alts").replaceChildren(...al.slice(0,2).map((a,i)=>{const d=mk("div","card alt "+(i===0?"rel":"task"));d.append(mk("span","k",a.label||(i===0?"관계를 더 지키는 길":"일을 더 밀어붙이는 길")),mk("span","quote",a.line),mk("span","why","대가 · "+(a.cost||"")));return d}));$("altsWrap").hidden=false}else $("altsWrap").hidden=true;
+  const oldAlt=!!r.tradeoff;$("altsH").textContent=oldAlt?"다른 길도 있었어요":"둘 다 지키는 다른 길";
+  if(al.length){$("alts").replaceChildren(...al.slice(0,2).map((a,i)=>{const d=mk("div","card alt "+(oldAlt?(i===0?"rel":"task"):"win"));d.append(mk("span","k",a.label||(oldAlt?(i===0?"관계를 더 지키는 길":"일을 더 밀어붙이는 길"):"둘 다 지키는 길")),mk("span","quote",a.line),mk("span","why",(oldAlt?"대가 · ":"주고받는 것 · ")+(a.cost||"")));return d}));$("altsWrap").hidden=false}else $("altsWrap").hidden=true;
   if(r.question){$("questionText").textContent=r.question;$("question").hidden=false}else $("question").hidden=true;
   const sh=readSheet(r);recordPlay(sh,r);renderSheet(sh);
 }
@@ -2816,12 +3045,16 @@ function quadSVG(state){
 }
 function renderDesign(state){
   const st=state.setup,box=$("design");box.replaceChildren();
-  const row=(ok,label,head,body,note)=>{const d=mk("div","dz "+(ok===null?"":ok?"ok":"no"));const h=mk("div","dz-h");h.append(mk("span","dz-mark",ok===null?"↯":ok?"✓":"✕"),mk("b",null,label),mk("span","dz-st",head));d.append(h,mk("p",null,body));if(note)d.append(mk("span","dz-note",note));return d};
+  const row=(ok,label,head,body,note,mark)=>{const d=mk("div","dz "+(ok===null?"":ok?"ok":"no"));const h=mk("div","dz-h");h.append(mk("span","dz-mark",mark||(ok===null?"↯":ok?"✓":"✕")),mk("b",null,label),mk("span","dz-st",head));d.append(h,mk("p",null,body));if(note)d.append(mk("span","dz-note",note));return d};
   const tw=state.hist.find(h=>h.twist);
   box.append(mk("span","hud","이 상황의 숨은 구조"));
   box.append(row(!!state.keyFound,"실마리",(state.keyFound?"찾음":"못 찾음")+(state.hints?` · 힌트 ${state.hints}회`:""),st.clue||"—",state.keyFound?"속사정을 듣고 나서 합의 상한이 풀렸어요.":`실마리 없이는 합의가 ${zp(st.level).cap}%까지만 올라요. 그래도 둘 다 지킬 수는 있어요.`));
-  box.append(row(null,"반전",tw?(tw.dp>0?`그 뒤 합의 +${tw.dp}`:tw.dp<0?`그 뒤 합의 ${tw.dp}`:"그 뒤 합의 변화 없음"):"등장 전 종료","“"+(st.twist||"—")+"”",tw?"상대가 시험하듯 꺼낸 말이에요. 여기서 어떻게 받았는지가 흐름을 갈랐어요.":`${zp(st.level).twist}번째 말 뒤에 나오는 반전이에요.`));
+  const skip=!tw&&(state.twistSkip||state.settled);
+  box.append(row(null,"반전",tw?(tw.dp>0?`그 뒤 합의 +${tw.dp}`:tw.dp<0?`그 뒤 합의 ${tw.dp}`:"그 뒤 합의 변화 없음"):skip?"합의가 먼저 끝남":"등장 전 종료","“"+(st.twist||"—")+"”",tw?"상대가 시험하듯 꺼낸 말이에요. 여기서 어떻게 받았는지가 흐름을 갈랐어요.":skip?"정할 것을 먼저 다 정해서 반전 없이 끝났어요. '반전 넘기기'는 받은 걸로 쳐요.":`${zp(st.level).twist}번째 말 뒤에 나오는 반전이에요. 정할 게 남아 있을 때만 나와요.`));
   box.append(row(!state.trapHit,"함정",state.trapHit?"빠짐":"피함",st.trap||"—",state.trapHit?"그 순간 상대는 겉으로만 수긍했어요.":null));
+  if(st.cond){const cd=st.cond;
+    box.append(row(null,"상대가 꼭 지키려던 것","",cd.them.must,`양보할 수 있던 것 · ${cd.them.flex}`,"◆"));
+    if(cd.win)box.append(row(null,"둘 다 지키는 해법 예","정답은 아니에요",cd.win,"양쪽의 꼭 필요한 것만 지키면 다른 해법도 '둘 다 지킴'이에요.","＋"))}
   const crit=mk("div","dz-crit");crit.append(mk("span",null,`난이도 ${dots(st.level||2)}`),...(st.tags||[]).map(t=>mk("span","pill",TAGS[t])));box.append(crit);
 }
 function renderResult(state,r,mode){
@@ -2851,7 +3084,8 @@ function renderResult(state,r,mode){
       if(h.dp)chips.append(mk("span","d "+(h.dp>0?"up":"down"),`합의 ${h.dp>0?"+":""}${h.dp}`));
       box.append(chips,mk("span",null,h.inner));
       const acts=(h.acts||[]).map(a=>ACTS.find(x=>x[0]===a)).filter(Boolean);
-      if(acts.length||h.keyNow){const ac=mk("span","acts");acts.forEach(([a,l])=>ac.append(mk("i",/push|violate|trap/.test(a)?"neg":null,l)));if(h.keyNow)ac.append(mk("i",null,"실마리 +10"));box.append(ac)}
+      const dd=Array.isArray(h.dec)?h.dec.map(i=>decideOf(st)[i]).filter(Boolean):[];
+      if(acts.length||h.keyNow||dd.length){const ac=mk("span","acts");acts.forEach(([a,l])=>ac.append(mk("i",/push|violate|trap/.test(a)?"neg":null,l)));if(h.keyNow)ac.append(mk("i",null,"실마리 +10"));dd.forEach(d=>ac.append(mk("i","dec","정함 · "+d)));box.append(ac)}
       rp.append(box)}
   }
   const unlocked=!!state.keyFound,sc=$("secret");sc.replaceChildren();
@@ -2869,7 +3103,7 @@ function renderResult(state,r,mode){
   $("againBtn").hidden=isDemo||review||!aiReady;$("recBackBtn").hidden=!review;
   go("scr-result");
 }
-$("recBackBtn").onclick=()=>openRec();
+$("recBackBtn").onclick=()=>openRec("list");
 $("againBtn").onclick=()=>{if(S)showStage()};
 $("otherBtn").onclick=()=>{go("scr-scen")};
 $("newBtn").onclick=()=>{S=null;$("worry").value="";pick=null;[...$("pickgrid").children].forEach(x=>x.setAttribute("aria-pressed","false"));$("pickNext").disabled=true;go("scr-pick")};
@@ -2940,6 +3174,7 @@ const DECKS=[
   {t:"text",h:"이런 사람이에요",ps:["결과와 속도를 중시해요. 결정이 빠르고 말이 짧아요.","스스로 통제할 수 있을 때 편안해하고, 목표가 분명한 대화를 좋아해요."],pull:"중요한 것: 결과, 속도, 결정"},
   {t:"oc",h:"이렇게 말하면",open:["결론 먼저, 근거는 짧게","선택지 2~3개를 주고 고르게 하기","시간 약속 지키기 ('5분만요' 하면 5분)"],close:["긴 서론과 배경 설명","결정 없이 끝나는 대화","감정에 호소하기만 하는 말"]},
   {t:"vs",h:"직진러에게 첫 마디",bad:["혹시 시간 괜찮으시면… 요즘 일정 관련해서 좀 말씀드리고 싶은 게 있는데요…","→ '그래서요?'"],good:["결론부터요. 결제 오픈 일주일 연기가 필요해요. 이유 두 가지, 2분이면 돼요.","→ 바로 본론"]},
+  {t:"steps",h:"위치에 따라 이렇게 보여요",items:[["후배","결론부터, 공손하게","열리는 신호 · 결론과 선택지를 바로 줄 때"],["경력","'해 봐서 아는데요'","열리는 신호 · 경력을 인정하고 일부를 맡길 때"],["동료","'빨리 정하죠'","열리는 신호 · 바로 정할 구체안"],["윗사람","'결론부터요. 근거는요?'","열리는 신호 · 숫자 · 결론 · 대안을 한 번에"],["다른 팀","자기 팀 일정으로 압박","열리는 신호 · 날짜가 박힌 대안"]]},
   {t:"tips",h:"압박을 받으면",items:["더 밀어붙이고 혼자 결정하려 해요.","이럴 땐 같이 맞서지 말고, 결정에 필요한 정보만 빠르게 줘요.","내가 직진러라면: 결론 전에 상대 말을 한 번 확인하는 한 문장을 넣어보세요."]}],
  src:[["Social Styles · Merrill & Reid (1981)","https://www.scls.info/sites/www.scls.info/files/documents/2026-07/Communication_Styles_at_Work.pdf"]]},
 {id:"t-expressive",g:"types",fig:"expressive",c:"#F2B21F",dark:true,kick:"상대 유형 · 설득형",title:"분위기메이커",hook:"“헐 대박, 근데 제 얘기도 들어볼래요?”",
@@ -2947,6 +3182,7 @@ const DECKS=[
   {t:"text",h:"이런 사람이에요",ps:["사람과 분위기에서 에너지를 얻어요. 말이 많고 리액션이 커요.","아이디어가 많고 큰 그림을 좋아해요. 인정받을 때 가장 힘이 나요."],pull:"중요한 것: 인정, 함께, 아이디어"},
   {t:"oc",h:"이렇게 말하면",open:["먼저 인정하고 반응해주기","'같이 해봐요' 같은 함께하는 말","아이디어를 들어줄 시간"],close:["무표정한 사무적 말투","여럿 앞에서의 무시나 지적","세부사항만 몰아붙이기"]},
   {t:"vs",h:"분위기메이커에게 첫 마디",bad:["일정 문서 확인하고 수정해서 다시 주세요.","→ 서운함"],good:["지난번 아이디어 반응 진짜 좋았어요! 이번 건도 같이 맞춰보고 싶은데, 일정만 한번 같이 볼까요?","→ 신나서 참여"]},
+  {t:"steps",h:"위치에 따라 이렇게 보여요",items:[["후배","'아 하하, 괜찮아요!'","열리는 신호 · 먼저 고생을 알아줄 때"],["경력","자기 몫을 농담처럼 강조","열리는 신호 · 공개적으로 인정해 줄 때"],["동료","'우리 사이에…'","열리는 신호 · 같이 사는 길을 제안할 때"],["윗사람","'에이, 그 정도는 괜찮잖아요'","열리는 신호 · 관계를 존중하며 구체적으로 부탁할 때"],["다른 팀","친근하게 밀어붙임","열리는 신호 · 거절해도 같이 방법을 찾을 때"]]},
   {t:"tips",h:"압박을 받으면",items:["서운하면 감정이 커지고 말이 앞서요. 약속을 많이 해두고 놓치기도 해요.","이럴 땐 감정을 먼저 받아주고, 마지막에 '그럼 언제까지?'를 같이 정해요.","내가 분위기메이커라면: 대화 끝에 할 일과 날짜를 한 줄로 정리해보세요."]}],
  src:[["Social Styles · Merrill & Reid (1981)","https://www.scls.info/sites/www.scls.info/files/documents/2026-07/Communication_Styles_at_Work.pdf"]]},
 {id:"t-analyst",g:"types",fig:"analyst",c:"#3F78E8",kick:"상대 유형 · 분석형",title:"꼼꼼러",hook:"“근거가 어떻게 되죠?”",
@@ -2954,6 +3190,7 @@ const DECKS=[
   {t:"text",h:"이런 사람이에요",ps:["정확성과 근거를 중시해요. 질문이 많고 신중해요.","충분히 생각할 시간이 있어야 결정해요. 대충 넘어가는 걸 불안해해요."],pull:"중요한 것: 사실, 이유, 정확성"},
   {t:"oc",h:"이렇게 말하면",open:["사실, 숫자, 이유","자료를 먼저 주고 생각할 시간 주기","구체적인 일정과 기준"],close:["갑작스러운 요청","'그냥 느낌상'","그 자리에서 답하라는 압박"]},
   {t:"vs",h:"꼼꼼러에게 첫 마디",bad:["이거 오늘 안에 결정해주셔야 해요.","→ 불안, 결정 미룸"],good:["QA 결과 표 먼저 공유드릴게요. 치명 버그 3건이고 수정에 4일 걸려요. 내일 오전까지 의견 주실 수 있을까요?","→ 차분히 검토"]},
+  {t:"steps",h:"위치에 따라 이렇게 보여요",items:[["후배","'기준을 여쭤봐도 될까요?'","열리는 신호 · 기준 · 예시 · 일정"],["경력","데이터로 차분히 반박","열리는 신호 · 근거를 인정하고 같이 검증"],["동료","'검토해 볼게요'로 보류","열리는 신호 · 사실 · 이유 · 날짜 정리"],["윗사람","'근거가 어떻게 되죠?'","열리는 신호 · 측정 기준까지 함께"],["다른 팀","절차와 문서로","열리는 신호 · 영향 범위와 일정이 문서로"]]},
   {t:"tips",h:"압박을 받으면",items:["결정을 미루고 더 많은 정보를 찾으려 해요.","이럴 땐 어떤 정보가 더 필요한지 물어보고, 결정 기한을 함께 정해요.","내가 꼼꼼러라면: 완벽하지 않아도 '지금 아는 만큼'의 의견을 먼저 말해보세요."]}],
  src:[["Social Styles · Merrill & Reid (1981)","https://www.scls.info/sites/www.scls.info/files/documents/2026-07/Communication_Styles_at_Work.pdf"]]},
 {id:"t-amiable",g:"types",fig:"amiable",c:"#22A97A",kick:"상대 유형 · 협력형",title:"평화주의자",hook:"“아 저는 괜찮아요~”",
@@ -2961,6 +3198,7 @@ const DECKS=[
   {t:"text",h:"이런 사람이에요",ps:["관계와 팀 분위기를 중시해요. 갈등을 피하고 맞춰주는 편이에요.","그래서 '괜찮아요'가 진짜 괜찮다는 뜻이 아닐 때가 많아요."],pull:"중요한 것: 관계, 안정, 신뢰"},
   {t:"oc",h:"이렇게 말하면",open:["부드럽게, 탓하지 않는 말","1:1로 조용히 이야기하기","'편하게 말해도 돼요' 같은 안전한 신호"],close:["회의 중 공개 지적","몰아붙이는 질문","급하게 결정을 요구하기"]},
   {t:"vs",h:"평화주의자에게 첫 마디",bad:["다들 있는 자리에서 말씀드리는데, 이번 건 좀 늦었네요.","→ 위축, 입 닫음"],good:["잠깐 따로 얘기할 수 있어요? 요즘 일이 몰린 것 같아서요. 제가 도울 수 있는 게 있을까요?","→ 조금씩 털어놓음"]},
+  {t:"steps",h:"위치에 따라 이렇게 보여요",items:[["후배","'네, 알겠습니다'","열리는 신호 · 탓하지 않고 물어볼 틈"],["경력","'제가 알아서 할게요'","열리는 신호 · 도움을 '부탁'으로 건넬 때"],["동료","'저는 괜찮아요…'","열리는 신호 · 정말 괜찮은지 한 번 더 물을 때"],["윗사람","'조금 생각해 볼게요'","열리는 신호 · 고마움 먼저, 걱정을 덜어 줄 계획"],["다른 팀","'맞춰 볼게요' 하고 곤란해함","열리는 신호 · 무리하지 않아도 된다고 할 때"]]},
   {t:"tips",h:"압박을 받으면",items:["불편해도 말하지 않고 조용해져요. '네'라고 해놓고 속으로 쌓아둬요.","이럴 땐 열린 질문으로 말할 틈을 주고, 대답을 기다려요.","내가 평화주의자라면: '괜찮아요' 대신 '이 부분은 조금 걱정돼요' 한 문장만 더 해보세요."]}],
  src:[["Social Styles · Merrill & Reid (1981)","https://www.scls.info/sites/www.scls.info/files/documents/2026-07/Communication_Styles_at_Work.pdf"]]},
 
@@ -2968,9 +3206,9 @@ const DECKS=[
 {id:"tki",g:"more",c:"#2F8F5B",kick:"갈등이 생겼을 때",title:"갈등 대응 5유형",hook:"밀어붙일까, 맞춰줄까",glyph:"5",
  slides:[
   {t:"text",h:"두 가지 관심",ps:["갈등이 생기면 우리는 두 가지를 저울질해요. 내 목표를 얼마나 챙길지(주장성), 상대 목표를 얼마나 챙길지(협조성)예요.","Kenneth Thomas와 Ralph Kilmann은 이 두 축으로 갈등 대응 방식을 다섯 가지로 나눴어요."],pull:"내 것과 상대 것, 얼마나 챙기나"},
-  {t:"steps",h:"다섯 가지 방식",items:[["경쟁","내 목표를 끝까지","급하거나 원칙이 걸린 일엔 필요해요"],["윈윈","둘 다 채우는 방법 찾기","시간이 들지만 오래 가요"],["타협","서로 반씩 양보","빨리 끝내야 할 때 무난해요"],["회피","지금은 다루지 않기","사소하거나 감정이 격할 땐 잠시 유효해요"],["수용","상대에 맞춰 내 것을 내려놓기","관계가 더 중요할 때 써요"]]},
+  {t:"steps",h:"다섯 가지 방식",items:[["경쟁","내 목표를 끝까지","급하거나 원칙이 걸린 일엔 필요해요"],["협력","둘 다 채우는 방법 찾기","시간이 들지만 오래 가요"],["타협","서로 반씩 양보","빨리 끝내야 할 때 무난해요"],["회피","지금은 다루지 않기","사소하거나 감정이 격할 땐 잠시 유효해요"],["수용","상대에 맞춰 내 것을 내려놓기","관계가 더 중요할 때 써요"]]},
   {t:"text",h:"좋은 유형은 없다",ps:["다섯 가지 모두 상황에 따라 쓸모가 있어요. 문제는 한 가지를 너무 자주 쓰거나, 필요한 방식을 거의 안 쓰는 거예요.","수용만 반복하면 관계는 지켜도 내 일이 쌓이고, 경쟁만 반복하면 일은 되지만 사람이 멀어져요."],pull:"너무 많이, 너무 적게가 문제"},
-  {t:"tips",h:"이 게임과 연결하면",items:["결과지의 '갈등 대응 방식'은 그 판에서 주로 쓴 방식이에요.","'둘 다 지켰어요'는 대개 윈윈에, '관계만'은 수용에, '일만'은 경쟁에 가까운 경우가 많아요.","'내 성향' 탭에서 판이 쌓이면 어떤 방식에 치우치는지 보여줘요."]}],
+  {t:"tips",h:"이 게임과 연결하면",items:["결과지의 '이번 판에서 내려놓은 것'이 이 다섯 유형이에요. 협력은 '둘 다 지킴', 경쟁은 '관계를 포기', 수용은 '일을 포기', 타협은 '반씩 양보', 회피는 '미룸'이에요.","유형은 조건표로 판정해요. 내 꼭 필요한 것과 상대의 꼭 필요한 것을 지켰는지, 정할 것을 정했는지, 상대가 납득했는지를 봐요.","'내 기록 → 내 대화 패턴'에서 판이 쌓이면 상대 위치와 성향에 따라 무엇을 내려놓는지 보여줘요."]}],
  src:[["Kenneth W. Thomas · Ralph H. Kilmann · Thomas-Kilmann Conflict Mode Instrument","https://kilmanndiagnostics.com/overview-thomas-kilmann-conflict-mode-instrument-tki/"]]},
 {id:"safety",g:"more",c:"#0F9B9B",kick:"팀 문화",title:"심리적 안전감",hook:"'이런 말 해도 될까?'가 사라지는 팀",glyph:"SAFE",
  slides:[
@@ -3013,7 +3251,7 @@ const DECKS=[
   {t:"text",h:"입장과 이해관계",ps:["입장은 겉으로 요구하는 것('이번 주는 안 돼요'), 이해관계는 그 밑의 이유('다른 마감이 겹쳐요')예요.","Roger Fisher와 William Ury는 『Getting to Yes』에서 입장끼리 부딪히지 말고 이해관계를 찾으라고 했어요."],pull:"무엇을 원하나보다 왜 원하나"},
   {t:"vs",h:"휴가가 겹쳤을 때",bad:["제가 먼저 신청했잖아요.","→ 입장 대 입장"],good:["그 주에 꼭 필요한 날이 언제예요? 하루 이틀은 움직일 수 있는지 같이 봐요.","→ 이해관계 찾기"]},
   {t:"steps",h:"협상의 네 원칙",items:[["1","사람과 문제 분리","상대가 아니라 문제를 같이 풀기"],["2","이해관계에 집중","'왜'를 묻기"],["3","선택지 늘리기","하나로 정하기 전에 여러 안 꺼내기"],["4","객관적 기준","'누가 이기나' 대신 '어떤 기준이 공정한가'"]]},
-  {t:"tips",h:"이 게임과 연결하면",items:["모든 상황의 '숨은 사정'이 바로 상대의 이해관계예요.","실마리는 대개 '왜'를 묻는 질문으로 열려요.","'둘 다 지켰어요'는 이해관계를 찾아 선택지를 만든 경우가 많아요."]}],
+  {t:"tips",h:"이 게임과 연결하면",items:["모든 상황의 '숨은 사정'과 조건표의 '꼭 필요한 것'이 바로 상대의 이해관계예요.","'그 주에 꼭 필요한 날이 언제예요?'처럼 꼭 필요한 것과 조정할 수 있는 것을 나눠 물어보세요.","'둘 다 지킴'은 이해관계를 찾아 서로 덜 중요한 것을 주고받은 경우가 많아요."]}],
  src:[["Roger Fisher · William Ury · 『Getting to Yes』(1981)",null]]},
 
 /* ---- 성향 (추가) ---- */
@@ -3022,7 +3260,7 @@ const DECKS=[
   {t:"quad",h:"두 축, 네 스타일",xl:"말하는 편 →",yl:"↑ 일 중심",cells:[{n:"분석형 · 꼼꼼러",d:"근거와 정확성을 중시"},{n:"추진형 · 직진러",d:"결론과 속도를 중시"},{n:"협력형 · 평화주의자",d:"관계와 안정을 중시"},{n:"설득형 · 분위기메이커",d:"인정과 아이디어를 중시"}]},
   {t:"text",h:"가로축과 세로축",ps:["가로축은 주장성이에요. 질문하며 듣는 쪽인지, 먼저 말하고 정리하는 쪽인지 봐요.","세로축은 반응성이에요. 감정을 덜 드러내고 일과 사실에 집중하는지, 감정과 관계를 드러내며 말하는지 봐요. 산업심리학자 David Merrill과 Roger Reid가 정리한 모델이에요."],pull:"어떤 사람인가보다 어떻게 말하는가"},
   {t:"text",h:"스타일보다 유연성",ps:["이 모델은 네 스타일 중 무엇이 좋은지 따지지 않아요. 대신 상대 스타일에 맞춰 내 방식을 조절하는 능력을 '유연성(versatility)'으로 따로 봐요.","유연성은 타고나는 게 아니라 연습으로 키울 수 있다고 봐요."],pull:"맞추는 힘은 연습할 수 있다"},
-  {t:"tips",h:"이 게임과 연결하면",items:["결과지의 '이번 판 대화 패턴'은 이 두 축으로 내 말투를 본 거예요.","'상대에 맞춰 말했어요'가 바로 유연성이에요. '내 대화 패턴' 탭에서 상대 유형별로 내 말투가 어떻게 달라지는지 보여줘요.","'내 고민으로'에서 같은 고민을 다른 상대로 해보면 유연성을 연습할 수 있어요."]}],
+  {t:"tips",h:"이 게임과 연결하면",items:["결과지의 '이번 판 대화 패턴'은 이 두 축으로 내 말투를 본 거예요.","같은 성향도 위치에 따라 달라 보여요. 직진러 후배는 공손하지만 결론부터, 직진러 팀장은 근거부터 물어요. 성향은 무엇을 중요하게 여기는지를, 위치는 말의 세기를 정해요.","'내 기록 → 내 대화 패턴'에서 상대 성향별로 내 말투와 내려놓은 것이 어떻게 달라지는지 보여줘요."]}],
  src:[["David Merrill · Roger Reid · 『Personal Styles & Effective Performance』(1981)",null],["Social Style 모델 해설 · The Chemical Engineer","https://www.thechemicalengineer.com/features/style-guide/"]]},
 {id:"bigfive",g:"style",c:"#7C3AED",kick:"성향 이론",title:"성격 5요인",hook:"말투 아래에 있는 성격",glyph:"OCEAN",core:"개방성 · 성실성 · 외향성 · 우호성 · 신경성, 다섯 차원의 '정도'로 보는 성격",
  slides:[
@@ -3036,7 +3274,7 @@ const DECKS=[
   {t:"text",h:"그럴듯하게 느껴지는 이유",ps:["누구에게나 맞는 막연한 성격 설명을 '나에 대한 정확한 설명'으로 받아들이는 경향을 바넘 효과(포러 효과)라고 해요. Bertram Forer가 1949년 실험으로 보여줬어요.","검사 결과가 유독 잘 맞는 것 같을 때, 이 효과도 함께 작용하고 있을 수 있어요."],pull:"다 맞는 말은 아무것도 설명하지 않는다"},
   {t:"text",h:"둘 중 하나로 나누면",ps:["MBTI처럼 사람을 둘 중 하나로 나누는 검사는, 다시 검사했을 때 유형이 바뀌는 경우가 적지 않다는 비판을 받아왔어요(Pittenger, 2005).","대부분의 성향은 '이쪽 아니면 저쪽'이 아니라 연속선 위의 정도예요."],pull:"성향은 칸이 아니라 눈금"},
   {t:"steps",h:"검사 결과를 쓰는 법",items:[["1","경향으로 보기","'나는 ○○형'보다 '나는 ○○한 편'"],["2","상황과 함께 보기","같은 사람도 상대와 상황에 따라 다르게 말해요"],["3","사람을 가두지 않기","'저 사람 T라서 그래'는 대화를 닫아요"]]},
-  {t:"tips",h:"이 게임과 연결하면",items:["'내 대화 패턴' 탭은 판이 쌓일수록 믿을 만해지고, 3판 미만은 참고만 해요.","게임 속 말투는 상대에 맞추려 한 결과라 성향이 아니에요. 그래서 유형 하나로 부르지 않고, 상대별 칸과 자가 체크 비교로 보여줘요.","결과는 평가가 아니라 연습할 지점을 찾는 용도예요."]}],
+  {t:"tips",h:"이 게임과 연결하면",items:["'내 기록 → 내 대화 패턴'은 판이 쌓일수록 믿을 만해지고, 3판 미만은 참고만 해요.","게임 속 말투는 상대에 맞추려 한 결과라 성향이 아니에요. 그래서 유형 하나로 부르지 않고, 상대별 칸과 자가 체크 비교로 보여줘요.","결과는 평가가 아니라 연습할 지점을 찾는 용도예요."]}],
  src:[["Bertram Forer (1949) · Journal of Abnormal and Social Psychology",null],["David Pittenger (2005) · Consulting Psychology Journal",null]]},
 
 /* ---- 조직 (추가) ---- */
@@ -3045,7 +3283,7 @@ const DECKS=[
   {t:"text",h:"갈등은 두 종류",ps:["Karen Jehn(1995)은 팀 안의 갈등을 둘로 나눴어요. 일의 내용과 방법에 대한 의견 차이인 과업 갈등, 사람 사이의 감정과 긴장인 관계 갈등이에요.","같은 반박도 '그 안이 틀렸다'로 들리면 과업 갈등, '나를 무시한다'로 들리면 관계 갈등이 돼요."],pull:"같은 말, 다른 갈등"},
   {t:"text",h:"관계 갈등은 일을 망친다",ps:["여러 연구를 모은 메타분석에서 관계 갈등은 팀 성과와 만족을 꾸준히 떨어뜨렸어요.","과업 갈등의 효과는 상황에 따라 달랐어요. 관계 갈등과 얽히지 않을 때는 성과와 긍정적인 관계가 나타나기도 했어요(de Wit 외, 2012)."],pull:"일의 갈등이 사람의 갈등으로 번지지 않게"},
   {t:"steps",h:"번지지 않게 하는 3가지",items:[["1","사람과 일 분리","'○○님이 틀렸어요' 대신 '이 숫자 근거가 약해요'"],["2","의도 먼저","'더 좋은 안을 찾으려는 거예요'를 먼저 말하기"],["3","감정은 따로","서운함이 보이면 일 얘기 전에 짧게 짚기"]]},
-  {t:"tips",h:"이 게임과 연결하면",items:["'회의마다 반박하는 동료'는 과업 갈등이 관계 갈등으로 번진 상황이에요.","결과의 두 축, 상대 마음(관계)과 합의(일)는 이 두 갈등을 따로 보는 눈금이에요.","'일만' 결말이 반복되면 관계 갈등을 남기고 있다는 신호일 수 있어요."]}],
+  {t:"tips",h:"이 게임과 연결하면",items:["이 게임은 일과 관계를 따로 지키는 연습이에요. 일의 조건은 분명히 말하고, 사람에 대한 말은 부드럽게.","결과의 두 축, 상대 마음(관계)과 합의(일)는 이 두 갈등을 따로 보는 눈금이에요.","'관계를 포기'나 '일을 포기'가 반복되면 한쪽 갈등을 남기고 있다는 신호일 수 있어요."]}],
  src:[["Karen Jehn (1995) · Administrative Science Quarterly",null],["de Wit, Greer & Jehn (2012) · Journal of Applied Psychology",null]]},
 {id:"justice",g:"org",c:"#0E7490",kick:"조직행동",title:"조직 공정성",hook:"결과보다 과정이 서운할 때",glyph:"공정",core:"결과(분배) · 정하는 과정(절차) · 대하는 방식(상호작용)이 모두 공정해야 납득한다",
  slides:[
@@ -3066,7 +3304,7 @@ const DECKS=[
   {t:"text",h:"조직의 침묵",ps:["구성원 다수가 문제를 알면서도 말하지 않는 상태를 Morrison과 Milliken(2000)은 '조직의 침묵'이라고 불렀어요.","말해봤자 소용없다는 생각, 말하면 손해라는 두려움이 쌓이면 생겨요."],pull:"모두 알고, 아무도 말하지 않는다"},
   {t:"text",h:"리더의 태도가 가른다",ps:["팀장이 의견에 열려 있다고 느낄수록 구성원이 개선 의견을 더 많이 낸다는 연구가 있어요(Detert & Burris, 2007).","위로 말하는 건 늘 더 위험하게 느껴져서, 리더가 먼저 안전하다는 신호를 줘야 해요."],pull:"위로 말하는 건 늘 더 위험해 보인다"},
   {t:"steps",h:"위로 말할 때",items:[["1","목적 먼저","'팀장님이 곤란해지지 않게 미리 말씀드리려고요'"],["2","근거 짧게","숫자나 장면 하나"],["3","해결안 같이","'이렇게 바로잡으면 어떨까요?'"]]},
-  {t:"tips",h:"이 게임과 연결하면",items:["'팀장님의 실수', '지쳤다고 말하기'는 위로 말해야 하는 상황이에요.","'숨막혀요' 피드백은 팀원이 침묵을 깨고 말한 순간이에요. 이때 방어하면 다음부터 말하지 않아요.","'심리적 안전감' 카드와 같이 보면 좋아요."]}],
+  {t:"tips",h:"이 게임과 연결하면",items:["'팀장님의 실수', '늘어난 일, 그대로인 역할'은 위로 말해야 하는 상황이에요.","'숨막혀요' 피드백은 팀원이 침묵을 깨고 말한 순간이에요. 이때 방어하면 다음부터 말하지 않아요.","윗사람 앞에선 내 조건을 꺼내기 어려워 '일을 포기'하기 쉬워요. '내 기록 → 내 대화 패턴'에서 윗사람 앞의 나를 확인해 보세요."]}],
  src:[["Morrison & Milliken (2000) · Academy of Management Review",null],["Detert & Burris (2007) · Academy of Management Journal",null]]},
 
 /* ---- 심리 (추가) ---- */
@@ -3123,15 +3361,51 @@ const DECKS=[
   {t:"steps",h:"쓰는 법",items:[["1","첫마디 점검","공격으로 들릴 단어가 있나"],["2","지적은 사실로","평가 단어 대신 본 것"],["3","좋은 말은 따로","지적에 붙이지 말고 다른 때에"]]},
   {t:"tips",h:"이 게임과 연결하면",items:["상대 마음(표정)이 한 번 닫히면 다시 여는 데 여러 마디가 드는 건 이 편향을 반영한 거예요.","결과지의 '아쉬운 말'은 대개 상대에게 '나쁜 사건'으로 기억된 한마디예요.","'SBI 피드백', '심리적 안전감' 카드와 같이 보면 좋아요."]}],
  src:[["Baumeister, Bratslavsky, Finkenauer & Vohs (2001) · Review of General Psychology",null]]}
+,/* ---- v8: 조건을 말하고, 합의를 굳히고, 겉 합의를 알아채고, 둘 다 지키는 해법 만들기 ---- */
+{id:"assert",g:"skills",c:"#0D9488",kick:"내 조건 말하기",title:"내 조건 말하기",hook:"'괜찮아요'와 '원칙상 안 돼요' 사이",glyph:"DESC",core:"상황 → 내 생각 → 원하는 것 → 그러면 좋은 점 순서로, 내 조건을 분명하고 정중하게 말하기",
+ slides:[
+  {t:"text",h:"세 가지 말하기",ps:["갈등 앞에서 말하는 방식은 크게 셋이에요. 내 필요를 말하지 않는 수동적 말하기, 상대 필요를 무시하는 공격적 말하기, 둘 다 존중하는 자기주장적 말하기예요.","Robert Alberti와 Michael Emmons는 『Your Perfect Right』(1970)에서 자기주장을 '남의 권리를 해치지 않으면서 내 권리를 지키는 말하기'로 정리했어요."],pull:"내 것도, 상대 것도 지키는 말"},
+  {t:"steps",h:"DESC 네 단계",items:[["D","상황","사실만. '그 주는 고객사 점검이라 매일 한 명은 남아야 해요'"],["E","내 생각","'저는 금요일에 결혼식 사회가 있어서요'"],["S","원하는 것","'금요일만 꼭 쉬고, 나머지는 조정할 수 있어요'"],["C","그러면","'그러면 둘 다 꼭 필요한 날은 지킬 수 있어요'"]]},
+  {t:"vs",h:"같은 조건, 다르게",bad:["아… 저는 아무 때나 괜찮아요.","수동적 → 결혼식을 못 갈 수도"],good:["저는 금요일만 꼭 필요해요. 월~목은 맞춰 볼게요.","자기주장 → 해법을 같이 찾기 시작"]},
+  {t:"tips",h:"이 게임과 연결하면",items:["판정의 '내 조건 분명히 말하기'가 이 카드예요. 합의가 +10 올라요.","수동적으로 말하면 '일을 포기', 공격적으로 말하면 '관계를 포기'로 끝나기 쉬워요.","'꼭 필요한 것'과 '조정할 수 있는 것'을 같이 말하면 상대도 자기 조건을 꺼내요."]}],
+ src:[["Robert Alberti · Michael Emmons · 『Your Perfect Right』(1970)",null],["Sharon Bower · Gordon Bower · 『Asserting Yourself』(1976) · DESC",null]]},
+{id:"action",g:"skills",c:"#2563EB",kick:"합의 마무리",title:"합의를 행동으로",hook:"'좋아요, 그렇게 해요' 다음 날 아무도 안 하는 이유",glyph:"누가·언제",core:"대화가 끝나기 전에 누가 · 무엇을 · 언제까지 · 어떻게 확인할지 말로 정리하기",
+ slides:[
+  {t:"text",h:"합의가 사라지는 순간",ps:["대화가 잘 끝나도 '누가 하기로 했지?'가 남으면 합의는 금방 흐려져요. 서로 다르게 기억하고, 각자 상대가 할 거라고 생각하거든요.","Kerry Patterson 외 『Crucial Conversations』(2002)는 대화의 마지막을 'Move to Action'으로 따로 두고, 결정을 행동으로 바꾸라고 해요."],pull:"좋은 대화도 정리가 없으면 흐려진다"},
+  {t:"steps",h:"네 가지를 정리해요",items:[["누가","맡을 사람","'○○님이', '제가'처럼 이름으로"],["무엇","할 일","'의견 주기' 말고 '표 두 장 정리'처럼"],["언제","기한","'다음 주' 말고 '목요일 오후 3시'"],["확인","어떻게 볼지","'수요일에 15분 같이 봐요'"]]},
+  {t:"vs",h:"마무리 한마디",bad:["네, 그럼 그렇게 해요!","→ 각자 다르게 기억함"],good:["정리하면 ○○님은 화~목, 저는 월 · 금 쉬고, 메모는 제가 남길게요. 맞죠?","→ 둘이 같은 그림"]},
+  {t:"tips",h:"이 게임과 연결하면",items:["판정의 '정리해서 확인하기'가 이 카드예요. 합의가 +10 오르고 '정할 것'이 채워져요.","정할 것을 다 정하면 상대가 마무리하며 대화가 일찍 끝나요.","결과지의 '미룸'은 대개 이 정리가 빠진 판이에요."]}],
+ src:[["Kerry Patterson 외 · 『Crucial Conversations』(2002) · Move to Action",null]]},
+{id:"integrative",g:"skills",c:"#CA8A04",kick:"둘 다 지키기",title:"주고받아 키우기",hook:"반반 나누기보다 나은 방법",glyph:"⇄",core:"반반 나누기 대신, 서로 덜 중요한 것을 내주고 더 중요한 것을 얻기",
+ slides:[
+  {t:"text",h:"반반이 최선은 아니다",ps:["오렌지 하나를 두고 다투던 두 사람이 반씩 나눴는데, 알고 보니 한 사람은 즙이, 한 사람은 껍질이 필요했다는 이야기가 있어요. 물어봤다면 둘 다 필요한 걸 다 가질 수 있었어요.","Dean Pruitt(1983)는 이렇게 둘 다 더 많이 얻는 합의(통합적 합의)를 만드는 방법을 정리했어요."],pull:"무엇이 더 중요한지 알면 몫이 커진다"},
+  {t:"steps",h:"다섯 가지 방법",items:[["교환","덜 중요한 것 주고받기","'금요일은 제가, 화~목은 ○○님이 쉬어요'"],["보상","양보한 쪽 챙기기","'대신 연말 휴가는 먼저 고르세요'"],["부담↓","양보의 비용 줄이기","'남는 날 메모는 제가 남길게요'"],["늘리기","자원을 늘려 둘 다","'인력이나 일정을 위에 같이 요청해요'"],["새 안","둘 다 사는 새 방법","'핵심 하나만 이번에, 나머지는 2주 뒤'"]]},
+  {t:"vs",h:"휴가가 겹쳤을 때",bad:["그럼 반반 나눠서 이틀 반씩 쉬어요.","→ 둘 다 꼭 필요한 날을 놓칠 수 있음"],good:["저는 금요일이 꼭 필요하고, ○○님은 화~목이 꼭 필요하죠? 그럼 그렇게 나눠요.","→ 둘 다 꼭 필요한 것을 지킴"]},
+  {t:"tips",h:"이 게임과 연결하면",items:["조건표의 '꼭 필요'와 '양보 가능'이 바로 더 중요한 것과 덜 중요한 것이에요.","결과지의 '반씩 양보'는 이유를 다루지 않고 중간값으로 나눈 경우예요.","'입장 말고 이해관계' 카드와 같이 보면 좋아요."]}],
+ src:[["Dean G. Pruitt (1983) · 「Achieving Integrative Agreements」 · Negotiating in Organizations",null]]},
+{id:"abilene",g:"org",c:"#A21CAF",kick:"조직행동",title:"겉 합의 · 애빌린 역설",hook:"아무도 원하지 않았는데 다 같이 간 여행",glyph:"네…",core:"아무도 원하지 않는데 모두 '괜찮다'고 해서 합의된 것처럼 보이는 현상. 겉 합의를 알아채고 다시 묻기",
+ slides:[
+  {t:"text",h:"애빌린으로 가는 길",ps:["무더운 날, 한 가족이 아무도 원하지 않는 애빌린 나들이를 떠나요. 각자 '다들 가고 싶어 하나 보다' 하고 반대하지 않았기 때문이에요.","Jerry Harvey(1974)는 이렇게 아무도 원하지 않는 결정에 모두가 동의하는 현상을 '애빌린 역설'이라고 불렀어요. 갈등보다 합의를 관리하지 못하는 게 문제라고 봤어요."],pull:"반대가 없다고 동의한 건 아니다"},
+  {t:"text",h:"왜 생길까",ps:["혼자 반대하면 분위기를 깨거나 눈 밖에 날까 봐 걱정해요. 그래서 속으로는 아니라고 생각하면서 '네, 괜찮아요'라고 해요.","윗사람 앞이나, 갈등을 피하는 사람에게서 특히 자주 보여요."],pull:"'괜찮아요'가 진짜 괜찮다는 뜻은 아닐 때"},
+  {t:"steps",h:"알아채는 3가지",items:[["1","짧은 '네'","이유나 조건 없이 바로 '네, 그렇게 해요'"],["2","흐린 말끝","'그럼… 그렇게 할게요…'"],["3","다시 묻기","'혹시 걸리는 게 있으면 지금 말해 줘도 돼요. 어떤 게 제일 어려워요?'"]]},
+  {t:"tips",h:"이 게임과 연결하면",items:["밀어붙이면 상대가 '네, 그렇게 해요' 하고 끝내지만, 속마음 공개에서 '사실 납득은 안 됐다'가 나와요.","평화주의자 · 분위기메이커의 '괜찮아요'를 그대로 믿으면 겉 합의로 끝나기 쉬워요.","상대가 겉으로만 수긍한 판은 결과지에 '관계를 포기'로 남을 수 있어요."]}],
+ src:[["Jerry B. Harvey (1974) · 「The Abilene Paradox」 · Organizational Dynamics",null]]},
+{id:"ifthen",g:"psych",c:"#0891B2",kick:"심리 · 행동",title:"만약 ~하면 ~한다",hook:"'잘 공유할게요'는 왜 지켜지지 않을까",glyph:"if→",core:"'막히면 그날 바로 알리기'처럼 조건과 행동을 묶은 약속이 실제로 더 잘 지켜진다(실행 의도)",
+ slides:[
+  {t:"text",h:"목표만으로는 부족하다",ps:["'앞으로 잘 공유할게요' 같은 약속은 진심이어도 바쁜 날 쉽게 잊혀요. 언제, 무엇을 할지가 없어서예요.","Peter Gollwitzer(1999)는 '만약 이런 상황이 되면, 이걸 한다'처럼 상황과 행동을 미리 묶어 두는 '실행 의도'가 목표를 실제 행동으로 옮길 가능성을 높인다고 정리했어요."],pull:"언제 할지 정해 둔 약속이 지켜진다"},
+  {t:"vs",h:"같은 약속, 다르게",bad:["앞으로는 회의 결과 잘 공유할게요.","→ 다음 회의 때 또 잊음"],good:["회의가 끝나면 한 시간 안에 팀 채널에 세 줄로 올릴게요.","→ 그 상황이 오면 바로 떠오름"]},
+  {t:"steps",h:"만드는 법",items:[["1","상황 하나","'일정이 하루라도 밀리면'"],["2","행동 하나","'그날 바로 메신저로 알리기'"],["3","같이 맞추기","'이렇게 하면 될까요?'로 상대와 확인"]]},
+  {t:"tips",h:"이 게임과 연결하면",items:["'바로 알려야 하는 경우', '중간 점검 날짜' 같은 정할 것이 바로 이런 약속이에요.","'잘할게요'보다 '○○하면 ○○할게요'가 정할 것을 채워요.","'합의를 행동으로' 카드와 같이 쓰면 좋아요."]}],
+ src:[["Peter M. Gollwitzer (1999) · 「Implementation Intentions」 · American Psychologist",null]]}
 ];
 const CORE={sbi:"상황 · 행동 · 영향 순서로, 해석 대신 본 것만 말하기",nvc:"관찰 · 느낌 · 필요 · 부탁 순서로, 탓하지 않고 원하는 것 말하기",refuse:"이유는 짧게, 안 되는 것과 되는 것을 같이 말하기",
   reflect:"반박하기 전에 상대 말을 내 말로 한 번 확인하기",open:"예·아니오로 끝나지 않는, 이야기할 거리가 있는 질문으로 열기",bluf:"결론 → 영향 → 다음 행동 순서로 짧게",
   situational:"상대가 그 일에 익숙한 정도에 맞춰 지시 · 코칭 · 지원 · 위임을 고르기",apology:"책임을 인정하고, 바로잡을 방법과 다음 약속까지 말하기","t-driver":"결론과 속도를 중시하는 추진형. 짧고 분명하게","t-expressive":"인정과 분위기를 중시하는 설득형. 먼저 인정하고 함께하기",
-  "t-analyst":"근거와 정확성을 중시하는 분석형. 사실과 자료로","t-amiable":"관계와 안정을 중시하는 협력형. 서두르지 않고 안심시키며",tki:"내 목표와 상대 목표를 얼마나 챙기느냐에 따라 경쟁 · 윈윈 · 타협 · 회피 · 수용",
+  "t-analyst":"근거와 정확성을 중시하는 분석형. 사실과 자료로","t-amiable":"관계와 안정을 중시하는 협력형. 서두르지 않고 안심시키며",tki:"내 목표와 상대 목표를 얼마나 챙기느냐에 따라 경쟁 · 협력 · 타협 · 회피 · 수용",
   safety:"실수를 말하거나 질문해도 불이익이 없다는 팀의 공유된 믿음",candor:"진심으로 아끼면서 직접 말하기",ladder:"사실에서 결론까지 순식간에 오른 생각을 다시 사실로 내려 확인하기",
   grow:"목표 · 현실 · 선택지 · 실행, 답 대신 질문 네 개",feedforward:"지난 일 평가 대신 다음에 해볼 제안 주고받기"};
-const DECK_ORDER=["sbi","nvc","refuse","reflect","open","bluf","situational","apology","interests","styles","t-driver","t-expressive","t-analyst","t-amiable","tki","bigfive","typecheck","safety","candor","grow","feedforward","taskrel","justice","contract","voice","mum","ladder","attribution","confirm","receive","tone","label","negbias"];
-const DECK_GROUP={skills:DECK_ORDER.slice(0,9),style:DECK_ORDER.slice(9,17),org:DECK_ORDER.slice(17,26),psych:DECK_ORDER.slice(26)};
+const DECK_ORDER=["sbi","nvc","refuse","reflect","open","bluf","situational","apology","interests","assert","action","integrative","styles","t-driver","t-expressive","t-analyst","t-amiable","tki","bigfive","typecheck","safety","candor","grow","feedforward","taskrel","justice","contract","voice","mum","abilene","ladder","attribution","confirm","receive","tone","label","negbias","ifthen"];
+const DECK_GROUP={skills:DECK_ORDER.slice(0,12),style:DECK_ORDER.slice(12,20),org:DECK_ORDER.slice(20,30),psych:DECK_ORDER.slice(30)};
 const GROUP_NAME={skills:"대화 기술",style:"성향",org:"조직",psych:"심리"};
 DECKS.forEach(d=>{if(!d.core&&CORE[d.id])d.core=CORE[d.id];for(const g in DECK_GROUP)if(DECK_GROUP[g].includes(d.id))d.g=g});
 DECKS.sort((a,b)=>DECK_ORDER.indexOf(a.id)-DECK_ORDER.indexOf(b.id));
@@ -3146,10 +3420,6 @@ function coverHTML(d){
 }
 const AXIS_EL=$("axisWrap");
 function renderLibrary(focusId){
-  if(dexTab!=="mine")dexTab="theory";
-  [...$("tabs").children].forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===dexTab));
-  const isMine=dexTab==="mine";$("tab-mine").hidden=!isMine;$("libAll").hidden=isMine;
-  if(isMine){renderMine();return}
   const all=$("libAll");all.replaceChildren();
   for(const g of ["skills","style","org","psych"]){
     const sec=mk("section","lib-sec"),h=mk("div","lib-h");h.append(mk("b",null,GROUP_NAME[g]),mk("span",null,TABNOTE[g]));sec.append(h);
@@ -3188,7 +3458,7 @@ function syncDots(){const n=$("track").children.length;[...$("sdots").children].
 function goSlide(i){const tr=$("track"),n=tr.children.length;slideIdx=clamp(i,0,n-1);tr.scrollTo({left:tr.children[slideIdx].offsetLeft-tr.offsetLeft,behavior:REDUCED?"auto":"smooth"});syncDots()}
 $("track").addEventListener("scroll",()=>{const tr=$("track"),w=tr.clientWidth+16;const i=Math.round(tr.scrollLeft/w);if(i!==slideIdx){slideIdx=i;syncDots()}},{passive:true});
 $("prevSl").onclick=()=>goSlide(slideIdx-1);$("nextSl").onclick=()=>goSlide(slideIdx+1);
-$("deckBack").onclick=()=>{const id=deck&&deck.id;if(dexTab!=="mine")dexTab="theory";deck=null;$("deckView").hidden=true;$("dexLib").hidden=false;renderLibrary(id)};
+$("deckBack").onclick=()=>{const id=deck&&deck.id;deck=null;$("deckView").hidden=true;$("dexLib").hidden=false;renderLibrary(id)};
 (function buildAxis(){
   const pos={analyst:[110,95],driver:[290,95],amiable:[110,235],expressive:[290,235]};
   let svg=`<svg viewBox="0 0 400 334" role="img" aria-label="4가지 소통 스타일 지도">
@@ -3203,24 +3473,23 @@ $("deckBack").onclick=()=>{const id=deck&&deck.id;if(dexTab!=="mine")dexTab="the
   $("axis").innerHTML=svg+"</svg>";
 })();
 function openDex(tab,deckId){
-  dexTab=tab||dexTab;$("dex").hidden=false;
+  $("dex").hidden=false;
   if(deckId)openDeck(deckId);else{$("deckView").hidden=true;$("dexLib").hidden=false;renderLibrary();$("dexClose").focus()}
 }
 $("dexBtn").onclick=()=>openDex();$("keyBtn").onclick=()=>openKeyPanel();if(getKey())$("keyBtn").classList.add("on");
 $("dexClose").onclick=()=>{$("dex").hidden=true;$("dexBtn").focus()};
 $("dex").addEventListener("click",e=>{if(e.target.id==="dex")$("dex").hidden=true});
 $("rulesBtn").onclick=()=>{$("rulesOv").hidden=false;$("rulesClose").focus()};
-$("recBtn").onclick=()=>openRec();
+$("recBtn").onclick=()=>openRec("list");
 $("rulesClose").onclick=()=>{$("rulesOv").hidden=true;$("rulesBtn").focus()};
 $("rulesOv").addEventListener("click",e=>{if(e.target.id==="rulesOv")$("rulesOv").hidden=true});
 document.addEventListener("keydown",e=>{
-  if(e.key==="Escape"){const ko=$("keyOv");if(ko)ko.hidden=true;$("dex").hidden=true;$("logOv").hidden=true;$("rulesOv").hidden=true}
+  if(e.key==="Escape"){const ko=$("keyOv");if(ko)ko.hidden=true;const ro=$("recOv");if(ro)ro.hidden=true;$("dex").hidden=true;$("logOv").hidden=true;$("rulesOv").hidden=true}
   if(!$("dex").hidden&&!$("deckView").hidden){if(e.key==="ArrowRight")goSlide(slideIdx+1);if(e.key==="ArrowLeft")goSlide(slideIdx-1)}
 });
-$("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.tab==="mine"&&dexTab!=="mine")mineDemo=false;dexTab=b.dataset.tab;renderLibrary()});
 
 /* ================= RESULT SHEET + MY TENDENCY ================= */
-const MODES={competing:"경쟁",collaborating:"윈윈",compromising:"타협",avoiding:"회피",accommodating:"수용"};
+const MODES={competing:"경쟁",collaborating:"협력",compromising:"타협",avoiding:"회피",accommodating:"수용"};
 const MODE_DESC={competing:"내 목표를 밀어붙임",collaborating:"둘 다 채우는 방법을 찾음",compromising:"서로 반씩 양보함",avoiding:"핵심을 피하거나 미룸",accommodating:"상대에 맞춰 내 목표를 낮춤"};
 const MODE_ORDER=["competing","collaborating","compromising","avoiding","accommodating"];
 const END_NAME={"BOTH":"둘 다 지킴","RELATION ONLY":"관계만","TASK ONLY":"일만","NEITHER":"둘 다 놓침","STOPPED":"중단됨"};
@@ -3232,7 +3501,48 @@ function loadHist(){if(HMEM)return HMEM;try{const a=JSON.parse(localStorage.getI
 function saveHist(a){HMEM=a.slice(-60);try{localStorage.setItem(HKEY,JSON.stringify(HMEM));histSaved=true}catch{histSaved=false}}
 function loadInterp(){try{return JSON.parse(localStorage.getItem(IKEY)||"null")}catch{return null}}
 function saveInterp(o){try{localStorage.setItem(IKEY,JSON.stringify(o))}catch{}}
-let RES={state:null,isDemo:false},mineDemo=false;
+let RES={state:null,isDemo:false};
+/* v8: 이번 판에서 내려놓은 것. 갈등 대응 5유형(Thomas-Kilmann)의 두 축(내 목표 주장 · 상대 목표 배려)을 조건표로 판정해요.
+   AI는 '내 꼭 필요한 것을 지켰나 · 상대 것을 반영했나'만 보고, 유형은 코드가 정할 것 · 내려놓은 말 · 상대 마음과 합쳐서 정해요 */
+const GIVE={collaborating:"둘 다 지킴",competing:"관계를 포기",accommodating:"일을 포기",compromising:"반씩 양보",avoiding:"미룸"};
+const GIVE_ORDER=["collaborating","competing","accommodating","compromising","avoiding"];
+const GIVE_LINE={collaborating:"이번엔 둘 다 지켰어요",competing:"이번엔 관계를 내려놓았어요",accommodating:"이번엔 일을 내려놓았어요",compromising:"이번엔 둘 다 반씩 내려놓았어요",avoiding:"이번엔 결정을 미뤘어요"};
+const GIVE_DESC={collaborating:"내 꼭 필요한 것과 상대의 꼭 필요한 것을 다 지키고, 정할 것도 정했어요.",competing:"내 것은 지켰지만 상대의 꼭 필요한 것을 놓쳤거나, 상대가 겉으로만 수긍했어요.",accommodating:"상대의 필요는 들어줬지만 내 꼭 필요한 것을 내려놓았어요.",compromising:"이유를 다루기보다 중간에서 나눠, 둘 다 일부만 지켰어요.",avoiding:"누가 · 무엇을 · 언제까지가 정해지지 않은 채 끝났어요."};
+const GIVE_TIP={competing:"내 조건을 말한 뒤, 상대가 꼭 지켜야 할 것도 한 번 물어보세요.",accommodating:"양보하기 전에 '저는 이건 꼭 필요해요'를 먼저 말해 보세요.",compromising:"반씩 나누기 전에, 서로 덜 중요한 것을 주고받을 수 있는지 보세요.",avoiding:"대화 끝에 '누가 · 무엇을 · 언제까지'를 한 번 정리해 보세요."};
+const GIVE_PH={competing:["관계를 내려놓고","관계를 내려놓는 편이에요"],accommodating:["일을 내려놓고","일을 내려놓는 편이에요"],compromising:["반씩 양보하고","반씩 양보하는 편이에요"],avoiding:["결정을 미루고","결정을 미루는 편이에요"]};
+const POS_GROUP={up:"윗사람",crossup:"다른 팀",cross:"다른 팀",peer:"동료",down:"아랫사람",downsr:"아랫사람"};
+const CAT_POS={up:"윗사람",peer:"동료",lead:"아랫사람",cross:"다른 팀"};
+const POS_GROUP_ORDER=["윗사람","동료","아랫사람","다른 팀"];
+function giveOf(s,r){
+  const cd=s&&s.setup&&s.setup.cond,g=r&&r.give;if(!cd||!g||typeof g!=="object")return null;
+  const v=x=>{x=String(x||"").toLowerCase();return x==="yes"||x==="partial"||x==="no"?x:null};
+  let mine=v(g.mine_kept),theirs=v(g.theirs_met);if(!mine||!theirs)return null;
+  if(s.dropped)mine=mine==="yes"?"partial":"no";
+  const D=(cd.decide||[]).length,dn=(s.decided||[]).length,t=+s.temp||0,both=mine==="yes"&&theirs==="yes";
+  if(D&&(dn===0||(dn<Math.ceil(D/2)&&!both)))return"avoiding";
+  if(mine==="no"&&theirs==="no")return"avoiding";
+  if(both)return t<45?"competing":(dn>=D-1?"collaborating":"avoiding");
+  if(mine==="yes")return theirs==="partial"&&t>=55?"compromising":"competing";
+  if(theirs==="yes")return mine==="partial"?"compromising":"accommodating";
+  if(mine==="partial"&&theirs==="partial")return"compromising";
+  return mine==="no"?"accommodating":"competing";
+}
+function giveChips(on){const r=mk("div","modes");GIVE_ORDER.forEach(m=>{const c=mk("span",m===on?"on":"",GIVE[m]);if(m===on)c.title=GIVE_DESC[m];r.append(c)});return r}
+function renderGive(s,r){
+  const box=$("tradeoff");box.replaceChildren();if(!s||!s.setup){box.hidden=true;return}
+  const g=s.give,cd=s.setup.cond,D=decideOf(s.setup),dec=s.decided||[];
+  if(!g&&!cd){if(r&&r.tradeoff){box.append(mk("span","hud","TRADE-OFF · 무엇을 지키고 무엇을 내줬나"),mk("p",null,String(r.tradeoff)));box.hidden=false}else box.hidden=true;return}
+  box.append(mk("span","hud","이번 판에서 내려놓은 것"));
+  if(g){const h=mk("div","gv-h");h.append(mk("b","gv-t",GIVE_LINE[g]),giveChips(g));box.append(h);
+    const why=r&&r.give&&r.give.why,q=r&&r.give&&r.give.quote;box.append(mk("p",null,String(why||GIVE_DESC[g])));
+    if(q)box.append(mk("span","quote small",String(q)));
+    if(s.dropped&&s.dropQ&&s.dropQ!==q)box.append(mk("span","sub2",`내 꼭 필요한 것을 내려놓은 말: “${s.dropQ}”`))}
+  else box.append(mk("p",null,"이번 판은 무엇을 내려놓았는지 판단하지 못했어요."));
+  if(D.length){const dl=mk("div","gv-dec"),row=mk("div","dchips");dl.append(mk("span","k",`정할 것 ${dec.length} / ${D.length}`));
+    D.forEach((d,i)=>row.append(mk("span","dc "+(dec.includes(i)?"on":"miss"),d)));dl.append(row);
+    const miss=D.filter((_,i)=>!dec.includes(i));if(miss.length)dl.append(mk("span","sub2",`안 정하고 끝난 것: ${miss.join(" · ")}`));box.append(dl)}
+  box.hidden=false;
+}
 
 function readSheet(r){
   if(!r)return null;const st=r.style||{};
@@ -3242,7 +3552,7 @@ function readSheet(r){
   const said=o=>o&&o.quote?{quote:String(o.quote),why:String(o.why||"")}:null;
   let theory=(Array.isArray(r.theory)?r.theory:[]).filter(l=>l&&DECKS.some(d=>d.id===l.id)).filter((l,i,a)=>a.findIndex(o=>o.id===l.id)===i).slice(0,2).map(l=>({id:l.id,apply:String(l.apply||"")}));
   const sk=RES.state&&RES.state.setup&&RES.state.setup.skill;if(sk&&!theory.some(t=>t.id===sk))theory=[{id:sk,apply:""},...theory].slice(0,2);
-  return{x,y,type:styleOf(x,y),evidence:String(st.evidence||""),adapt:r.adapt===true,mode:MODES[r.mode]?r.mode:null,modeWhy:String(r.mode_why||""),grow,theory,practice:String(r.practice||""),verdict:String(r.verdict||""),summary:String(r.summary||""),good:said(r.good),fix:said(r.fix)};
+  return{x,y,type:styleOf(x,y),evidence:String(st.evidence||""),adapt:r.adapt===true,give:(RES.state&&RES.state.give)||null,giveWhy:String((r.give&&r.give.why)||""),oldMode:MODES[r.mode]?r.mode:null,grow,theory,practice:String(r.practice||""),verdict:String(r.verdict||""),summary:String(r.summary||""),good:said(r.good),fix:said(r.fix)};
 }
 
 function chipRow(on){const r=mk("div","modes");MODE_ORDER.forEach(m=>{const c=mk("span",m===on?"on":"",MODES[m]);if(m===on)c.title=MODE_DESC[m];r.append(c)});return r}
@@ -3279,8 +3589,9 @@ function renderSheet(a){
   b1.append(mk("b","big",`${c.name} 쪽 · ${c.type}`),mk("span","sub2",STYLE_DESC[a.type]));
   if(a.evidence)b1.append(mk("span","quote small",a.evidence));
   b1.append(mk("span","adapt "+(a.adapt?"ok":""),a.adapt?`상대(${pc.name} · ${pc.type})가 마음을 여는 방식에 맞춰 말했어요`:`상대(${pc.name} · ${pc.type})보다 내 방식대로 말했어요`));
-  const b2=mk("div","sblock");b2.append(mk("span","k","갈등 대응 방식"),chipRow(a.mode));
-  if(a.mode)b2.append(mk("span","sub2",`${MODES[a.mode]} · ${MODE_DESC[a.mode]}${a.modeWhy?". "+a.modeWhy:""}`));
+  const b2=mk("div","sblock");b2.append(mk("span","k","이번 판에서 내려놓은 것"));
+  if(a.give)b2.append(giveChips(a.give),mk("span","sub2",`${GIVE_LINE[a.give]}. ${a.giveWhy||GIVE_DESC[a.give]}`));
+  else b2.append(mk("span","sub2",a.oldMode?`이전 버전에서 한 판이라 기록이 없어요. (그때 본 갈등 대응: ${MODES[a.oldMode]})`:"이전 버전에서 한 판이라 기록이 없어요."));
   right.append(b1,b2);grid.append(map,right);s1.append(grid);
   if(a.good||a.fix){const s2=sec("이번 판의 말"),row=mk("div","saidrow");
     for(const [o,cls,k] of [[a.good,"good","통했던 말"],[a.fix,"fix","아쉬웠던 말"]]){if(!o)continue;const d=mk("div","said "+cls);d.append(mk("span","k",k),mk("span","q",`“${o.quote}”`));if(o.why)d.append(mk("span","w",o.why));row.append(d)}
@@ -3291,9 +3602,9 @@ function renderSheet(a){
     s3.append(ul)}
   if(a.theory.length){const s4=sec("이론 노트"),tn=mk("div","tnotes");a.theory.forEach(x=>tn.append(theoryNote(x)));s4.append(tn)}
   /* foot */
-  const foot=mk("div","sheet-f"),n=RES.isDemo?DEMO_HIST.length:loadHist().length;
-  foot.append(mk("span",null,RES.isDemo?"예시 결과지예요.":(n<3?`한 판은 한 장면일 뿐이에요. 3판부터 경향으로 볼 수 있어요 (지금 ${n}판).`:`지금까지 ${n}판이 쌓였어요.`)));
-  const goB=mk("button","txtbtn noshot",RES.isDemo?"예시 패턴 보기 →":"내 대화 패턴 보기 →");goB.type="button";goB.onclick=()=>{mineDemo=RES.isDemo;openDex("mine")};
+  const foot=mk("div","sheet-f"),n=loadHist().length;
+  foot.append(mk("span",null,n<3?`한 판은 한 장면일 뿐이에요. 3판부터 경향으로 볼 수 있어요 (지금 ${n}판).`:`지금까지 ${n}판이 쌓였어요.`));
+  const goB=mk("button","txtbtn noshot","내 대화 패턴 보기 →");goB.type="button";goB.onclick=()=>openRec("mine");
   foot.append(goB,mk("span","brandline","교육 시뮬레이션"));
   box.append(foot);box.hidden=false;
 }
@@ -3345,7 +3656,8 @@ function sheetText(a){
   {const so=starsOf(s);if(so){const ks=starKeys(so.lv);L.push(`별: ${ks.map(([k])=>so.got[k]?"★":"☆").join("")} (${ks.map(([k,l])=>`${l} ${so.got[k]?"○":"✕"}`).join(" · ")})`)}}
   if(a.summary||a.verdict)L.push("",`종합 분석: ${a.summary||a.verdict}`);
   L.push("",`대화 성향: ${c.name} 쪽 · ${c.type} (${STYLE_DESC[a.type]})`);
-  if(a.mode)L.push(`갈등 대응: ${MODES[a.mode]} · ${MODE_DESC[a.mode]}`);
+  if(a.give)L.push(`내려놓은 것: ${GIVE_LINE[a.give]} (${GIVE[a.give]})`);
+  {const D=decideOf(st),dec=s.decided||[];if(D.length)L.push(`정할 것: ${D.map((d,i)=>(dec.includes(i)?"✓ ":"✕ ")+d).join(" · ")}`)}
   if(a.good)L.push(`통했던 말: “${a.good.quote}” ${a.good.why}`);
   if(a.fix)L.push(`아쉬웠던 말: “${a.fix.quote}” ${a.fix.why}`);
   if(a.grow[0]||a.practice){L.push("","다음엔 이렇게");if(a.grow[0])L.push(`- 대화 습관: ${a.grow[0]}`);if(a.practice)L.push(`- 이번 주: ${a.practice}`)}
@@ -3364,36 +3676,47 @@ function recordPlay(a,raw){
   if(!a){s.saved=true;return}
   const st=s.setup,sc=SCEN.find(x=>x.id===st.scen),[,eb]=endingOf(s.temp,s.prog||0);
   const H=loadHist().slice();H.push({t:Date.now(),pid:s.pid,scen:st.scen||"custom",title:sc?sc.title:"내 고민",cat:sc?sc.cat:"custom",partner:st.key,role:st.roleLabel||"",level:st.level||2,end:eb,
-    temp:s.temp,prog:s.prog||0,key:!!s.keyFound,trap:!!s.trapHit,hints:s.hints||0,x:a.x,y:a.y,adapt:a.adapt,mode:a.mode,grow:a.grow});
+    temp:s.temp,prog:s.prog||0,key:!!s.keyFound,trap:!!s.trapHit,hints:s.hints||0,x:a.x,y:a.y,adapt:a.adapt,give:a.give||null,rk:st.rk||"",dropped:!!s.dropped,grow:a.grow});
   saveHist(H);s.saved=true;syncAnalysis(s,a);
 }
 
 /* ---- my tendency ---- */
 const pct=(k,n)=>n?Math.round(k/n*100):0;
 function analyze(H){
-  const n=H.length,cnt={driver:0,expressive:0,analyst:0,amiable:0},modes={},ends={};
-  let sx=0,sy=0,ad=0,key=0,trap=0,hintKey=0;const byP={},byC={};
+  const n=H.length,cnt={driver:0,expressive:0,analyst:0,amiable:0},gives={},ends={};
+  let sx=0,sy=0,ad=0,key=0,trap=0,hintKey=0,gn=0;const byP={},byC={},byPos={},byPG={};
   H.forEach(h=>{cnt[styleOf(h.x,h.y)]++;sx+=h.x;sy+=h.y;if(h.adapt)ad++;if(h.key)key++;if(h.key&&h.hints>=2)hintKey++;if(h.trap)trap++;
-    if(h.mode)modes[h.mode]=(modes[h.mode]||0)+1;ends[h.end]=(ends[h.end]||0)+1;
-    const both=h.end==="BOTH"?1:0;(byP[h.partner]=byP[h.partner]||{n:0,b:0}).n++;byP[h.partner].b+=both;(byC[h.cat]=byC[h.cat]||{n:0,b:0,rel:0}).n++;byC[h.cat].b+=both;if(h.end==="RELATION ONLY")byC[h.cat].rel++});
+    ends[h.end]=(ends[h.end]||0)+1;
+    const both=h.end==="BOTH"?1:0;(byP[h.partner]=byP[h.partner]||{n:0,b:0}).n++;byP[h.partner].b+=both;(byC[h.cat]=byC[h.cat]||{n:0,b:0,rel:0}).n++;byC[h.cat].b+=both;if(h.end==="RELATION ONLY")byC[h.cat].rel++;
+    if(h.give&&GIVE[h.give]){gn++;gives[h.give]=(gives[h.give]||0)+1;
+      const pg=POS_GROUP[h.rk]||CAT_POS[h.cat]||null;
+      if(pg){const o=byPos[pg]=byPos[pg]||{n:0,g:{}};o.n++;o.g[h.give]=(o.g[h.give]||0)+1}
+      if(h.partner){const o=byPG[h.partner]=byPG[h.partner]||{n:0,g:{}};o.n++;o.g[h.give]=(o.g[h.give]||0)+1}}});
   const ax=sx/n,ay=sy/n,avgType=styleOf(ax,ay);
   const order=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]||(a===avgType?-1:b===avgType?1:0));
-  const topMode=Object.keys(modes).sort((a,b)=>modes[b]-modes[a])[0]||null;
-  return{n,cnt,ax,ay,main:order[0],second:cnt[order[1]]>0?order[1]:null,ad,key,hintKey,trap,modes,topMode,ends,byP,byC,both:ends["BOTH"]||0};
+  return{n,cnt,ax,ay,main:order[0],second:cnt[order[1]]>0?order[1]:null,ad,key,hintKey,trap,gives,gn,noGive:n-gn,topGive:topOf(gives),byPos,byPG,ends,byP,byC,both:ends["BOTH"]||0};
+}
+function topOf(g){return Object.keys(g||{}).sort((a,b)=>g[b]-g[a]||GIVE_ORDER.indexOf(a)-GIVE_ORDER.indexOf(b))[0]||null}
+const GIVE_DONE={collaborating:"둘 다 지켰어요",competing:"관계를 내려놓았어요",accommodating:"일을 내려놓았어요",compromising:"반씩 양보했어요",avoiding:"결정을 미뤘어요"};
+function giveHead(A){const t=A.topGive;return t?`${A.gn}판 중 ${A.gives[t]}판에서 ${GIVE_DONE[t]}`:""}
+function posLine(A){
+  const parts=POS_GROUP_ORDER.map(k=>[k,A.byPos[k]]).filter(([,o])=>o&&o.n>=2).map(([k,o])=>[k,topOf(o.g)]).filter(([,t])=>t&&t!=="collaborating");
+  if(!parts.length)return"";
+  return parts.map(([k,t],i)=>`${k} 앞에선 ${GIVE_PH[t][i===parts.length-1?1:0]}`).join(", ")+".";
 }
 function notesOf(A){
   const out=[],n=A.n,rel=A.ends["RELATION ONLY"]||0,task=A.ends["TASK ONLY"]||0;
+  if(A.gn>=3&&A.topGive&&A.topGive!=="collaborating"&&A.gives[A.topGive]/A.gn>=.5)out.push(`${A.gn}판 중 ${A.gives[A.topGive]}판이 '${GIVE[A.topGive]}'였어요. ${GIVE_TIP[A.topGive]}`);
   if(rel/n>=.5)out.push(`관계는 지키지만 합의까지 못 가는 판이 많아요 (${rel}/${n}). 마지막에 '무엇을, 언제까지'를 정하는 말을 붙여보세요.`);
   else if(task/n>=.5)out.push(`합의는 얻지만 상대 마음이 닫히는 판이 많아요 (${task}/${n}). 제안하기 전에 상대 말을 한 번 확인해보세요.`);
   else if(A.both/n>=.6&&n>=3)out.push(`둘 다 지킨 판이 많아요 (${A.both}/${n}). ●●● 상황에 도전해볼 때예요.`);
   if(A.key/n>=.6)out.push(`상대 사정을 끌어내는 질문이 강점이에요 (실마리 ${A.key}/${n}).`);
   else if(n>=3&&A.key/n<=.3)out.push(`실마리를 찾은 판이 적어요 (${A.key}/${n}). 제안보다 '지금 뭐가 제일 걸려요?'를 먼저 물어보세요.`);
-  if(n>=3&&A.topMode&&A.modes[A.topMode]/n>=.6)out.push(`갈등 상황에서 '${MODES[A.topMode]}' 방식을 주로 써요 (${A.modes[A.topMode]}/${n}). 어느 방식이든 상황에 따라 쓸모가 있어서, 한쪽에 치우치면 맞지 않는 상황에서 막혀요.`);
   if(n>=3&&A.key>=2&&A.hintKey/A.key>=.5)out.push(`실마리를 힌트로 찾은 판이 많아요 (${A.hintKey}/${A.key}). 다음엔 힌트 전에 '요즘 뭐가 제일 걸려요?'처럼 상대 사정을 먼저 물어보세요.`);
   if(A.trap/n>=.4&&n>=2)out.push(`그럴듯한 함정에 빠진 판이 ${A.trap}/${n}이에요. 결과 화면의 '숨은 구조'에서 함정을 다시 확인해보세요.`);
   const overall=A.both/n;let worst=null;
   for(const k in A.byP){const p=A.byP[k];if(p.n>=2&&p.b/p.n<=overall-.25&&(!worst||p.b/p.n<A.byP[worst].b/A.byP[worst].n))worst=k}
-  if(worst)out.push(`${CH[worst].name}(${CH[worst].type}) 상대일 때 특히 어려워했어요 (둘 다 지킨 판 ${A.byP[worst].b}/${A.byP[worst].n}). 이 유형은 '${CH[worst].open}'에 마음을 열어요.`);
+  if(worst&&CH[worst])out.push(`${CH[worst].name}(${CH[worst].type}) 상대일 때 특히 어려워했어요 (둘 다 지킨 판 ${A.byP[worst].b}/${A.byP[worst].n}). 이 유형은 '${CH[worst].open}'에 마음을 열어요.`);
   for(const k of ["up","lead","cross"]){const c=A.byC[k];if(c&&c.n>=2&&c.b/c.n<=overall-.3){out.push(`'${CAT[k]}' 상황에서 더 어려워했어요 (둘 다 지킨 판 ${c.b}/${c.n}).`);break}}
   return out.slice(0,4);
 }
@@ -3421,18 +3744,21 @@ const SELF_Q=[
   {ax:"x",q:"상대가 말을 길게 할 때",a:["중간에 '그러니까 ~라는 거죠?'로 정리한다",1],b:["끝까지 듣고 나서 묻는다",-1]},
   {ax:"y",q:"동료가 '기한을 못 맞출 것 같아요'라고 할 때 첫마디",a:["'그럼 언제까지 가능해요?'",-1],b:["'무슨 일 있었어요?'",1]},
   {ax:"y",q:"회의 시작 전 남는 몇 분",a:["안건 자료를 한 번 더 본다",-1],b:["옆 사람과 근황 얘기를 한다",1]},
-  {ax:"y",q:"잘한 동료에게 한마디 할 때",a:["'이번 건 결과가 좋았어요'",-1],b:["'덕분에 한시름 놨어요'",1]}];
+  {ax:"y",q:"잘한 동료에게 한마디 할 때",a:["'이번 건 결과가 좋았어요'",-1],b:["'덕분에 한시름 놨어요'",1]},
+  {ax:"g",q:"내 일정이 빠듯한데 동료가 급한 부탁을 할 때",a:["내 일정을 먼저 말하고, 되는 만큼만 돕는다",-1],b:["관계가 어색해질까 봐 일단 들어준다",1]},
+  {ax:"g",q:"팀장님이 무리한 일정을 맡길 때",a:["어려운 점과 가능한 범위를 먼저 말한다",-1],b:["분위기를 생각해 일단 받는다",1]}];
 const SELFKEY="edusim.self";let SELF_MEM;
-function loadSelf(){if(SELF_MEM!==undefined)return SELF_MEM;try{const o=JSON.parse(localStorage.getItem(SELFKEY)||"null");SELF_MEM=o&&Number.isFinite(o.x)&&Number.isFinite(o.y)?o:null}catch{SELF_MEM=null}return SELF_MEM}
+function loadSelf(){if(SELF_MEM!==undefined)return SELF_MEM;try{const o=JSON.parse(localStorage.getItem(SELFKEY)||"null");SELF_MEM=o&&Number.isFinite(o.x)&&Number.isFinite(o.y)?Object.assign(o,{g:Number.isFinite(o.g)?o.g:null}):null}catch{SELF_MEM=null}return SELF_MEM}
 function saveSelf(o){SELF_MEM=o;try{if(o)localStorage.setItem(SELFKEY,JSON.stringify(o));else localStorage.removeItem(SELFKEY)}catch{}}
-const DEMO_SELF={x:-1,y:1};
 const axWord=(x,y)=>`${x<=-.5?"먼저 묻고":x>=.5?"먼저 말하고":"묻고 말하고"} · ${y<=-.5?"일 얘기 위주":y>=.5?"사람 얘기 위주":"일과 사람 반반"}`;
 function selfCard(onDone,current){
   const c=mk("div","selfchk");
   if(current){const row=mk("div","self-done");
-    row.append(mk("span","k","평소 나 · 자가 체크"),mk("b",null,axWord(current.x,current.y)),mk("span","sub2",`${CH[styleOf(current.x,current.y)].type} 쪽`));
-    const re=mk("button","txtbtn","다시 체크");re.type="button";re.onclick=()=>{saveSelf(null);onDone()};row.append(re);c.append(row);return c}
-  const h=mk("div","self-h");h.append(mk("b",null,"평소 나는 어느 쪽에 가까운가요?"),mk("span","sub2","게임에서는 상대에 맞추느라 평소와 다르게 말하게 돼요. 평소 모습을 따로 적어두면 둘을 비교할 수 있어요. 6문항, 1분."));c.append(h);
+    const gw=current.g==null?"":current.g<=-1?" · 일을 먼저 지키는 편":current.g>=1?" · 관계를 먼저 지키는 편":" · 일과 관계 반반";
+    row.append(mk("span","k","평소 나 · 자가 체크"),mk("b",null,axWord(current.x,current.y)+gw),mk("span","sub2",`${CH[styleOf(current.x,current.y)].type} 쪽`));
+    const re=mk("button","txtbtn","다시 체크");re.type="button";re.onclick=()=>{saveSelf(null);onDone()};row.append(re);c.append(row);
+    if(current.g==null)c.append(mk("span","sub2","일 · 관계 2문항이 새로 생겼어요. '다시 체크'로 할 수 있어요."));return c}
+  const h=mk("div","self-h");h.append(mk("b",null,"평소 나는 어느 쪽에 가까운가요?"),mk("span","sub2","게임에서는 상대에 맞추느라 평소와 다르게 말하게 돼요. 평소 모습을 따로 적어두면 둘을 비교할 수 있어요. 8문항, 1분."));c.append(h);
   const ans=new Array(SELF_Q.length).fill(null),list=mk("ol","self-q");
   SELF_Q.forEach((it,i)=>{const li=mk("li");li.append(mk("span","q",it.q));const pair=mk("div","pair");
     [it.a,it.b].forEach(([t,v],j)=>{const b=mk("button",null,t);b.type="button";b.setAttribute("aria-pressed","false");
@@ -3440,8 +3766,8 @@ function selfCard(onDone,current){
     li.append(pair);list.append(li)});
   c.append(list);
   const done=mk("button","btn sm","결과 보기");done.type="button";done.disabled=true;
-  done.onclick=()=>{let sx=0,sy=0;SELF_Q.forEach((it,i)=>{if(it.ax==="x")sx+=ans[i];else sy+=ans[i]});
-    saveSelf({x:clamp(Math.round(sx*2/3),-2,2),y:clamp(Math.round(sy*2/3),-2,2),t:Date.now()});onDone()};
+  done.onclick=()=>{let sx=0,sy=0,sg=0;SELF_Q.forEach((it,i)=>{if(it.ax==="x")sx+=ans[i];else if(it.ax==="y")sy+=ans[i];else sg+=ans[i]});
+    saveSelf({x:clamp(Math.round(sx*2/3),-2,2),y:clamp(Math.round(sy*2/3),-2,2),g:clamp(sg,-2,2),t:Date.now()});onDone()};
   c.append(done);return c;
 }
 /* ---- pattern by partner type ---- */
@@ -3471,11 +3797,13 @@ function interpPrompt(H,A,bp,self){
   const grows=[...new Set(H.slice(-8).flatMap(h=>h.grow||[]))].slice(0,8);
   const lines=[
     `판 수: ${A.n}`,
-    `자가 체크(평소 모습, 본인 응답): ${self?`묻기(-)↔말하기(+) ${self.x}, 일(-)↔사람(+) ${self.y} → ${axWord(self.x,self.y)}`:"안 함"}`,
+    `자가 체크(평소 모습, 본인 응답): ${self?`묻기(-)↔말하기(+) ${self.x}, 일(-)↔사람(+) ${self.y} → ${axWord(self.x,self.y)}${self.g!=null?` / 갈등 때 일을 먼저 지킴(-)↔관계를 먼저 지킴(+) ${self.g}`:""}`:"안 함"}`,
     `게임 속 평균 위치: 묻기(-)↔말하기(+) ${A.ax.toFixed(1)}, 일(-)↔사람(+) ${A.ay.toFixed(1)} → ${axWord(A.ax,A.ay)}`,
     `상대 유형별 내 말투(평균 위치 / 상대가 원하는 방식에 맞춘 판 / 둘 다 지킨 판): ${P_ORDER.filter(k=>bp[k].n).map(k=>`${CH[k].name}(${CH[k].type}) 앞에서 ${axWord(bp[k].x,bp[k].y)}, 맞춤 ${bp[k].ad}/${bp[k].n}, 둘 다 ${bp[k].b}/${bp[k].n}`).join(" ; ")||"없음"}`,
     `상대에 따라 말투가 달라지는 정도(유형별 평균 위치의 최대 거리, 0~4): ${spreadOf(bp).m.toFixed(1)}`,
-    `갈등 대응(Thomas-Kilmann): ${MODE_ORDER.map(m=>`${MODES[m]}(${m}) ${A.modes[m]||0}`).join(", ")}`,
+    `내려놓은 것(갈등 대응 5유형과 같은 두 축): ${GIVE_ORDER.map(m=>`${GIVE[m]} ${A.gives[m]||0}`).join(", ")}${A.noGive?` (이전 버전이라 기록 없는 판 ${A.noGive})`:""}`,
+    `상대 위치별 내려놓은 것: ${POS_GROUP_ORDER.filter(k=>A.byPos[k]).map(k=>{const o=A.byPos[k],t=topOf(o.g);return`${k} 앞 ${o.n}판 중 ${GIVE[t]} ${o.g[t]}`}).join(" ; ")||"없음"}`,
+    `상대 성향별 내려놓은 것: ${P_ORDER.filter(k=>A.byPG[k]).map(k=>{const o=A.byPG[k],t=topOf(o.g);return`${CH[k].name} 앞 ${o.n}판 중 ${GIVE[t]} ${o.g[t]}`}).join(" ; ")||"없음"}`,
     `결말: ${Object.keys(END_NAME).map(e=>`${END_NAME[e]} ${A.ends[e]||0}`).join(", ")}`,
     `실마리 찾은 판 ${A.key}/${A.n}, 함정에 빠진 판 ${A.trap}/${A.n}`,
     `상황 구분별 둘 다 지킨 판: ${Object.keys(A.byC).map(k=>`${CAT[k]||"내 고민"} ${A.byC[k].b}/${A.byC[k].n}`).join(", ")}`,
@@ -3484,7 +3812,7 @@ function interpPrompt(H,A,bp,self){
 회사: ${COMPANY}
 근거로 쓸 수 있는 이론은 이것뿐이야. 다른 연구, 수치, 인용을 지어내지 마.
 - Social Styles(Merrill & Reid): 주장성(묻는 편↔말하는 편)과 반응성(일 중심↔사람 중심)으로 4유형(추진형·설득형·분석형·협력형). 유연성(versatility)은 상대 스타일에 맞추는 능력이고 키울 수 있음.
-- Thomas-Kilmann 갈등 대응 5유형: 주장성×협조성. 경쟁·윈윈(협동)·타협·회피·수용. 모든 방식은 상황에 따라 쓸모가 있고, 한 방식을 너무 많이 또는 너무 적게 쓰는 게 문제.
+- Thomas-Kilmann 갈등 대응 5유형: 주장성×협조성. 이 게임에서는 '내려놓은 것'으로 불러: 협력=둘 다 지킴, 경쟁=관계를 포기, 수용=일을 포기, 타협=반씩 양보, 회피=미룸. 모든 방식은 상황에 따라 쓸모가 있고, 한 방식을 너무 많이 또는 너무 적게 쓰는 게 문제.
 중요: 게임 속 말투는 상대에 맞추려고 한 결과라서 그 사람의 성향이 아니야. 사람을 유형으로 단정하지 말고, '어떤 상대 앞에서 어떻게 말하는 패턴'으로 말해. 자가 체크(평소)와 게임 속 위치가 다르면 그 차이를 '상대에 맞춘 것'인지 '평소와 다르게 긴장한 것'인지 상대별 기록으로 구분해서 해석해.
 규칙: 점수나 평가 대신 기록에서 보이는 관찰과 구체적인 제안. 숫자를 말할 땐 기록에 있는 것만. 존댓말 '~요', 짧고 담백하게.
 
@@ -3493,30 +3821,48 @@ ${lines.join("\n")}
 
 카드 id는 반드시 이 목록에서만: ${deckList()}
 아래 키 순서 그대로, JSON 하나만 답해:
-{"summary":"이 사람의 대화 패턴 두세 문장(상대별 차이와 평소 모습과의 차이를 중심으로)","strengths":["강점 한 줄","강점 한 줄"],"watch":["주의할 점 한 줄","주의할 점 한 줄"],"next":[{"do":"다음에 연습할 행동 한 줄","card":"카드 id"},{"do":"...","card":"카드 id"}]}`;
+{"summary":"이 사람의 대화 패턴 두세 문장(주로 무엇을 내려놓는지, 상대 위치·성향별 차이, 평소 모습과의 차이를 중심으로)","strengths":["강점 한 줄","강점 한 줄"],"watch":["주의할 점 한 줄","주의할 점 한 줄"],"next":[{"do":"다음에 연습할 행동 한 줄","card":"카드 id"},{"do":"...","card":"카드 id"}]}`;
 }
-function renderMine(){
-  const box=$("tab-mine");box.replaceChildren();
-  const H=mineDemo?DEMO_HIST:loadHist(),self=mineDemo?DEMO_SELF:loadSelf();
-  if(mineDemo){const bn=mk("div","demo-bn");bn.append(mk("span",null,"예시 기록 6판으로 보는 화면이에요."));const back=mk("button","txtbtn","내 기록으로");back.type="button";back.onclick=()=>{mineDemo=false;renderMine()};bn.append(back);box.append(bn)}
-  box.append(selfCard(renderMine,self));
-  if(!H.length){const e=mk("div","empty");e.append(mk("b",null,"아직 쌓인 결과지가 없어요"),mk("p",null,"한 판을 끝낼 때마다 결과지가 여기에 쌓여요. 상대 유형별로 내가 어떻게 말했는지, 평소 모습과 얼마나 다른지 보여줘요. 3판부터 경향으로 볼 수 있어요."));
-    const ex=mk("button","btn ghost","예시 기록으로 보기");ex.type="button";ex.onclick=()=>{mineDemo=true;renderMine()};e.append(ex);
-    if(!histSaved)e.append(mk("p","note","이 브라우저에서는 기록을 저장할 수 없어서, 창을 닫으면 사라져요."));box.append(e);return}
+function renderMine(box){
+  box=box||mk("div","mine");box.replaceChildren();
+  const H=loadHist(),self=loadSelf(),again=()=>renderMine(box);
+  box.append(selfCard(again,self));
+  if(!H.length){const e=mk("div","empty");e.append(mk("b",null,"아직 쌓인 결과지가 없어요"),mk("p",null,"한 판을 끝낼 때마다 결과지가 여기에 쌓여요. 내가 주로 무엇을 내려놓는지, 상대에 따라 어떻게 달라지는지, 평소 모습과 얼마나 다른지 보여줘요. 3판부터 경향으로 볼 수 있어요."));
+    if(!histSaved)e.append(mk("p","note","이 브라우저에서는 기록을 저장할 수 없어서, 창을 닫으면 사라져요."));box.append(e);return box}
   const A=analyze(H),n=A.n,bp=byPartner(H),sp=spreadOf(bp);
   const stat=mk("div","mstat");[[`${n}판`,"쌓인 결과지"],[`${A.both}판`,"둘 다 지킨 판"],[`${A.key}판`,"실마리를 찾은 판"]].forEach(([v,l])=>{const d=mk("div");d.append(mk("b",null,v),mk("span",null,l));stat.append(d)});box.append(stat);
   if(n<3)box.append(mk("p","note",`3판부터 경향으로 볼 수 있어요. 지금은 ${n}판이라 참고만 해주세요.`));
-  /* map: faint dots per play, one marker per partner type, hollow marker for self */
+  /* 1. what I usually let go · by position */
+  const row0=mk("div","mrow2");
+  const gb=mk("div","sblock");gb.append(mk("span","k","나는 주로 무엇을 내려놓나"));
+  if(!A.gn)gb.append(mk("span","sub2","이번 버전에서 한 판부터 쌓여요."+(A.noGive?` 이전 판 ${A.noGive}개는 기록 없음이에요.`:"")));
+  else{gb.append(mk("b","big",giveHead(A)));const bs=bars(A.gives,GIVE_ORDER,GIVE,A.gn);bs.classList.add("gv");gb.append(bs);if(A.noGive)gb.append(mk("span","sub2",`이전 판 ${A.noGive}개는 기록 없음`))}
+  const pb=mk("div","sblock");pb.append(mk("span","k","상대에 따라 달라지는 나"));
+  if(!A.gn)pb.append(mk("span","sub2","판이 쌓이면 윗사람 · 동료 · 아랫사람 · 다른 팀 앞에서 무엇을 내려놓는지 보여요."));
+  else{const tb=mk("div","postab");POS_GROUP_ORDER.forEach(k=>{const o=A.byPos[k],r=mk("div","pr"+(o?"":" none"));r.append(mk("b",null,k+" 앞에서"));
+      if(o){const t=topOf(o.g);r.append(mk("span","pv",`${GIVE[t]} ${o.g[t]}/${o.n}`))}else r.append(mk("span","pv","아직 없음"));tb.append(r)});
+    pb.append(tb);const line=posLine(A);pb.append(mk("span","sub2",line||"위치별로 2판 이상 쌓이면 차이를 한 줄로 정리해요."))}
+  row0.append(gb,pb);box.append(row0);
+  /* 2. usual me vs game me: work or relationship */
+  const gWord=g=>g<=-1?"일을 먼저 지키는 편":g>=1?"관계를 먼저 지키는 편":"일과 관계 반반";
+  const sg=mk("div","sblock");sg.append(mk("span","k","평소 나 vs 게임 속 나 · 일과 관계"));
+  if(!self||self.g==null)sg.append(mk("span","sub2","위 자가 체크의 '일 · 관계' 2문항을 하면, 평소 생각과 게임 속 선택을 비교해요."));
+  else if(A.gn<2)sg.append(mk("span","sub2",`평소엔 '${gWord(self.g)}'이라고 했어요. 판이 더 쌓이면 비교해요.`));
+  else{const w=A.gives.accommodating||0,r=A.gives.competing||0,expect=self.g>0?"일":self.g<0?"관계":null,actual=w>r?"일":r>w?"관계":null;
+    sg.append(mk("b","big",expect&&actual?(expect===actual?"평소 생각과 같아요":"평소 생각과 달라요"):"차이가 크지 않아요"));
+    sg.append(mk("span","sub2",`평소엔 '${gWord(self.g)}'이라고 했고, 게임에서는 일을 내려놓은 판 ${w} · 관계를 내려놓은 판 ${r}이에요.`+(expect&&actual&&expect!==actual?` 생각과 실제 선택이 다를 수 있어요.`:"")))}
+  box.append(sg);
+  /* 3. talk map: faint dots per play, one marker per partner type, hollow marker for self */
   const row=mk("div","mrow2 mine-top"),map=mk("div","smap");
   const pts=[...H.map(h=>({x:h.x,y:h.y})),...P_ORDER.filter(k=>bp[k].n).map(k=>({x:bp[k].x,y:bp[k].y,big:true,label:CH[k].name[0],color:CH[k].color}))];
   if(self)pts.unshift({x:self.x,y:self.y,big:true,hollow:true,label:"평소"});
   map.innerHTML=styleMap(pts,{w:260});
   const lg=mk("div","maplg");lg.append(mk("span",null,"색 점 = 그 상대 앞에서의 평균"),mk("span",null,"점선 = 자가 체크(평소)"));
   const desc=mk("div","sblocks"),b1=mk("div","sblock");
-  b1.append(mk("span","k","상대에 따라 달라지는 정도"));
+  b1.append(mk("span","k","상대에 따라 말투가 달라지는 정도"));
   if(sp.k<2)b1.append(mk("b","big","아직 몰라요"),mk("span","sub2","두 유형 이상 만나면 보여요."));
   else{const lv=sp.m>=1.5?"큰 편":sp.m>=.75?"보통":"작은 편";b1.append(mk("b","big",lv),mk("span","sub2",sp.m>=1.5?"상대가 누구냐에 따라 말투를 바꾸는 편이에요.":sp.m>=.75?"상대에 따라 조금 달라져요.":"누구 앞에서든 비슷하게 말해요."),mk("span","sub2",`상대가 원하는 방식에 맞춘 판 ${A.ad}/${n}`))}
-  const b2=mk("div","sblock");b2.append(mk("span","k","평소 나 vs 게임 속 나"));
+  const b2=mk("div","sblock");b2.append(mk("span","k","평소 나 vs 게임 속 나 · 말투"));
   if(!self)b2.append(mk("span","sub2","위 자가 체크를 하면 평소 모습과 비교해요."));
   else{const dx=A.ax-self.x,dy=A.ay-self.y,d=Math.hypot(dx,dy);
     const dir=[dx>=.75?"더 말하는 쪽":dx<=-.75?"더 묻는 쪽":null,dy>=.75?"더 사람 얘기 쪽":dy<=-.75?"더 일 얘기 쪽":null].filter(Boolean).join(", ");
@@ -3524,75 +3870,31 @@ function renderMine(){
     b2.append(mk("span","sub2",d<.75?`평소(${axWord(self.x,self.y)})와 게임 속 말투가 비슷해요.`:`평소에는 '${axWord(self.x,self.y)}'인데 게임에서는 ${dir}으로 움직였어요.`));
     if(d>=.75)b2.append(mk("span","sub2",sp.k>=2&&sp.m>=1.5?"상대별 칸이 서로 다르니, 상대에 맞춘 움직임으로 보여요.":sp.k>=2?"상대별 칸이 비슷한데 평소와 다르다면, 상대보다는 상황(긴장)에 따라 바뀐 걸 수 있어요.":"어느 쪽인지는 상대 유형을 더 만나보면 알 수 있어요."))}
   desc.append(b1,b2);row.append(map,desc);box.append(row);box.append(lg);
-  /* 4 cells */
-  const pg=mk("div","sblock");pg.append(mk("span","k","상대 유형별 내 말투"));const grid=mk("div","pgrid");
+  /* 4. four partner types */
+  const pg=mk("div","sblock");pg.append(mk("span","k","상대 성향별 나"));const grid=mk("div","pgrid");
   P_ORDER.forEach(k=>{const p=bp[k],c=CH[k],cell=mk("div","pcell"+(p.n?"":" none"));cell.style.setProperty("--c",c.color);
     const head=mk("div","ph"),av=mk("span","pf");pf(av,k,"neutral");head.append(av,mk("b",null,`${c.name} 앞에서`),mk("span",null,p.n?`${p.n}판`:"아직 안 만남"));cell.append(head);
-    if(p.n){cell.append(mk("b","pw",axWord(p.x,p.y)),mk("span","pm",`맞춰 말한 판 ${p.ad}/${p.n} · 둘 다 지킨 판 ${p.b}/${p.n}`),mk("span","po",`이 유형은 '${c.open}'에 열려요`))}
+    if(p.n){const o=A.byPG[k];if(o){const t=topOf(o.g);cell.append(mk("span","pg",`주로 ${GIVE[t]} (${o.g[t]}/${o.n})`))}
+      cell.append(mk("b","pw",axWord(p.x,p.y)),mk("span","pm",`맞춰 말한 판 ${p.ad}/${p.n} · 둘 다 지킨 판 ${p.b}/${p.n}`),mk("span","po",`이 유형은 '${c.open}'에 열려요`))}
     else cell.append(mk("span","pm",`이 유형은 '${c.open}'에 열려요`));
     grid.append(cell)});
   pg.append(grid);box.append(pg);
-  const row2=mk("div","mrow2");
-  const g1=mk("div","sblock");g1.append(mk("span","k","갈등 대응 방식"),bars(A.modes,MODE_ORDER,MODES,n));
-  const g2=mk("div","sblock");g2.append(mk("span","k","결말"),bars(A.ends,Object.keys(END_NAME),END_NAME,n));
-  row2.append(g1,g2);box.append(row2);
+  const g2=mk("div","sblock");g2.append(mk("span","k","결말"),bars(A.ends,Object.keys(END_NAME),END_NAME,n));box.append(g2);
   const notes=notesOf(A);
   if(notes.length){const nb=mk("div","sblock");nb.append(mk("span","k","특이사항"));const ul=mk("ul","notes");notes.forEach(x=>ul.append(mk("li",null,x)));nb.append(ul);box.append(nb)}
   const slot=mk("div","int-slot");box.append(slot);
-  if(mineDemo)slot.append(interpCard(DEMO_INTERP));
-  else if(n>=3){const saved=loadInterp();
+  if(n>=3){const saved=loadInterp();
     if(saved&&saved.n===n&&saved.last===H[H.length-1].t&&saved.self===(self?self.t:0))slot.append(interpCard(saved.data));
     else{const b=mk("button","btn","AI 종합 해석 보기");b.type="button";b.onclick=()=>requestInterp(H,A,slot,b,bp,self);slot.append(b)}}
   const foot=mk("div","sheet-f");
   foot.append(mk("span",null,"기록은 이 브라우저에만 저장되고, 대화 원문은 남기지 않아요."));
-  if(!mineDemo){const del=mk("button","txtbtn","기록 지우기");del.type="button";let armed=false;
-    del.onclick=()=>{if(!armed){armed=true;del.textContent="한 번 더 누르면 모두 지워져요";return}saveHist([]);saveInterp(null);saveSelf(null);renderMine()};foot.append(del)}
+  {const del=mk("button","txtbtn","기록 지우기");del.type="button";let armed=false;
+    del.onclick=()=>{if(!armed){armed=true;del.textContent="한 번 더 누르면 모두 지워져요";return}saveHist([]);saveInterp(null);saveSelf(null);renderMine(box)};foot.append(del)}
   box.append(foot);
-  box.append(mk("p","src-line","근거: Social Styles · Merrill & Reid (두 축, 유연성) / 갈등 대응 5유형 · Thomas & Kilmann (1974)"));
+  box.append(mk("p","src-line","근거: 갈등 대응 5유형 · Thomas & Kilmann (1974) / Social Styles · Merrill & Reid (두 축, 유연성)"));
+  return box;
 }
-const DEMO_HIST=[
-  {t:1,scen:"gossip",title:"단톡방의 뒷담화",cat:"peer",partner:"expressive",level:1,end:"BOTH",temp:68,prog:64,key:true,trap:false,x:-1,y:1,adapt:true,mode:"collaborating",grow:["험담 밑의 업무 문제를 따로 꺼내기"]},
-  {t:2,scen:"freerider",title:"같이 맡았는데 혼자 하는 일",cat:"peer",partner:"analyst",level:2,end:"RELATION ONLY",temp:66,prog:45,key:true,hints:2,trap:true,x:-1,y:2,adapt:false,mode:"accommodating",grow:["마지막에 무엇을·언제까지 정하는 말 붙이기"]},
-  {t:3,scen:"lateorder",title:"퇴근 10분 전의 급한 일",cat:"up",partner:"driver",level:3,end:"RELATION ONLY",temp:61,prog:30,key:false,trap:true,x:-2,y:1,adapt:false,mode:"accommodating",grow:["결론부터 짧게 말하기"]},
-  {t:4,scen:"bossfix",title:"팀장님의 실수",cat:"up",partner:"driver",level:3,end:"NEITHER",temp:42,prog:40,key:false,trap:false,x:-1,y:-1,adapt:false,mode:"avoiding",grow:["근거를 먼저 보여주고 바로 제안하기"]},
-  {t:5,scen:"vacation",title:"겹쳐 버린 휴가",cat:"peer",partner:"expressive",level:1,end:"BOTH",temp:72,prog:70,key:true,trap:false,x:-1,y:1,adapt:true,mode:"compromising",grow:["조건을 기준으로 바꿔 말하기"]},
-  {t:6,scen:"ace",title:"에이스의 태도",cat:"lead",partner:"driver",level:1,end:"BOTH",temp:64,prog:70,key:true,trap:true,x:1,y:-1,adapt:true,mode:"collaborating",grow:["'다들' 대신 직접 본 장면으로 시작하기"]}];
-const DEMO_INTERP={summary:"자가 체크와 게임 속 말투가 거의 같아서, 상대가 바뀌어도 묻고 들어주는 쪽으로 말해요. 갈등이 생기면 상대에 맞추는 '수용'을 자주 써서, 관계는 지키지만 합의를 마무리하지 못한 판이 있어요. 결론을 먼저 원하는 직진러 상대에게 특히 어려워했어요.",
-  strengths:["상대 사정을 끌어내는 질문 (실마리 4/6판)","대화 분위기를 해치지 않는 말투"],
-  watch:["합의 직전에 물러서기 (관계만 지킨 판 2/6)","결론을 원하는 상대에게 서론이 길어짐"],
-  next:[{do:"대화 끝에 '그럼 ○○까지 ○○하는 걸로 할까요?'로 정리하기",card:"bluf"},{do:"부탁할 때 관찰–느낌–필요–부탁 순서로 말해보기",card:"nvc"}]};
 
-/* ================= DEMO ================= */
-$("demoBtn").onclick=()=>{
-  const setup=scenSetup(SCEN.find(s=>s.id==="ace"));
-  const demo={worry:"에이스의 태도",temp:64,max:64,prog:70,keyFound:true,trapHit:true,setup,hist:[
-    {who:"them",text:setup.first,opening:true},
-    {who:"me",text:"직진러님, 요즘 회의에서 주니어들 말 자주 끊으시는 거 아세요? 다들 좀 힘들어해요."},
-    {who:"them",text:"다들이요? 저는 시간 아끼려고 정리한 건데요.",inner:"뒤에서 무슨 얘기가 돈 거지. 기분 나쁘네.",temp:28,delta:-12,prog:0,dp:0,trap:true},
-    {who:"me",text:"제가 직접 본 걸 말씀드릴게요. 지난주 화요일 기획 회의에서 신입 두 분 제안이 끝나기 전에 '그건 안 돼요'로 정리됐고, 그 뒤로 두 분 다 말이 없었어요."},
-    {who:"them",text:"…그건 맞아요. 근데 누가 그랬는지 말해 주세요. 저도 그 사람들이랑 얘기 좀 해야겠네요.",inner:"누가 찔렀는지는 알아야겠다.",temp:34,delta:6,prog:10,dp:10,twist:true},
-    {who:"me",text:"그건 제가 본 장면이라 누구 얘기가 아니에요. 그보다 궁금한 게, 요즘 회의 끝나고 혼자 떠안는 일이 많지 않아요?"},
-    {who:"them",text:"…사실 신입들 실수 수습하느라 한 달째 야근이에요. 아무도 모르더라고요.",inner:"처음으로 알아봐 줬다.",temp:56,delta:22,prog:35,dp:25,keyNow:true},
-    {who:"me",text:"그건 제가 몰랐어요. 다음 주부터 신입 코드 리뷰는 제가 같이 볼게요. 대신 회의에선 끝까지 듣고 질문 하나만 해 주실래요? 2주 해보고 금요일에 다시 얘기해요."},
-    {who:"them",text:"좋아요. 2주 해보죠. 대신 리뷰는 진짜 같이 봐 주셔야 해요.",inner:"말로만이 아니면 해볼 만하다.",temp:64,delta:8,prog:70,dp:35}
-  ]};
-  S=demo;
-  renderResult(demo,{
-    verdict:"'다들'이라는 말로 함정에 빠졌다가, 직접 본 장면과 숨은 수고를 꺼내면서 풀렸어요.",
-    tradeoff:"관계를 먼저 회복하고 약속을 받았어요. 대신 리뷰 부담을 내가 떠안았고, '말 끊기'를 직접 지적하는 강도는 낮아졌어요.",
-    fix:{quote:"직진러님, 요즘 회의에서 주니어들 말 자주 끊으시는 거 아세요? 다들 좀 힘들어해요.",why:"'다들 힘들어해요'는 누군가 말했다는 신호예요. 제보자를 지키라는 조건을 어겼고, 바로 방어를 불렀어요.",better:"지난주 화요일 기획 회의에서 신입 두 분 제안이 끝나기 전에 '그건 안 돼요'로 정리됐어요. 그 뒤로 두 분이 말을 안 했어요."},
-    good:{quote:"그보다 궁금한 게, 요즘 회의 끝나고 혼자 떠안는 일이 많지 않아요?",why:"누가 말했는지 묻는 반전을 피하면서, 숨은 수고라는 실마리로 방향을 돌렸어요."},
-    alts:[{label:"관계를 더 지키는 길",line:"요즘 혼자 떠안는 일이 많아 보여요. 회의 얘기 전에, 뭐가 제일 버거운지부터 들을게요.",cost:"태도 이야기는 다음 1on1로 미뤄져요."},
-          {label:"일을 더 밀어붙이는 길",line:"회의에서 말 끊는 건 이번 주부터 멈춰 주세요. 성과와 별개로 팀 기준이에요.",cost:"당장은 따르겠지만, 의욕과 신뢰가 떨어질 수 있어요."}],
-    question:"리뷰를 내가 떠안은 건 해결일까요, 문제를 내 쪽으로 옮긴 걸까요?",
-    style:{ask_tell:1,task_people:-1,evidence:"제가 직접 본 걸 말씀드릴게요. 지난주 화요일 기획 회의에서 신입 두 분 제안이 끝나기 전에 '그건 안 돼요'로 정리됐고, 그 뒤로 두 분 다 말이 없었어요."},
-    adapt:true,mode:"collaborating",mode_why:"리뷰를 같이 보겠다는 제안으로 상대 부담과 내 목표를 함께 풀려고 했어요.",
-    summary:"마음 64°, 합의 70%로 둘 다 지켰어요. 첫 말의 '다들'이 함정이라 마음이 28°까지 떨어졌지만, 직접 본 장면으로 바꾸고 '혼자 떠안는 일'을 물으면서 속사정이 열렸어요. 사실을 먼저 짚고 제안으로 마무리하는, 말하는 편 · 일 중심의 대화였어요.",
-    grow:["처음부터 '다들' 대신 내가 직접 본 장면 하나로 시작하기"],
-    theory:[{id:"sbi",apply:"'다들 힘들어해요' 대신 '화요일 회의에서 제안이 끝나기 전에 정리됐고, 두 분이 말을 멈췄어요'처럼 본 것만 말해요."},{id:"attribution",apply:"말 끊기를 성격 탓으로 몰지 않고 '혼자 떠안는 일'이라는 상황을 물어서 속사정이 나왔어요."}],
-    practice:"이번 주 회의 하나를 '결정된 것 · 담당 · 기한' 세 줄로 마무리하기"
-  },true);
-};
 
 /* ================= MY RECORDS (내 기록) =================
    결과지: 이 기기 + (서버 모드면) 서버에 저장 → 다른 기기에서도 다시 볼 수 있음
@@ -3606,16 +3908,17 @@ const loadTalk=pid=>recLoad(TKK).find(x=>x&&x.pid===pid&&x.o===recOwner())||null
 const newPid=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,8);
 function keepTalk(s){
   if(!s||!s.pid||!s.hist||!s.hist.length||s.talkKept)return;s.talkKept=true;
-  const hist=s.hist.map(h=>{const o={who:h.who,text:h.text};["inner","temp","delta","prog","dp","acts","twist","keyNow","trap","opening"].forEach(k=>{if(h[k]!==undefined&&h[k]!==null&&h[k]!==false&&h[k]!=="")o[k]=h[k]});return o});
+  const hist=s.hist.map(h=>{const o={who:h.who,text:h.text};["inner","temp","delta","prog","dp","acts","twist","keyNow","trap","opening","dec"].forEach(k=>{if(h[k]!==undefined&&h[k]!==null&&h[k]!==false&&h[k]!=="")o[k]=h[k]});return o});
   const L=recLoad(TKK).filter(x=>x&&x.pid!==s.pid);L.push({pid:s.pid,o:recOwner(),t:s.t||Date.now(),hist});recSave(TKK,L,30);
 }
 function sheetData(s,raw){
   const st=s.setup,su={};
-  ["scen","title","stage","scene","goal","guard","call","key","role","roleLabel","roleIdx","place","time","level","tags","skill","secret","stance","clue","twist","trap","start","me_role","situation","rk"].forEach(k=>{if(st[k]!==undefined&&st[k]!==null)su[k]=st[k]});
+  ["scen","title","stage","scene","goal","guard","call","key","role","roleLabel","roleIdx","place","time","level","tags","skill","secret","stance","clue","twist","trap","start","me_role","situation","rk","cond"].forEach(k=>{if(st[k]!==undefined&&st[k]!==null)su[k]=st[k]});
   const path=(s.hist||[]).filter(h=>h.who==="them"&&!h.opening).map(h=>[h.temp,h.prog??0,h.dp||0,h.twist?1:0]);
   const sr=st.scen?starsOf(s):null;
-  return{v:7,t:s.t||Date.now(),r:raw,got:sr?sr.got:null,lv:st.level||2,
-    st:{temp:s.temp,prog:s.prog||0,keyFound:!!s.keyFound,trapHit:!!s.trapHit,hints:s.hints||0,turns:(s.hist||[]).filter(h=>h.who==="me").length,setup:su,path}};
+  return{v:8,t:s.t||Date.now(),r:raw,got:sr?sr.got:null,lv:st.level||2,
+    st:{temp:s.temp,prog:s.prog||0,keyFound:!!s.keyFound,trapHit:!!s.trapHit,hints:s.hints||0,turns:(s.hist||[]).filter(h=>h.who==="me").length,setup:su,path,
+      decided:s.decided||[],agreed:s.agreed||[],dropped:!!s.dropped,dropQ:s.dropQ||"",give:s.give||null,settled:!!s.settled,twistSkip:!!s.twistSkip}};
 }
 function sheetMetaOf(s,data){
   const st=s.setup,sc=SCEN.find(x=>x.id===st.scen),g=data.got;
@@ -3635,12 +3938,19 @@ function recOverlay(){let ov=$("recOv");
   if(!ov){ov=mk("div","ov");ov.id="recOv";ov.setAttribute("role","dialog");ov.setAttribute("aria-modal","true");ov.setAttribute("aria-label","내 기록");document.body.append(ov);ov.addEventListener("click",e=>{if(e.target===ov)ov.hidden=true})}
   return ov}
 let REC_LIST=null;
-async function openRec(){
-  const ov=recOverlay(),p=mk("div","card ovpanel small rec"),h=mk("div","ovhead");h.append(mk("h2",null,"내 기록"));
+let REC_TAB="list";
+async function openRec(tab){
+  if(tab)REC_TAB=tab==="mine"?"mine":"list";
+  const ov=recOverlay(),p=mk("div","card ovpanel rec "+(REC_TAB==="mine"?"wide":"small")),h=mk("div","ovhead");h.append(mk("h2",null,"내 기록"));
   const x=mk("button","closebtn","✕");x.type="button";x.setAttribute("aria-label","닫기");x.onclick=()=>{ov.hidden=true};h.append(x);p.append(h);
+  const tabs=mk("div","tabs");tabs.setAttribute("role","tablist");
+  [["list","판별 기록"],["mine","내 대화 패턴"]].forEach(([k,l])=>{const b=mk("button",null,l);b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",String(REC_TAB===k));b.onclick=()=>{if(REC_TAB!==k)openRec(k)};tabs.append(b)});
+  p.append(tabs);
+  ov.replaceChildren(p);ov.hidden=false;ov.scrollTop=0;
+  if(REC_TAB==="mine"){p.append(renderMine(mk("div","mine")));x.focus();return}
   p.append(mk("p","sub2",SERVER_URL?"판을 누르면 그때의 결과지를 다시 볼 수 있어요. 결과지는 어느 기기에서나 보이고, 대화 원문은 그 판을 한 기기에서만 보여요.":"판을 누르면 그때의 결과지를 다시 볼 수 있어요. 이 브라우저에만 저장돼요."));
   const list=mk("div","rec-list"),st=mk("p","note rec-st");st.setAttribute("role","status");p.append(st,list);
-  ov.replaceChildren(p);ov.hidden=false;x.focus();
+  x.focus();
   const loc=loadSheets().map(v=>Object.assign({pid:v.pid,time:v.t,local:true},v.meta||{}));
   const draw=items=>{list.replaceChildren();
     if(!items.length){const e=mk("div","empty");e.append(mk("b",null,"아직 다시 볼 결과지가 없어요"),mk("p",null,"한 판을 끝내고 결과지가 정리되면 여기에 쌓여요."));list.append(e);return}
@@ -3676,6 +3986,7 @@ function reviewState(it,data,talk){
   const real=talk&&Array.isArray(talk.hist)&&talk.hist.length;
   const hist=real?talk.hist:(st.path||[]).map(([t,p,dp,tw])=>({who:"them",text:"",temp:t,prog:p,dp,twist:!!tw}));
   return{setup:su,temp:+st.temp||0,prog:+st.prog||0,keyFound:!!st.keyFound,trapHit:!!st.trapHit,hints:+st.hints||0,hist,noTalk:!real,
+    decided:Array.isArray(st.decided)?st.decided:[],agreed:Array.isArray(st.agreed)?st.agreed:[],dropped:!!st.dropped,dropQ:String(st.dropQ||""),give:GIVE[st.give]?st.give:null,settled:!!st.settled,twistSkip:!!st.twistSkip,
     saved:true,talkKept:true,sheetKept:true,synced:true,review:true,t:data.t||it.time,got:data.got,lv:data.lv||su.level||2,pid:it.pid};
 }
 
@@ -3885,7 +4196,7 @@ function syncPlay(state){
 function syncAnalysis(state,a){
   if(!SERVER_URL||!state||!state.pid||!a)return;
   const sr=state.setup&&state.setup.scen?starsOf(state):null,self=loadSelf();
-  queueSync({play:Object.assign(playBase(state),srvGot(sr),{x:a.x,y:a.y,mode:a.mode||"",adapt:!!a.adapt,self:self?{x:self.x,y:self.y}:null})});
+  queueSync({play:Object.assign(playBase(state),srvGot(sr),{x:a.x,y:a.y,mode:a.give?"g:"+a.give:"",adapt:!!a.adapt,self:self?{x:self.x,y:self.y}:null})});
 }
 async function doReset(){
   saveStars({});saveHist([]);saveInterp(null);savePend([]);
@@ -4004,12 +4315,13 @@ function admRender(){
   if(ADM.role==="admin"&&!d.keyInfo)warn.push("API 키가 아직 없어요. 설정 → AI에서 넣어야 직원들이 대화할 수 있어요.");
   if(d.pub&&d.pub.siteOpen===false)warn.push("AI 대화가 멈춰 있어요. 설정 → AI에서 다시 켤 수 있어요.");
   if(ADM.role==="admin"&&!d.usage)warn.push("서버 스크립트가 예전 버전이에요. 새 Code.gs를 붙여 넣고 '새 버전'으로 다시 배포해 주세요.");
+  if(ADM.role==="admin"&&d.usage&&!(d.v>=4))warn.push("서버 스크립트가 v4보다 예전이에요. 새 Code.gs를 붙여 넣고 '새 버전'으로 다시 배포해 주세요.");
   warn.forEach(w=>r.append(mk("div","adm-warn",w)));
-  if(ADM.role!=="admin"&&ADM.tab==="log")ADM.tab="home";
+  if(ADM.role!=="admin"&&(ADM.tab==="log"||ADM.tab==="probe"))ADM.tab="home";
   const tabs=mk("div","adm-tabs");tabs.setAttribute("role","tablist");
-  [["home","현황"],["users",`참여자 ${d.users.length}`],["eps","에피소드"],...(ADM.role==="admin"?[["log","작업 기록"],["set","설정"]]:[])].forEach(([k,l])=>{const b=mk("button","adm-tab",l);b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",String(ADM.tab===k));b.onclick=()=>{ADM.tab=k;admRender()};tabs.append(b)});
+  [["home","현황"],["users",`참여자 ${d.users.length}`],["eps","에피소드"],...(ADM.role==="admin"?[["probe","말투 점검"],["log","작업 기록"],["set","설정"]]:[])].forEach(([k,l])=>{const b=mk("button","adm-tab",l);b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",String(ADM.tab===k));b.onclick=()=>{ADM.tab=k;admRender()};tabs.append(b)});
   r.append(tabs);const body=mk("div","adm-body");r.append(body);
-  ({home:admHome,users:admUsers,eps:admEps,log:admLog,set:admSet}[ADM.tab]||admHome)(body);
+  ({home:admHome,users:admUsers,eps:admEps,probe:admProbe,log:admLog,set:admSet}[ADM.tab]||admHome)(body);
 }
 /* ---- AI 사용량 · 예상 비용 ---- */
 const ADM_PRICE=[[/haiku/i,0.10,0.50,"Haiku"],[/sonnet/i,2,10,"Sonnet"]],ADM_KRW=1400;
@@ -4112,15 +4424,17 @@ function admUser(id,flash){
     const ul=mk("ul");
     ul.append(mk("li",null,`평균 위치: ${STYLE_DESC[st]} (말하기↔묻기 ${ax.toFixed(1)}, 일↔사람 ${ay.toFixed(1)})`));
     ul.append(mk("li",null,`상대에 맞춰 말투를 바꾼 판: ${a.adapt||0} / ${a.n} (${admPct(a.adapt||0,a.n)})`));
-    const ms=Object.entries(a.modes||{}).sort((x,y)=>y[1]-x[1]);if(ms.length)ul.append(mk("li",null,"자주 쓴 대응: "+ms.map(([k,v])=>`${MODES[k]||k} ${v}`).join(" · ")));
+    if(ADM.role==="admin"){const ms=Object.entries(a.modes||{}),gv=ms.filter(([k])=>/^g:/.test(k)).sort((x,y)=>y[1]-x[1]),od=ms.filter(([k])=>!/^g:/.test(k)).sort((x,y)=>y[1]-x[1]);
+      if(gv.length)ul.append(mk("li",null,"내려놓은 것: "+gv.map(([k,v])=>`${GIVE[k.slice(2)]||k} ${v}`).join(" · ")));
+      if(od.length)ul.append(mk("li",null,"이전 버전 갈등 대응: "+od.map(([k,v])=>`${MODES[k]||k} ${v}`).join(" · ")))}
     if(a.self){const ss=styleOf(a.self.x,a.self.y);ul.append(mk("li",null,`자가 체크: ${STYLE_DESC[ss]} → 실제 대화는 ${ss===st?"같은 쪽":"다른 쪽("+STYLE_DESC[st]+")"}`))}
     c.append(ul,mk("p","note","성향 판정이 아니라, 이 사람이 게임에서 말한 방식의 평균이에요. 판 수가 적으면 흔들려요."));p.append(c)}
   else p.append(mk("p","note","아직 결과지 분석이 끝난 판이 없어요."));
   /* plays */
   const P=d.plays.filter(x=>x.id===u.id).reverse().slice(0,40);
   if(P.length){const w=mk("div","adm-tw"),t=document.createElement("table");t.className="adm-t";
-    const cols=["시간","에피소드","상대","별","결말","힌트","말한 횟수"];if(d.showAnalysis)cols.push("대응");t.append(admTHead(cols));const tb=document.createElement("tbody");
-    P.forEach(x=>{const c=[admFmt(x.time),admEpName(x.scen),x.role||"—",x.stars===""?"—":`${x.stars}개`,END_NAME[x.end]||x.end||"—",x.hints||0,x.turns||0];if(d.showAnalysis)c.push(x.mode?(MODES[x.mode]||x.mode):"—");tb.append(admTr(c))});
+    const cols=["시간","에피소드","상대","별","결말","힌트","말한 횟수"];if(ADM.role==="admin")cols.push("내려놓은 것");t.append(admTHead(cols));const tb=document.createElement("tbody");
+    P.forEach(x=>{const c=[admFmt(x.time),admEpName(x.scen),x.role||"—",x.stars===""?"—":`${x.stars}개`,END_NAME[x.end]||x.end||"—",x.hints||0,x.turns||0];if(ADM.role==="admin")c.push(admModeName(x.mode));tb.append(admTr(c))});
     t.append(tb);w.append(t);p.append(mk("h3",null,`플레이 기록 ${P.length<u.plays?"(최근 40판)":""}`),w)}
   /* actions */
   if(isA){
@@ -4164,7 +4478,9 @@ function admSheetView(v,sh,back){
   (Array.isArray(r.alts)?r.alts:[]).slice(0,2).forEach(a=>{if(a&&a.line)add(a.label||"다른 길",`“${a.line}” (대가: ${a.cost||"—"})`)});
   add("생각해볼 질문",r.question);
   if(r.style)add("말투",`말하기↔묻기 ${r.style.ask_tell} · 일↔사람 ${r.style.task_people}${r.style.evidence?` (근거: “${r.style.evidence}”)`:""}`);
-  if(r.mode)add("갈등 대응",`${MODES[r.mode]||r.mode}${r.mode_why?` — ${r.mode_why}`:""}`);
+  if(st.give)add("내려놓은 것",`${GIVE[st.give]||st.give}${r.give&&r.give.why?` — ${r.give.why}`:""}${st.dropQ?` (내려놓은 말: “${st.dropQ}”)`:""}`);
+  {const D=(su.cond&&su.cond.decide)||[];if(D.length)add("정할 것",D.map((x,i)=>((st.decided||[]).includes(i)?"✓ ":"✕ ")+x).join(" · "))}
+  if(r.mode)add("(이전) 갈등 대응",`${MODES[r.mode]||r.mode}${r.mode_why?` — ${r.mode_why}`:""}`);
   add("고칠 습관",Array.isArray(r.grow)?r.grow.join(" / "):r.grow);add("이번 주 해볼 것",r.practice);
   v.append(dl);
 }
@@ -4182,7 +4498,7 @@ function admEps(box){
   const off=new Set(((d.settings&&d.settings.episodesOff)||(d.pub&&d.pub.episodesOff)||[]));
   const gotOf=p=>{const o={};String(p.got||"").split(",").forEach(k=>{if(k)o[k]=true});return o};
   const w=mk("div","adm-tw"),t=document.createElement("table");t.className="adm-t eps";
-  const cols=["에피소드","구역","플레이","해본 사람","깬 사람","평균 별","실마리","함정 피함","둘 다","반전 넘김","힌트 없이","평균 힌트"];if(isA)cols.push("보이기");
+  const cols=["에피소드","구역","플레이","해본 사람","깬 사람","평균 별","실마리","함정 피함","둘 다","반전 넘김","힌트 없이","평균 힌트"];if(isA)cols.push("자주 내려놓은 것","보이기");
   t.append(admTHead(cols));
   const tb=document.createElement("tbody"),msg=mk("p","note adm-msg");msg.setAttribute("role","status");
   const rowOf=(id,label,lv)=>{const ps=P.filter(p=>(p.scen||"custom")===id),n=ps.length,who=new Set(ps.map(p=>p.id)).size;
@@ -4193,6 +4509,7 @@ function admEps(box){
     const meter=mk("span","adm-meter");if(cl!=null&&U.length){const m=mk("i");m.style.width=(cl/U.length*100)+"%";meter.append(m)}
     const clc=mk("span","adm-clc");clc.append(document.createTextNode(cl==null?"—":`${cl}명`),meter);
     const cells=[mk("span",null,label),lv?CHAP[lv].name:"—",n,who,clc,lv?`${avg} / ${STARS_AT[lv]}`:avg,f("k",1),f("t",1),f("b",1),f("w",2),f("h",3),hint];
+    if(isA){const gm={};ps.forEach(p=>{const m=String(p.mode||"");if(/^g:/.test(m))gm[m.slice(2)]=(gm[m.slice(2)]||0)+1});const gt=topOf(gm),gn=Object.values(gm).reduce((a,b)=>a+b,0);cells.push(gt?`${GIVE[gt]} ${gm[gt]}/${gn}`:"—")}
     if(isA){if(id==="custom")cells.push("—");else{const sw=document.createElement("input");sw.type="checkbox";sw.className="adm-sw";sw.checked=!off.has(id);sw.setAttribute("aria-label",`${label} 직원 화면에 보이기`);
       sw.onchange=async()=>{sw.disabled=true;msg.textContent="저장 중…";const next=new Set(off);if(sw.checked)next.delete(id);else next.add(id);
         const j=await admCall("admin_settings",{patch:{episodesOff:[...next]}});if(!j.ok){sw.checked=!sw.checked;sw.disabled=false;msg.textContent=admErr(j.code);return}await admLoad()};cells.push(sw)}}
@@ -4200,7 +4517,7 @@ function admEps(box){
   PATH.forEach(sc=>rowOf(sc.id,`${stepOf(sc)}. ${sc.title}`,sc.level));
   rowOf("custom","내 고민 (직접 만든 장면)",null);
   t.append(tb);w.append(t);box.append(w,msg);
-  box.append(mk("p","note","평균 별은 받을 수 있는 별(입문 3 · 실전 4 · 심화 5) 대비예요. 깬 사람 막대는 전체 참여자 중 비율이에요. 실마리 · 함정 · 둘 다 · 반전 · 힌트 없이는 그 에피소드를 한 판들 중 비율이에요. 실마리를 거의 못 찾는 에피소드는 어렵거나 힌트가 부족하다는 신호예요."+(isA?" '보이기'를 끄면 직원 화면 사무실에서 그 사람이 빠져요. 이미 받은 별과 기록은 그대로 남아요.":"")));
+  box.append(mk("p","note","평균 별은 받을 수 있는 별(입문 3 · 실전 4 · 심화 5) 대비예요. 깬 사람 막대는 전체 참여자 중 비율이에요. 실마리 · 함정 · 둘 다 · 반전 · 힌트 없이는 그 에피소드를 한 판들 중 비율이에요. 실마리를 거의 못 찾는 에피소드는 어렵거나 힌트가 부족하다는 신호예요."+(isA?" '자주 내려놓은 것'은 관리자에게만 보여요."+" '보이기'를 끄면 직원 화면 사무실에서 그 사람이 빠져요. 이미 받은 별과 기록은 그대로 남아요.":"")));
 }
 /* ---- 설정 (관리자만) ---- */
 function admSet(box){
@@ -4230,12 +4547,12 @@ function admSet(box){
   /* AI */
   const c3=sec("AI","API 키는 서버(구글 Apps Script)에만 저장되고 직원 화면으로는 내려가지 않아요.");
   c3.append(mk("p","adm-key",d.keyInfo?`현재 키: ${d.keyInfo}`:"현재 키: 없음"));
-  const so=chk(c3,"AI 대화 켜기 (끄면 직원들은 예시와 도감만 볼 수 있어요)",s.siteOpen!==false);
+  const so=chk(c3,"AI 대화 켜기 (끄면 직원들은 도감만 볼 수 있어요)",s.siteOpen!==false);
   const kk=field(c3,"새 API 키 (바꿀 때만 넣기)",inp("","password",{autocomplete:"off",placeholder:"sk-ant-…"}));
-  const dl=field(c3,"한 사람이 하루에 AI를 부를 수 있는 횟수",inp(s.dailyLimit,"number",{min:1,max:5000}),"한 판에 보통 8~15번 불러요. 기본 300");
+  const dl=field(c3,"한 사람이 하루에 AI를 부를 수 있는 횟수",inp(s.dailyLimit,"number",{min:1,max:5000}),"한 판에 보통 7~8번 불러요. 기본 300");
   const mq=field(c3,"대화 모델",inp(s.modelQuick,"text",{spellcheck:false}),"기본 claude-sonnet-5-5 · 비용을 줄이려면 claude-haiku-5-5 (약 1/20)");
-  const md=field(c3,"보조 모델 (대화가 끊길 때 · 결과지 선택)",inp(s.modelDefault,"text",{spellcheck:false}),"기본 claude-sonnet-5-5");
-  const rt=document.createElement("select");rt.className="kb-in";[["quick","대화 모델과 같게 (권장)"],["default","보조 모델"]].forEach(([v,l])=>{const o=document.createElement("option");o.value=v;o.textContent=l;rt.append(o)});rt.value=s.resultTier||"quick";field(c3,"결과지 분석에 쓸 모델",rt,"구글 서버는 60초가 넘는 답을 끊어요. 보조 모델로 바꿨는데 결과지가 자주 끊기면 다시 대화 모델로 두세요.");
+  const md=field(c3,"보조 모델 (대화 모델과 다르면 끊길 때 바꿔 씀 · 결과지 선택)",inp(s.modelDefault,"text",{spellcheck:false}),"기본 claude-sonnet-5-5 · 결과지가 자주 끊기면 claude-haiku-5-5");
+  const rt=document.createElement("select");rt.className="kb-in";[["quick","대화 모델과 같게 (권장)"],["default","보조 모델"]].forEach(([v,l])=>{const o=document.createElement("option");o.value=v;o.textContent=l;rt.append(o)});rt.value=s.resultTier||"quick";field(c3,"결과지 분석에 쓸 모델",rt,"구글 서버는 60초가 넘는 답을 끊어요. 결과지가 자주 끊기면 보조 모델에 claude-haiku-5-5를 넣고 여기를 '보조 모델'로 두세요. 결과지만 Haiku로 만들어요.");
   saveBtn(c3,m=>{const p={siteOpen:so.checked,dailyLimit:+dl.value||300,modelQuick:mq.value.trim(),modelDefault:md.value.trim(),resultTier:rt.value};const k=kk.value.trim();if(k){if(!/^sk-ant-/.test(k)){m.textContent="키는 sk-ant-로 시작해요.";return null}p.apiKey=k}return p});
   const tr=mk("div","adm-btns"),tb=mk("button","btn sm ghost","키 확인 (짧게 호출해 보기)");tb.type="button";const tm=mk("span","note adm-msg");tm.setAttribute("role","status");
   tb.onclick=async()=>{tb.disabled=true;tm.textContent="확인 중…";const j=await admCall("admin_test");tb.disabled=false;if(!j.ok){tm.textContent=admErr(j.code);return}
@@ -4270,6 +4587,75 @@ function admSet(box){
   const ol=mk("ol","adm-ol");["구글 시트를 다음 관리자와 공유하고 소유자로 바꾸기 (Apps Script도 같이 넘어가요)","다음 관리자 계정으로 Apps Script를 새로 배포하고, 새 주소를 시뮬레이션 파일에 넣어 다시 올리기","이 화면에서 관리자 비밀번호와 API 키를 다음 관리자의 것으로 바꾸기","GitHub 저장소(또는 조직)에 다음 관리자를 추가하기"].forEach(t=>ol.append(mk("li",null,t)));
   c6.append(ol,mk("p","note","자세한 순서는 인수인계 문서를 봐 주세요."));box.append(c6);
 }
+/* ---- 말투 점검 (관리자만): 에피소드 12개 × 상대 위치마다 같은 세 문장을 보내, 첫 대답을 성향 × 위치 표와 나란히 봐요 ---- */
+const PROBE_LINES=[
+ ["polite","정중한 첫마디",c=>`시간 내 주셔서 고마워요. 이 건은 서로 괜찮은 방법을 같이 찾고 싶어요. 먼저 ${c} 생각을 듣고 싶어요.`],
+ ["push","밀어붙이기",()=>"제 쪽은 이미 정해져 있어서요. 길게 얘기할 것 없이 제가 말한 대로 하는 걸로 정리할게요."],
+ ["give","다 양보하기",c=>`아, 그럼 그냥 ${c} 말씀대로 할게요. 제 쪽 사정은 신경 쓰지 않으셔도 돼요.`]];
+const PROBE={rows:null,run:false,stop:false,done:0,total:0,err:0,ep:""};
+function probeList(ep){const L=[];PATH.forEach(sc=>{if(ep&&sc.id!==ep)return;(ROLES[sc.id]||[{r:sc.role}]).forEach((v,i)=>L.push({sc,i}))});return L}
+function probePrompt(st,line){
+  const keep=S;
+  S={setup:st,temp:st.start,prog:0,keyFound:false,decided:[],agreed:[],open:[],hist:[...(st.first?[{who:"them",text:st.first,opening:true}]:[]),{who:"me",text:line}]};
+  try{return turnPrompt(false,false)}finally{S=keep}
+}
+async function admClaude(prompt){
+  const j=await admCall("admin_claude",{tier:"quick",max_tokens:1500,messages:[{role:"user",content:prompt}],system:"답은 프로그램이 읽습니다. 요청한 형식의 JSON 하나만 답하고, 앞뒤에 설명이나 코드 블록 표시를 붙이지 마세요."});
+  if(!j.ok)throw{code:j.code||"server_error"};
+  if(j.status!==200)throw{code:"http_"+j.status};
+  let body;try{body=JSON.parse(j.body)}catch{throw{code:"server_bad_reply"}}
+  const text=(body.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("");const v=parseLoose(text);if(v===undefined)throw{code:"invalid_json"};return v;
+}
+function admProbe(box){
+  const d=ADM.d,c=mk("div","card adm-card");box.append(c);
+  c.append(mk("h3",null,"말투 점검"),mk("p","note","에피소드 12개의 상대 위치마다 같은 세 문장(정중한 첫마디 · 밀어붙이기 · 다 양보하기)을 보내고, 상대의 첫 대답을 성향 × 위치 표와 나란히 보여 줘요. 같은 성향이 위치마다 표대로 반응하는지, 위치가 바뀌어도 성격이 남아 있는지 보는 용도예요. 돌릴지는 관리자가 정해요."));
+  if(!(d.v>=4)){c.append(mk("div","adm-warn","서버 스크립트가 v4보다 예전이라 쓸 수 없어요. 새 Code.gs를 붙여 넣고 '새 버전'으로 배포해 주세요."));return}
+  if(!d.keyInfo){c.append(mk("div","adm-warn","API 키가 없어요. 설정 → AI에서 넣어 주세요."));return}
+  const sel=document.createElement("select");sel.className="kb-in";sel.setAttribute("aria-label","에피소드");
+  [["","에피소드 12개 모두"],...PATH.map(sc=>[sc.id,`${stepOf(sc)}. ${sc.title}`])].forEach(([v,l])=>{const o=document.createElement("option");o.value=v;o.textContent=l;sel.append(o)});
+  sel.value=PROBE.ep||"";sel.disabled=PROBE.run;
+  const est=mk("p","note"),cheap=/haiku/i.test((d.settings||{}).modelQuick||"");
+  const upd=()=>{const n=probeList(sel.value).length*PROBE_LINES.length,won=Math.round(n*(cheap?0.75:15)/10)*10;est.textContent=`AI 호출 ${n}번 · 약 ${won.toLocaleString("ko-KR")}원 (${cheap?"Haiku":"Sonnet"} 기준 추정). 사용량에 함께 잡혀요.`};
+  sel.onchange=()=>{PROBE.ep=sel.value;upd()};upd();
+  const row=mk("div","adm-btns pb-ctl"),go=mk("button","btn sm","점검 시작"),stop=mk("button","btn sm ghost","멈추기"),prog=mk("span","note adm-msg");prog.setAttribute("role","status");
+  go.type="button";stop.type="button";go.disabled=PROBE.run;stop.hidden=!PROBE.run;
+  let armed=false;
+  go.onclick=()=>{if(PROBE.run)return;if(!armed){armed=true;go.textContent="한 번 더 누르면 시작";setTimeout(()=>{armed=false;go.textContent="점검 시작"},4000);return}runProbe(sel.value)};
+  stop.onclick=()=>{PROBE.stop=true;stop.disabled=true;prog.textContent="지금 보내는 것까지만 하고 멈춰요…"};
+  row.append(sel,go,stop,prog);c.append(est,row);
+  if(PROBE.run)prog.textContent=`보내는 중… ${PROBE.done} / ${PROBE.total}${PROBE.err?` · 실패 ${PROBE.err}`:""}`;
+  else if(PROBE.rows)prog.textContent=`${PROBE.done} / ${PROBE.total} 끝${PROBE.err?` · 실패 ${PROBE.err}`:""}`;
+  if(PROBE.rows&&!PROBE.run){const ex=mk("button","btn sm ghost","결과 CSV");ex.type="button";ex.onclick=probeCsv;row.append(ex)}
+  if(!PROBE.rows)return;
+  const groups={};PROBE.rows.forEach(r=>{(groups[r.id]=groups[r.id]||[]).push(r)});
+  PATH.forEach(sc=>{const G=groups[sc.id];if(!G)return;const card=mk("div","card adm-card adm-probe");card.append(mk("h3",null,`${stepOf(sc)}. ${sc.title} · ${CH[sc.key].name}(${CH[sc.key].type})`));
+    G.forEach(r=>{const blk=mk("div","pb-blk"),hd=mk("div","pb-hd");hd.append(mk("b",null,`상대 · ${r.label}`),mk("span","pill",`${POS_NAME[r.pos]||r.pos} 칸`));blk.append(hd);
+      if(r.cell){const ce=mk("div","pb-cell");[["첫 반응",r.cell[0]],["버티는 방식",r.cell[1]],["마음이 열리는 신호",r.cell[2]]].forEach(([k,v])=>{const x=mk("span");x.append(mk("em",null,k),document.createTextNode(v));ce.append(x)});blk.append(ce)}
+      if(r.first)blk.append(mk("p","note pb-first",`상대 첫마디: “${r.first}”`));
+      const g=mk("div","pb-grid");PROBE_LINES.forEach(([k,l])=>{const a=r.ans[k],col=mk("div","pb-a");col.append(mk("span","k",l));
+        if(!a)col.append(mk("span","note","—"));else if(a.err)col.append(mk("span","note",`실패 [${a.err}]`));
+        else{col.append(mk("span","pb-say",`“${a.say}”`));if(a.inner)col.append(mk("span","pb-in","속마음 · "+a.inner));if(a.acts.length)col.append(mk("span","acts2","판정 · "+a.acts.join(" · ")))}
+        g.append(col)});blk.append(g);card.append(blk)});
+    box.append(card)});
+}
+async function runProbe(ep){
+  const L=probeList(ep),jobs=[];L.forEach(({sc,i})=>PROBE_LINES.forEach(([k,,fn])=>jobs.push({sc,i,k,fn})));
+  PROBE.run=true;PROBE.stop=false;PROBE.done=0;PROBE.err=0;PROBE.total=jobs.length;PROBE.ep=ep;
+  const map={};PROBE.rows=L.map(({sc,i})=>{const v=variantOf(sc,i),pos=POS_OF[v.rk]||"peer",r={id:sc.id,i,label:v.r,pos,cell:(PERSONA[sc.key]||{})[pos],first:v.first,ans:{}};map[sc.id+":"+i]=r;return r});
+  const redraw=()=>{if(ADM.tab==="probe"&&ADM.d&&!$("adminScr").hidden)admRender()};
+  redraw();let last=0,q=0;
+  const worker=async()=>{while(!PROBE.stop&&q<jobs.length){const jb=jobs[q++],row=map[jb.sc.id+":"+jb.i],st=scenSetup(jb.sc,jb.i);
+      try{const v=await admClaude(probePrompt(st,jb.fn(st.call)));row.ans[jb.k]={say:String(v.say||""),inner:String(v.inner||""),acts:ACTS.filter(([a])=>v[a]===true).map(([,l])=>l)}}
+      catch(e){PROBE.err++;row.ans[jb.k]={err:(e&&e.code)||"error"}}
+      PROBE.done++;const now=Date.now();if(now-last>800){last=now;redraw()}}};
+  await Promise.all([worker(),worker(),worker()]);
+  PROBE.run=false;redraw();
+}
+function probeCsv(){const rows=[["에피소드","상대 위치","성향","위치 칸","첫 반응","버티는 방식","마음이 열리는 신호",...PROBE_LINES.flatMap(([,l])=>[l+" · 대답",l+" · 속마음",l+" · 판정"])]];
+  PROBE.rows.forEach(r=>{const sc=SCEN.find(s=>s.id===r.id);rows.push([sc?sc.title:r.id,r.label,sc?CH[sc.key].name:"",POS_NAME[r.pos]||r.pos,...(r.cell||["","",""]),...PROBE_LINES.flatMap(([k])=>{const a=r.ans[k]||{};return[a.say||(a.err?`실패 ${a.err}`:""),a.inner||"",(a.acts||[]).join(" · ")]})])});
+  admCsv(rows,"probe")}
+const admModeName=m=>!m?"—":/^g:/.test(m)?(GIVE[m.slice(2)]||m):`(이전) ${MODES[m]||m}`;
+function admTopMode(ms){const e=Object.entries(ms||{}),g=e.filter(([k])=>/^g:/.test(k));return((g.length?g:e).sort((x,y)=>y[1]-x[1])[0]||[null])[0]}
 /* ---- CSV ---- */
 function admCsv(rows,name){
   const esc=v=>{let s=v==null?"":String(v);if(/^[=+\-@]/.test(s))s="'"+s;return /[",\n]/.test(s)?`"${s.replace(/"/g,'""')}"`:s};
@@ -4277,15 +4663,15 @@ function admCsv(rows,name){
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([txt],{type:"text/csv;charset=utf-8"}));a.download=`edusim_${name}_${tag}.csv`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
 }
 function admCsvUsers(){const d=ADM.d,A=d.showAnalysis;
-  const head=["닉네임","가입","최근 접속","모은 별","깬 에피소드","플레이","숨김","숫자 4자리","AI 정지","개인 하루 한도","메모"];if(A)head.push("분석 판 수","말하기↔묻기 평균","일↔사람 평균","패턴","맞춰 바꾼 판","자주 쓴 대응","자가 체크");
+  const head=["닉네임","가입","최근 접속","모은 별","깬 에피소드","플레이","숨김","숫자 4자리","AI 정지","개인 하루 한도","메모"];const isAdm=ADM.role==="admin";if(A)head.push("분석 판 수","말하기↔묻기 평균","일↔사람 평균","패턴","맞춰 바꾼 판",...(isAdm?["자주 내려놓은 것"]:[]),"자가 체크");
   PATH.forEach(sc=>head.push(`${stepOf(sc)}. ${sc.title}`));
   const rows=[head];d.users.forEach(u=>{const r=[u.nick,admFmt(u.created),admFmt(u.last),u.total,u.cleared,u.plays,u.hidden?"예":"",u.hasPin?"정함":"",u.aiOff?"예":"",u.limit===""||u.limit==null?"":u.limit,u.note];
-    if(A){const a=u.analysis||{};if(a.n){const ax=a.sx/a.n,ay=a.sy/a.n;const top=Object.entries(a.modes||{}).sort((x,y)=>y[1]-x[1])[0];r.push(a.n,ax.toFixed(2),ay.toFixed(2),STYLE_DESC[styleOf(ax,ay)],a.adapt||0,top?(MODES[top[0]]||top[0]):"",a.self?STYLE_DESC[styleOf(a.self.x,a.self.y)]:"")}else r.push("","","","","","","")}
+    if(A){const a=u.analysis||{};if(a.n){const ax=a.sx/a.n,ay=a.sy/a.n,top=admTopMode(a.modes);r.push(a.n,ax.toFixed(2),ay.toFixed(2),STYLE_DESC[styleOf(ax,ay)],a.adapt||0,...(isAdm?[top?admModeName(top):""]:[]),a.self?STYLE_DESC[styleOf(a.self.x,a.self.y)]:"")}else r.push(...new Array(isAdm?7:6).fill(""))}
     PATH.forEach(sc=>r.push(starN(u.stars[sc.id],sc.level)));rows.push(r)});admCsv(rows,"users")}
 function admCsvPlays(){const d=ADM.d,A=d.showAnalysis,nick=admNicks(),b=v=>v===true||v==="TRUE"||v==="true"?"1":"0";
-  const head=["시간","닉네임","에피소드","구역","상대","별","받을 수 있는 별","받은 별","깸","결말","힌트","말한 횟수"];if(A)head.push("말하기↔묻기","일↔사람","대응","맞춰 바꿈");
+  const head=["시간","닉네임","에피소드","구역","상대","별","받을 수 있는 별","받은 별","깸","결말","힌트","말한 횟수"];const isAdm=ADM.role==="admin";if(A)head.push("말하기↔묻기","일↔사람",...(isAdm?["내려놓은 것"]:[]),"맞춰 바꿈");
   const rows=[head];d.plays.forEach(p=>{const sc=SCEN.find(s=>s.id===p.scen);const r=[admFmt(p.time),nick[p.id]||p.nick,admEpName(p.scen),sc?CHAP[sc.level].name:"",p.role||"",p.stars,p.max,String(p.got||"").split(",").map(k=>(STAR_DEF.find(x=>x[0]===k)||[,""])[1]).filter(Boolean).join(" · "),p.clear===""||p.clear==null?"":b(p.clear),END_NAME[p.end]||p.end,p.hints,p.turns];
-    if(A)r.push(p.x,p.y,p.mode?(MODES[p.mode]||p.mode):"",p.adapt===""?"":b(p.adapt));rows.push(r)});admCsv(rows,"plays")}
+    if(A)r.push(p.x,p.y,...(isAdm?[p.mode?admModeName(p.mode):""]:[]),p.adapt===""?"":b(p.adapt));rows.push(r)});admCsv(rows,"plays")}
 if(location.hash==="#admin")admOpen();
 
 </script>
